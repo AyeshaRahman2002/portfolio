@@ -7,11 +7,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #1d1f21;
+    color: #f4f4f4;
 }
 
 header {
-    background: #35424a;
+    background: #2c3e50;
     color: #ffffff;
     padding: 20px 0;
 }
@@ -44,39 +45,24 @@ nav ul li a:hover {
     color: #f4f4f4;
 }
 
-h2 {
-    color: #35424a;
+.intro {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-main {
-    padding: 20px;
-    margin: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.intro h2 {
+    font-size: 2.5rem;
 }
 
-section {
-    margin: 20px 0;
-}
-
-article {
-    margin-bottom: 20px;
-}
-
-article h3 {
-    color: #35424a;
-}
-
-article p {
-    margin: 10px 0;
+.intro p {
+    font-size: 1.2rem;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     color: #ffffff;
-    background: #35424a;
+    background: #2ecc71;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -84,14 +70,12 @@ article p {
 }
 
 .btn:hover {
-    background: #474e57;
+    background: #27ae60;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background: #35424a;
+    padding: 20px;
+    background: #2c3e50;
     color: #ffffff;
-    position: relative;
-    width: 100%;
 }
