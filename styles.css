@@ -83,7 +83,12 @@ nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     object-fit: cover;
+    
+    /* Fading Border Effect */
+    mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
+    -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
 }
+
 
 /* Stats Section */
 .stats {
