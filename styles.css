@@ -298,71 +298,44 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Updated swirling background effect */
+/* Moving circle animations */
 @keyframes swirl {
     0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(50vw, -30vh) rotate(90deg);
-    }
-    50% {
-        transform: translate(-50vw, 30vh) rotate(180deg);
-    }
-    75% {
-        transform: translate(30vw, -50vh) rotate(270deg);
+        transform: translate(-100px, -100px) rotate(0deg);
     }
     100% {
-        transform: translate(0, 0) rotate(360deg);
+        transform: translate(500px, 500px) rotate(360deg);
     }
 }
 
 @keyframes swirl-reverse {
     0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(-30vw, 50vh) rotate(-90deg);
-    }
-    50% {
-        transform: translate(50vw, -30vh) rotate(-180deg);
-    }
-    75% {
-        transform: translate(-50vw, 30vh) rotate(-270deg);
+        transform: translate(100px, 100px) rotate(0deg);
     }
     100% {
-        transform: translate(0, 0) rotate(-360deg);
+        transform: translate(-500px, -500px) rotate(-360deg);
     }
 }
 
-@keyframes float {
+@keyframes swirl-faster {
     0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-50vw, 30vh);
-    }
-    50% {
-        transform: translate(30vw, -50vh);
-    }
-    75% {
-        transform: translate(50vw, -30vh);
+        transform: translate(0px, 0px) rotate(0deg);
     }
     100% {
-        transform: translate(0, 0);
+        transform: translate(600px, -600px) rotate(360deg);
     }
 }
 
+/* Swirls for background effect */
 .swirl {
     position: absolute;
     width: 600px;
     height: 600px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
-    top: 10%;
-    left: 10%;
-    transform: translate(-10%, -10%);
-    animation: swirl 20s infinite linear, float 15s infinite alternate;
+    top: 20%;
+    left: 30%;
+    animation: swirl 20s linear infinite;
     z-index: 0;
 }
 
@@ -372,12 +345,24 @@ nav ul li a:hover {
     height: 500px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: swirl-reverse 25s infinite linear, float 18s infinite alternate;
+    top: 40%;
+    left: 40%;
+    animation: swirl-reverse 25s linear infinite;
     z-index: 0;
 }
+
+.swirl-faster {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation: swirl-faster 15s linear infinite;
+    z-index: 0;
+}
+
 
 /* Ensure no transformations affect the text */
 .work-card-inner {
