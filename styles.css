@@ -150,11 +150,23 @@ h2 {
     background-color: #00cc7a;
 }
 
+
 /* Overlapping Section */
 .overlapping-section {
     position: relative;
     height: 600px;
     background-color: #111;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards ease; /* Fade-in effect on load */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .image-container {
@@ -181,12 +193,6 @@ h2 {
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
     padding: 20px;
     border-radius: 10px;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease; /* Fade in transition */
-}
-
-.image-container:hover .overlay-text {
-    opacity: 1; /* Fade in when hovering over the image */
 }
 
 .overlay-text h3 {
