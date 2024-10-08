@@ -268,6 +268,7 @@ nav ul li a:hover {
     }
 }
 
+
 /* Work Section with Moving Swirls Background */
 .work-section {
     position: relative;
@@ -292,6 +293,14 @@ nav ul li a:hover {
     gap: 20px;
     flex-wrap: wrap;
     z-index: 2;
+    position: relative;
+}
+
+/* Ensure no transformations affect text */
+.work-card h3, 
+.work-card p {
+    transform: none !important;
+    z-index: 3; /* Ensures text stays on top */
     position: relative;
 }
 
@@ -338,6 +347,16 @@ nav ul li a:hover {
     transform: translate(-40%, -40%);
     animation: swirl-reverse 40s linear infinite;
     z-index: 0;
+}
+
+/* Static text to ensure it's unaffected by any animations */
+.work-section h2,
+.work-card h3,
+.work-card p {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    position: relative;
+    transform: none !important;
 }
 
 
