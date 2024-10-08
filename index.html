@@ -24,114 +24,72 @@
         <p>MEng Computer Science & AI Student | Artist | Innovator</p>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            I am currently a 3rd-year MEng (Hons) Computer Science and Artificial Intelligence student at the University of Leeds, graduating in 2024. My academic journey has given me strong technical skills in software engineering, AI, and machine learning, which I aim to apply in solving real-world problems.
-        </p>
-        <p>
-            I have worked on various technical projects, including an AI-based healthcare tool for Autism detection and a stock market sentiment analysis tool. I am passionate about blending creativity with technology and have built an engaging presence in the art world through my Instagram (@artxar_).
-        </p>
-        <p>
-            With proficiency in C++, Python, Java, and more, I strive to leverage my skills to drive innovation in AI, robotics, and beyond.
-        </p>
-    </section>
-
-    <!-- Projects Section -->
+    <!-- Projects Section with Flip Card Effect -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
 
-        <div class="project">
-            <h3>AI-Based Stock Market Sentiment Analysis</h3>
-            <p>
-                Developed a sentiment analysis tool using neural networks to analyze data from social media and customer reviews. The tool predicts stock market fluctuations based on sentiment analysis, providing valuable insights for investors to track trends and make informed decisions.
-                <br>
-                <strong>Skills:</strong> WEKA, Python, Stock Market Analysis, Sentiment Analysis, Mutual Funds.
-            </p>
+        <!-- AI-Based Stock Market Sentiment Analysis -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/stock-analysis.png" alt="AI-Based Stock Market Sentiment Analysis">
+                </div>
+                <div class="flip-card-back">
+                    <h3>AI-Based Stock Market Sentiment Analysis</h3>
+                    <p>
+                        This tool predicts stock market trends based on sentiment analysis of data from social media and customer reviews. Click for more details.
+                    </p>
+                    <button onclick="showDetails('ai-analysis')">More Details</button>
+                </div>
+            </div>
         </div>
 
-        <div class="project">
-            <h3>xv6 Memory Management</h3>
-            <p>
-                Implemented functions similar to `malloc()` and `free()` for memory management in xv6. This project involved learning about low-level memory management, processes, and efficient function implementation.
-                <br>
-                <strong>Learning Objectives:</strong> Xv6, Malloc, Free, Memory Management.
-            </p>
+        <!-- xv6 Memory Management -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/xv6-memory.png" alt="xv6 Memory Management">
+                </div>
+                <div class="flip-card-back">
+                    <h3>xv6 Memory Management</h3>
+                    <p>
+                        Implemented functions for memory management similar to malloc() and free(). Click for more details.
+                    </p>
+                    <button onclick="showDetails('xv6-memory')">More Details</button>
+                </div>
+            </div>
         </div>
 
-        <div class="project">
-            <h3>Web Application for Assessment To-Do List</h3>
-            <p>
-                Built a web application to add, delete, and search assessments using Flask and Bootstrap. The system used a client-server architecture to handle HTTP requests and responses, creating a seamless experience for users to track their assessments.
-                <br>
-                <strong>Skills:</strong> Flask, Bootstrap, HTML5, CSS3, Client-Server Architecture.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Functional User Interface Group Project: Video Editing Application</h3>
-            <p>
-                Designed a video editing application in C++ with a team. We developed functional buttons, implemented a user-friendly interface, and presented our project via GitHub. The group experience taught valuable lessons in project management and collaborative development.
-                <br>
-                <strong>Learning Objectives:</strong> User Interface Design, C++, Project Management, GitHub.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Web Application for Sports Management Centre (Python)</h3>
-            <p>
-                Developed a web application using Python and Flask through multiple iterations. The app allowed user management, facility tracking, and visual calendars for staff and users. My role involved acting as Scrum Master and Shaper during sprints, focusing on system security and usability.
-                <br>
-                <strong>Skills:</strong> Python Flask, Web Application Security, GitHub, Project Management.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Technical Report - Use of AI in Psychological Treatments</h3>
-            <p>
-                Researched and authored a report on the use of AI in clinical psychological treatments. The report explored how AI models are applied to mental health diagnosis, their risks, and potential future applications in the industry.
-                <br>
-                <strong>Skills:</strong> Research, AI Applications, Critical Thinking.
-            </p>
-        </div>
-
-        <div class="resume-links">
-            <a href="Resume.pdf" target="_blank" class="btn">Download Resume</a>
-            <a href="Dissertation.pdf" target="_blank" class="btn">Read Dissertation</a>
+        <!-- Web Application for Assessment To-Do List -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/todo-app.png" alt="Web Application for Assessment To-Do List">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Assessment To-Do List Application</h3>
+                    <p>
+                        A web app to add, delete, and search assessments with task tracking. Click for more details.
+                    </p>
+                    <button onclick="showDetails('todo-app')">More Details</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Art & Design Section -->
-    <section id="art" class="art">
-        <h2>Art & Design</h2>
-        <div class="art-piece">
-            <img src="images/art1.jpg" alt="Strawberry Acrylic Painting">
-            <p>Acrylic Painting: Exploring vibrant colors and textures through strawberries.</p>
+    <!-- Project Details Modal (Hidden by Default) -->
+    <div id="project-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetails()">&times;</span>
+            <div id="modal-text"></div>
         </div>
-        <div class="art-piece">
-            <img src="images/art2.jpg" alt="Abstract Portrait">
-            <p>Abstract Portrait: A fusion of surrealism and emotion through digital mediums.</p>
-        </div>
-        <a href="https://www.instagram.com/artxar_" target="_blank" class="btn">View More on Instagram</a>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:ayesharahman7755@gmail.com">ayesharahman7755@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ayesha-rahman-53665a1a8/" target="_blank">Ayesha Rahman</a></p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 Ayesha Rahman. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
