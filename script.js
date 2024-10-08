@@ -46,3 +46,20 @@ function closeDetails() {
     const modal = document.getElementById("project-details");
     modal.style.display = "none";
 }
+
+// Add mouse movement effect to work cards for 3D hover
+const workCards = document.querySelectorAll('.work-card');
+
+workCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        let rect = card.getBoundingClientRect();
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.querySelector('.work-card-inner').style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.querySelector('.work-card-inner').style.transform = `rotateY(0deg) rotateX(0deg)`;
+    });
+});
+
