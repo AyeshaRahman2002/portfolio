@@ -3,67 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayesha Rahman - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ayesha Rahman | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Ayesha Rahman</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#art">Art & Design</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Ayesha Rahman</h1>
+        <p>Computer Science & AI Enthusiast | Artist | Creator</p>
     </header>
-    <main>
-        <section id="home" class="hero">
-            <h1>Hi, I'm Ayesha Rahman.</h1>
-            <p>I build things for the web.</p>
-            <a href="#work" class="cta-button">View My Work</a>
-        </section>
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>[Your bio goes here]</p>
-        </section>
 
-        <section id="work">
-            <h2>My Work</h2>
-            <div class="projects">
-                <div class="project">
-                    <img src="images/project1.jpg" alt="Project 1">
-                    <h3>Project Title 1</h3>
-                    <p>Project description goes here.</p>
-                </div>
-                <div class="project">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <h3>Project Title 2</h3>
-                    <p>Project description goes here.</p>
-                </div>
-                <div class="project">
-                    <img src="images/project3.jpg" alt="Project 3">
-                    <h3>Project Title 3</h3>
-                    <p>Project description goes here.</p>
-                </div>
-            </div>
-        </section>
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am currently a 3rd-year MEng Computer Science & Artificial Intelligence student at the University of Leeds.
+            Passionate about software engineering, AI, and digital art. Exploring art and technology, I combine creativity with logic to
+            solve real-world challenges.
+        </p>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Autism Spectrum Disorder Detection Using AI</h3>
+            <p>
+                A machine-learning-based healthcare application for ASD detection in adults using NLP and eye-tracking tools.
+            </p>
+            <a href="https://github.com/yourusername/asd-ai-project" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Financial Prediction Using Neural Networks</h3>
+            <p>
+                Leveraged sentiment analysis and Numerai’s dataset to predict high-frequency trading trends.
+            </p>
+            <a href="https://github.com/yourusername/finance-nn-project" target="_blank">View Project</a>
+        </div>
+
+        <div class="resume-links">
+            <a href="Resume.pdf" target="_blank" class="btn">Download Resume</a>
+            <a href="Desertation.pdf" target="_blank" class="btn">Read Dissertation</a>
+        </div>
+    </section>
+
+    <!-- Art & Design Section -->
+    <section id="art" class="art">
+        <h2>Art & Design</h2>
+        <div class="art-piece">
+            <img src="images/art1.jpg" alt="Acrylic Painting">
+            <p>Acrylic Painting: An experimental piece exploring vivid emotions through texture.</p>
+        </div>
+        <div class="art-piece">
+            <img src="images/art2.jpg" alt="Digital Painting">
+            <p>Digital Painting: A fusion of futuristic landscapes and abstract concepts.</p>
+        </div>
+        <a href="https://www.instagram.com/artxar_" target="_blank" class="btn">View More on Instagram</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:ayesharahman7755@gmail.com">ayesharahman7755@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ayesha-rahman" target="_blank">Ayesha Rahman</a></p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Ayesha Rahman. All Rights Reserved.</p>
+        <p>© 2024 Ayesha Rahman. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
