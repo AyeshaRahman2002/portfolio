@@ -276,7 +276,7 @@ nav ul li a:hover {
     position: relative;
     background-color: #111;
     padding: 4rem 2rem;
-    text-align: center;
+    text-align: left;
     color: #fff;
     overflow: hidden;
 }
