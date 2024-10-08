@@ -150,6 +150,37 @@ h2 {
     background-color: #00cc7a;
 }
 
+/* Overlapping Section */
+.overlapping-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #111;
+    padding: 4rem 0;
+}
+
+.image-container img {
+    max-width: 40%;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.description {
+    color: #fff;
+    max-width: 50%;
+}
+
+.description h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
 /* Footer */
 footer {
     background-color: #222;
