@@ -3,57 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayesha Rahman | Portfolio</title>
+    <title>Ayesha Rahman - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Ayesha Rahman</h1>
+        <div class="logo">Ayesha Rahman</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <section class="hero">
-            <h2>Hi, I'm Ayesha.</h2>
-            <p>I create impactful digital experiences.</p>
-            <a href="work.html" class="button">View My Work</a>
+        <section id="home" class="hero">
+            <h1>Hi, I'm Ayesha Rahman.</h1>
+            <p>I build things for the web.</p>
+            <a href="#work" class="cta-button">View My Work</a>
+        </section>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>[Your bio goes here]</p>
         </section>
 
-        <section class="featured-projects">
-            <h3>Featured Projects</h3>
-            <div class="project-grid">
+        <section id="work">
+            <h2>My Work</h2>
+            <div class="projects">
                 <div class="project">
                     <img src="images/project1.jpg" alt="Project 1">
-                    <h4>Project Title 1</h4>
-                    <p>Short description of the project.</p>
+                    <h3>Project Title 1</h3>
+                    <p>Project description goes here.</p>
                 </div>
                 <div class="project">
                     <img src="images/project2.jpg" alt="Project 2">
-                    <h4>Project Title 2</h4>
-                    <p>Short description of the project.</p>
+                    <h3>Project Title 2</h3>
+                    <p>Project description goes here.</p>
                 </div>
                 <div class="project">
                     <img src="images/project3.jpg" alt="Project 3">
-                    <h4>Project Title 3</h4>
-                    <p>Short description of the project.</p>
+                    <h3>Project Title 3</h3>
+                    <p>Project description goes here.</p>
                 </div>
             </div>
         </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
-
     <footer>
-        <p>© 2024 Ayesha Rahman. All Rights Reserved.</p>
-        <a href="Resume.pdf" download>Download My Resume</a>
+        <p>&copy; 2024 Ayesha Rahman. All Rights Reserved.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-
