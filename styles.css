@@ -40,12 +40,13 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    flex-wrap: wrap; /* Allow the content to wrap on smaller screens */
 }
 
 .hero-content {
@@ -54,6 +55,7 @@ nav ul li a:hover {
     align-items: center;
     width: 100%;
     max-width: 1200px;
+    flex-wrap: wrap; /* For responsive wrapping */
 }
 
 .hero-text {
@@ -75,19 +77,18 @@ nav ul li a:hover {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Center image on smaller screens */
+    align-items: center;
 }
 
 .hero-image img {
-    width: 350px;
+    width: 100%;
+    max-width: 300px; /* Control the maximum width of the image */
     height: auto;
     border-radius: 10px;
     object-fit: cover;
-    
-    /* Fading Border Effect */
-    mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%);
-    -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%);
 }
+
 
 
 /* Stats Section */
