@@ -298,22 +298,58 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Swirling background effect */
+/* Swirling and Random background effect */
 @keyframes swirl {
     0% {
-        transform: rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, -30px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-50px, 30px) rotate(180deg);
+    }
+    75% {
+        transform: translate(30px, -50px) rotate(270deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: translate(0, 0) rotate(360deg);
     }
 }
 
 @keyframes swirl-reverse {
     0% {
-        transform: rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-30px, 50px) rotate(-90deg);
+    }
+    50% {
+        transform: translate(50px, -30px) rotate(-180deg);
+    }
+    75% {
+        transform: translate(-50px, 30px) rotate(-270deg);
     }
     100% {
-        transform: rotate(-360deg);
+        transform: translate(0, 0) rotate(-360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-50px, 30px);
+    }
+    50% {
+        transform: translate(30px, -50px);
+    }
+    75% {
+        transform: translate(50px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
 
@@ -326,7 +362,7 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: swirl 30s linear infinite;
+    animation: swirl 20s infinite linear, float 15s infinite alternate;
     z-index: 0;
 }
 
@@ -339,7 +375,7 @@ nav ul li a:hover {
     top: 40%;
     left: 40%;
     transform: translate(-40%, -40%);
-    animation: swirl-reverse 40s linear infinite;
+    animation: swirl-reverse 25s infinite linear, float 18s infinite alternate;
     z-index: 0;
 }
 
