@@ -42,12 +42,82 @@ nav ul li a:hover {
 .hero {
     height: 100vh;
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero-text {
+    flex: 1;
+    color: #fff;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.fade-image {
+    filter: grayscale(0.5); /* Makes it partially gray for fade */
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-image:hover {
+    opacity: 1;
+    filter: grayscale(0); /* Removes gray fade on hover */
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
     text-align: center;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+}
+
+.stat-item h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Section Title */
