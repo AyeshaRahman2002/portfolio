@@ -304,7 +304,7 @@ nav ul li a:hover {
         transform: translate(-100px, -100px) rotate(0deg);
     }
     100% {
-        transform: translate(500px, 500px) rotate(360deg);
+        transform: translate(800px, 800px) rotate(360deg);
     }
 }
 
@@ -313,7 +313,7 @@ nav ul li a:hover {
         transform: translate(100px, 100px) rotate(0deg);
     }
     100% {
-        transform: translate(-500px, -500px) rotate(-360deg);
+        transform: translate(-800px, -800px) rotate(-360deg);
     }
 }
 
@@ -322,7 +322,7 @@ nav ul li a:hover {
         transform: translate(0px, 0px) rotate(0deg);
     }
     100% {
-        transform: translate(600px, -600px) rotate(360deg);
+        transform: translate(1000px, -1000px) rotate(360deg);
     }
 }
 
@@ -335,7 +335,7 @@ nav ul li a:hover {
     border-radius: 50%;
     top: 20%;
     left: 30%;
-    animation: swirl 20s linear infinite;
+    animation: swirl 10s linear infinite; /* Speed up */
     z-index: 0;
 }
 
@@ -347,7 +347,7 @@ nav ul li a:hover {
     border-radius: 50%;
     top: 40%;
     left: 40%;
-    animation: swirl-reverse 25s linear infinite;
+    animation: swirl-reverse 15s linear infinite; /* Speed up */
     z-index: 0;
 }
 
@@ -359,10 +359,22 @@ nav ul li a:hover {
     border-radius: 50%;
     top: 10%;
     left: 10%;
-    animation: swirl-faster 15s linear infinite;
+    animation: swirl-faster 8s linear infinite; /* Move faster */
     z-index: 0;
 }
 
+/* Add more circles */
+.swirl-extra {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    top: 30%;
+    left: 60%;
+    animation: swirl 12s linear infinite; /* Extra swirl */
+    z-index: 0;
+}
 
 /* Ensure no transformations affect the text */
 .work-card-inner {
