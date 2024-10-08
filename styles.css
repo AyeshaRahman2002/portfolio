@@ -85,17 +85,6 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-.fade-image {
-    filter: grayscale(0.5); /* Makes it partially gray for fade */
-    opacity: 0.9;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.fade-image:hover {
-    opacity: 1;
-    filter: grayscale(0); /* Removes gray fade on hover */
-}
-
 /* Stats Section */
 .stats {
     display: flex;
@@ -119,6 +108,7 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 
 /* Section Title */
 .projects-section h2 {
