@@ -268,7 +268,7 @@ nav ul li a:hover {
     }
 }
 
-/* 3D Futuristic Work Section with Swirling Background */
+/* Work Section with Moving Swirls Background */
 .work-section {
     position: relative;
     background-color: #111;
@@ -295,62 +295,49 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Adding the swirling background */
+/* Swirling background effect */
 @keyframes swirl {
     0% {
-        transform: rotate(0deg) translate(-50%, -50%);
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translate(-50%, -50%);
+        transform: rotate(360deg);
     }
 }
 
 @keyframes swirl-reverse {
     0% {
-        transform: rotate(0deg) translate(-50%, -50%);
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(-360deg) translate(-50%, -50%);
+        transform: rotate(-360deg);
     }
 }
 
 .swirl {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
-    animation: swirl 20s infinite linear;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: swirl 30s linear infinite;
+    z-index: 0;
 }
 
 .swirl-reverse {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.05);
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    animation: swirl-reverse 25s infinite linear;
-}
-
-/* Positioning the swirls */
-.swirl:first-child {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.swirl-reverse:first-child {
-    top: 60%;
-    left: 60%;
-    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+    animation: swirl-reverse 40s linear infinite;
     z-index: 0;
-}
-
-/* Adding a glow effect to the text for a futuristic look */
-.work-section h2,
-.work-card {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 
