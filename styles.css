@@ -298,19 +298,19 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Swirling and Random background effect */
+/* Updated swirling background effect */
 @keyframes swirl {
     0% {
         transform: translate(0, 0) rotate(0deg);
     }
     25% {
-        transform: translate(50px, -30px) rotate(90deg);
+        transform: translate(50vw, -30vh) rotate(90deg);
     }
     50% {
-        transform: translate(-50px, 30px) rotate(180deg);
+        transform: translate(-50vw, 30vh) rotate(180deg);
     }
     75% {
-        transform: translate(30px, -50px) rotate(270deg);
+        transform: translate(30vw, -50vh) rotate(270deg);
     }
     100% {
         transform: translate(0, 0) rotate(360deg);
@@ -322,13 +322,13 @@ nav ul li a:hover {
         transform: translate(0, 0) rotate(0deg);
     }
     25% {
-        transform: translate(-30px, 50px) rotate(-90deg);
+        transform: translate(-30vw, 50vh) rotate(-90deg);
     }
     50% {
-        transform: translate(50px, -30px) rotate(-180deg);
+        transform: translate(50vw, -30vh) rotate(-180deg);
     }
     75% {
-        transform: translate(-50px, 30px) rotate(-270deg);
+        transform: translate(-50vw, 30vh) rotate(-270deg);
     }
     100% {
         transform: translate(0, 0) rotate(-360deg);
@@ -340,13 +340,13 @@ nav ul li a:hover {
         transform: translate(0, 0);
     }
     25% {
-        transform: translate(-50px, 30px);
+        transform: translate(-50vw, 30vh);
     }
     50% {
-        transform: translate(30px, -50px);
+        transform: translate(30vw, -50vh);
     }
     75% {
-        transform: translate(50px, -30px);
+        transform: translate(50vw, -30vh);
     }
     100% {
         transform: translate(0, 0);
@@ -359,9 +359,9 @@ nav ul li a:hover {
     height: 600px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%);
     animation: swirl 20s infinite linear, float 15s infinite alternate;
     z-index: 0;
 }
@@ -372,9 +372,9 @@ nav ul li a:hover {
     height: 500px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: swirl-reverse 25s infinite linear, float 18s infinite alternate;
     z-index: 0;
 }
