@@ -24,84 +24,103 @@
         <p>MEng Computer Science & AI Student | Artist | Innovator</p>
     </header>
 
-    <!-- Projects Section with Flip Card Effect -->
-    <section id="projects" class="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
         <h2>Projects</h2>
-        <br>
-        </br>
+        <div class="projects">
+            <!-- AI-Based Stock Market Sentiment Analysis -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/stock-analysis.png" alt="AI-Based Stock Market Sentiment Analysis">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>AI-Based Stock Market Sentiment Analysis</h3>
+                        <p>This tool predicts stock market trends based on sentiment analysis of data from social media and customer reviews. Click for more details.</p>
+                        <button onclick="showDetails('ai-analysis')">More Details</button>
+                    </div>
+                </div>
+            </div>
 
-        <!-- AI-Based Stock Market Sentiment Analysis -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/stock-analysis.png" alt="AI-Based Stock Market Sentiment Analysis">
-                </div>
-                <div class="flip-card-back">
-                    <h3>AI-Based Stock Market Sentiment Analysis</h3>
-                    <p>This tool predicts stock market trends based on sentiment analysis of data from social media and customer reviews. Click for more details.</p>
-                    <button onclick="showDetails('ai-analysis')">More Details</button>
+            <!-- xv6 Memory Management -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/xv6-memory.png" alt="xv6 Memory Management">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>xv6 Memory Management</h3>
+                        <p>Implemented functions for memory management similar to malloc() and free(). Click for more details.</p>
+                        <button onclick="showDetails('xv6-memory')">More Details</button>
+                    </div>
                 </div>
             </div>
-        </div>
     
-        <!-- xv6 Memory Management -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/xv6-memory.png" alt="xv6 Memory Management">
-                </div>
-                <div class="flip-card-back">
-                    <h3>xv6 Memory Management</h3>
-                    <p>Implemented functions for memory management similar to malloc() and free(). Click for more details.</p>
-                    <button onclick="showDetails('xv6-memory')">More Details</button>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Video Editing Application in C++ -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/video-editing.png" alt="Video Editing Application">
-                </div>
-                <div class="flip-card-back">
-                    <h3>Functional User Interface Group Project</h3>
-                    <p>A video editing tool created in C++ with functional UI elements and project management skills. Click for more details.</p>
-                    <button onclick="showDetails('video-editing')">More Details</button>
+            <!-- Video Editing Application in C++ -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/video-editing.png" alt="Video Editing Application">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Functional User Interface Group Project</h3>
+                        <p>A video editing tool created in C++ with functional UI elements and project management skills. Click for more details.</p>
+                        <button onclick="showDetails('video-editing')">More Details</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <!-- Web Application for Assessment To-Do List -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/todo-app.png" alt="Web Application for Assessment To-Do List">
-                </div>
-                <div class="flip-card-back">
-                    <h3>Assessment To-Do List Application</h3>
-                    <p>A web app to add, delete, and search assessments with task tracking. Click for more details.</p>
-                    <button onclick="showDetails('todo-app')">More Details</button>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Web Application for Sports Management Centre (Python) -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="images/sports-management.png" alt="Sports Management Web Application">
-                </div>
-                <div class="flip-card-back">
-                    <h3>Sports Management System</h3>
-                    <p>A web application built for sports management, handling user login, facility tracking, and calendar management. Click for more details.</p>
-                    <button onclick="showDetails('sports-management')">More Details</button>
+        
+            <!-- Web Application for Assessment To-Do List -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/todo-app.png" alt="Web Application for Assessment To-Do List">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Assessment To-Do List Application</h3>
+                        <p>A web app to add, delete, and search assessments with task tracking. Click for more details.</p>
+                        <button onclick="showDetails('todo-app')">More Details</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        
+            <!-- Web Application for Sports Management Centre (Python) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/sports-management.png" alt="Sports Management Web Application">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Sports Management System</h3>
+                        <p>A web application built for sports management, handling user login, facility tracking, and calendar management. Click for more details.</p>
+                        <button onclick="showDetails('sports-management')">More Details</button>
+                    </div>
+                </div>
+            </div>
         
     </section>
 
+    <section class="certificates-section">
+        <h2>Certificates</h2>
+        <div class="certificates-list">
+            <div class="certificate-item">
+                <h3>Blockchain Transformations of Financial Services</h3>
+                <p>Issued: Sep 2024</p>
+                <p>Skills: Blockchain</p>
+                <button onclick="window.open('https://www.credential-link.com', '_blank')">Show Credential</button>
+            </div>
+
+            <div class="certificate-item">
+                <h3>Blockchain, Cryptoassets, and Decentralized Finance</h3>
+                <p>Issued: Sep 2024</p>
+                <p>Skills: Blockchain</p>
+                <button onclick="window.open('https://www.credential-link.com', '_blank')">Show Credential</button>
+            </div>
+
+            <!-- Add other certificates here similarly -->
+        </div>
+    </section>
+    
     <!-- Project Details Modal (Hidden by Default) -->
     <div id="project-details" class="modal">
         <div class="modal-content">
