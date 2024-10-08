@@ -85,8 +85,8 @@ nav ul li a:hover {
     object-fit: cover;
     
     /* Fading Border Effect */
-    mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
-    -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
+    mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%);
+    -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 40%);
 }
 
 
