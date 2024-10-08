@@ -10,7 +10,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #111;
     color: #fff;
-    line-height: 1.6;
 }
 
 /* Navigation */
@@ -51,101 +50,108 @@ nav ul li a:hover {
     flex-direction: column;
 }
 
-/* About Me Section */
-.about {
-    padding: 4rem 2rem;
-    background-color: #222;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-/* Projects Section */
+/* Flip Card Styles */
 .projects {
-    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
     background-color: #222;
 }
 
-.projects h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.projects .project {
-    margin-bottom: 2rem;
-}
-
-.resume-links {
-    text-align: center;
-}
-
-.resume-links .btn {
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
     margin: 1rem;
-    background-color: #00ff99;
-    color: #111;
-    padding: 0.7rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-.resume-links .btn:hover {
-    background-color: #00cc7a;
-}
-
-/* Art & Design Section */
-.art {
-    padding: 4rem 2rem;
-    background-color: #111;
-}
-
-.art-piece {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.art-piece img {
-    width: 80%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Contact Section */
-.contact form {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-}
-
-.contact input,
-.contact textarea {
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border: none;
-    border-radius: 5px;
+.flip-card-inner {
+    position: relative;
     width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.contact button {
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.flip-card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.flip-card-back h3 {
+    margin-bottom: 15px;
+}
+
+.flip-card-back button {
     background-color: #00ff99;
     color: #111;
-    padding: 1rem;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.contact button:hover {
+.flip-card-back button:hover {
     background-color: #00cc7a;
 }
 
-/* Footer */
-footer {
+/* Modal for Project Details */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
     background-color: #222;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
