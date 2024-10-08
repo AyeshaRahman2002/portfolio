@@ -192,7 +192,7 @@ nav ul li a:hover {
 }
 
 .flip-card-back button {
-    background-color: #00ff99;
+    background-color: #87CEEB;
     color: #111;
     padding: 10px 15px;
     border: none;
@@ -281,7 +281,7 @@ nav ul li a:hover {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    color: #00ff99;
+    color: #87CEEB;
     flex: 1 1 calc(50% - 20px); /* Make each certificate take 50% of the width minus spacing */
     margin-bottom: 20px;
     display: flex;
@@ -302,7 +302,7 @@ nav ul li a:hover {
 
 
 .certificate-item button {
-    background-color: #00ff99;
+    background-color: #87CEEB;
     color: #111;
     padding: 10px 15px;
     border: none;
