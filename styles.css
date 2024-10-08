@@ -114,6 +114,16 @@ nav ul li a:hover {
     letter-spacing: 1px;
 }
 
+/* Biography Title */
+.biography-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #000; /* Jet black background */
+    padding: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+}
 
 /* Section Title */
 .projects-section h2 {
