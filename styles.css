@@ -268,6 +268,103 @@ nav ul li a:hover {
     }
 }
 
+/* Work Section */
+.work-section {
+    background-color: #222;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    perspective: 1000px;
+}
+
+.work-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.work-items {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Work Card Styles */
+.work-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 1rem;
+}
+
+.work-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background: linear-gradient(145deg, #1d1d1d, #303030);
+}
+
+.work-card:hover .work-card-inner {
+    transform: rotateY(180deg);
+}
+
+.work-card-front, .work-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-card-front {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.work-card-back {
+    background-color: #444;
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.work-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.work-card p {
+    font-size: 1rem;
+}
+
+/* Add 3D movement effect */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.work-card-inner {
+    animation: floating 5s ease-in-out infinite;
+}
+
+
 /* Certificates Section */
 .certificates-section {
     width: 100%;
