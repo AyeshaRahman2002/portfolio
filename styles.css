@@ -14,28 +14,60 @@ body {
 
 /* Navigation */
 nav {
-    background-color: #222;
-    padding: 1rem;
-    text-align: center;
+    background-color: #333;
+    padding: 10px;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    padding: 14px 20px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    background-color: #575757;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the list initially */
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+        color: white;
+        text-align: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-icon:hover {
+        background-color: #575757;
+    }
+
+    nav ul.active {
+        display: flex; /* Display the list when active */
+    }
 }
 
 /* Hero Section */
