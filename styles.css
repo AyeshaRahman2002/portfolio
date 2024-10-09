@@ -645,3 +645,24 @@ nav ul li a:hover {
         transform: translateX(100%) rotate(15deg);
     }
 }
+
+/* Instagram Link Styling */
+.instagram-link {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.instagram-link a {
+    color: #87CEEB;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #87CEEB;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.instagram-link a:hover {
+    color: #00cc7a;
+    border-bottom-color: #00cc7a;
+}
