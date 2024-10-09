@@ -1019,19 +1019,19 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid #00ffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* Neon box shadow */
+    box-shadow: 0 0 15px rgb(173, 216, 230); /* Neon box shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .competency-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); /* Stronger neon on hover */
+    box-shadow: 0 0 30px rgb(173, 216, 230); /* Stronger neon on hover */
 }
 
 .competency-item h3 {
     font-size: 1.5rem;
     color: #00ffcc;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgb(173, 216, 230);
     margin-bottom: 1rem;
     border-bottom: 2px solid #00ffcc;
     padding-bottom: 0.5rem;
