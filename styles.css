@@ -516,23 +516,38 @@ nav ul li a:hover {
     color: #fff; /* Set title to white */
 }
 
-/* Grid for Art Gallery */
+/* Art & Design Section */
+.art-section {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    position: relative; /* Ensure swirls are positioned behind */
+    z-index: 1; /* Art content stays above swirls */
+}
+
+.art-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    color: #fff; /* Set title to white */
+}
+
+/* Masonry layout for Art Gallery */
 .art-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible based on available space */
-    grid-auto-rows: 1fr; /* Ensure equal height rows */
-    gap: 10px; /* Remove extra space between the images */
-    justify-items: center;
+    column-count: 3; /* Adjust based on screen size or preference */
+    column-gap: 10px; /* Small gap between columns */
+    width: 100%;
 }
 
 .art-piece {
-    width: 100%;
-    position: relative;
+    display: inline-block;
+    margin-bottom: 10px; /* Adjust space between rows */
+    break-inside: avoid; /* Prevent the image from breaking between columns */
 }
 
 .art-piece img {
     width: 100%;
-    height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -542,6 +557,20 @@ nav ul li a:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.7);
 }
+
+/* Responsive Design: Adjust column count on smaller screens */
+@media (max-width: 1200px) {
+    .art-gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .art-gallery {
+        column-count: 1;
+    }
+}
+
 
 /* 3D Moving Swirl Background */
 .swirl-background {
