@@ -669,12 +669,12 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact-section {
-    background-color: #2d2d2d; /* This matches the dark gray color */
+    background-color: #2d2d2d;
     color: #fff;
-    padding: 2rem;
+    padding: 4rem 2rem;
     text-align: center;
     border-top: 2px solid #fff;
-    margin-bottom: 3rem; /* Add space before the footer */
+    margin-bottom: 3rem;
 }
 
 .contact-section h2 {
@@ -682,6 +682,16 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     color: #fff;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-section iframe {
+    border: none;
+    border-radius: 10px;
 }
 
 .contact-info p {
