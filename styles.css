@@ -109,7 +109,28 @@ nav ul li a:hover {
     color: #111; /* Black text on hover */
 }
 
+/* LinkedIn Button */
+.linkedin-button {
+    margin-top: 10px; /* Add some spacing between buttons */
+}
 
+.linkedin-link {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid #0077B5; /* LinkedIn blue */
+    border-radius: 50px;
+    background-color: transparent;
+    color: #0077B5;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.linkedin-link:hover {
+    background-color: #0077B5;
+    color: #fff;
+}
 
 /* Stats Section */
 .stats {
