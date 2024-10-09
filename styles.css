@@ -513,7 +513,7 @@ nav ul li a:hover {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
-    color: #fff;
+    color: #fff; /* Set title to white */
 }
 
 /* Grid for Art Gallery */
@@ -555,26 +555,64 @@ nav ul li a:hover {
     pointer-events: none; /* Prevent any interaction with the background */
 }
 
-.swirl-background::before {
+/* Multiple swirl animations */
+.swirl-background::before,
+.swirl-background::after,
+.swirl-background div:nth-child(1),
+.swirl-background div:nth-child(2),
+.swirl-background div:nth-child(3) {
     content: '';
     position: absolute;
-    top: 50%;
-    left: -150px;
-    width: 250%;
-    height: 400px;
+    width: 200%;
+    height: 300px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     border-radius: 50%;
-    animation: swirlAnimation 10s linear infinite;
-    transform: rotate(20deg);
-    opacity: 0.6;
+    animation: swirlAnimation 12s linear infinite;
+    opacity: 0.5; /* Increase opacity for more clarity */
+}
+
+/* Position and angle adjustments for each swirl */
+.swirl-background::before {
+    top: 50%;
+    left: -150px;
+    transform: rotate(15deg);
+    animation-duration: 10s;
+}
+
+.swirl-background::after {
+    top: 30%;
+    left: -120px;
+    transform: rotate(-25deg);
+    animation-duration: 14s;
+}
+
+.swirl-background div:nth-child(1) {
+    top: 70%;
+    left: -100px;
+    transform: rotate(30deg);
+    animation-duration: 16s;
+}
+
+.swirl-background div:nth-child(2) {
+    top: 20%;
+    left: -170px;
+    transform: rotate(-35deg);
+    animation-duration: 18s;
+}
+
+.swirl-background div:nth-child(3) {
+    top: 40%;
+    left: -200px;
+    transform: rotate(40deg);
+    animation-duration: 20s;
 }
 
 /* Swirl Animation */
 @keyframes swirlAnimation {
     0% {
-        transform: translateX(-100%) rotate(20deg);
+        transform: translateX(-100%) rotate(15deg);
     }
     100% {
-        transform: translateX(100%) rotate(20deg);
+        transform: translateX(100%) rotate(15deg);
     }
 }
