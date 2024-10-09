@@ -711,7 +711,7 @@ nav ul li a:hover {
 
 /* Volunteering Section */
 .volunteering-section {
-    background-color: #222; /* A different background from work experience */
+    background-color: #222;
     color: #fff;
     padding: 2rem;
     text-align: left;
@@ -722,52 +722,114 @@ nav ul li a:hover {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2rem;
-    border-bottom: 3px solid #fff; /* To give a separator under the title */
+    border-bottom: 3px solid #fff;
     padding-bottom: 1rem;
 }
 
 .volunteering-items {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between items */
+    gap: 40px; /* Increased gap between items */
     padding: 1rem 0;
 }
 
 .volunteering-item {
-    background-color: #333;
-    border-left: 5px solid #87CEEB; /* A vertical colored accent for each card */
-    padding: 1.5rem;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.volunteering-item h3 {
+.volunteering-content {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.volunteering-content h3 {
     font-size: 1.5rem;
     color: #87CEEB;
 }
 
-.volunteering-item p {
+.volunteering-content p {
     font-size: 1rem;
     margin: 0.5rem 0;
     line-height: 1.6;
 }
 
-.volunteering-item ul {
+.volunteering-content ul {
     list-style-type: disc;
-    margin: 0.5rem 0 0 1.5rem; /* Indent the bullet points */
+    margin: 0.5rem 0 0 1.5rem;
 }
 
-.volunteering-item li {
+.volunteering-content li {
     margin-bottom: 0.5rem;
+}
+
+.volunteering-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.volunteering-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Fade Effect */
+.fade-right::after, .fade-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    pointer-events: none;
+}
+
+.fade-right::after {
+    right: 0;
+    background: linear-gradient(to right, transparent, #222);
+}
+
+.fade-left::after {
+    left: 0;
+    background: linear-gradient(to left, transparent, #222);
+}
+
+/* Positioning for specific items */
+.volunteering-item:nth-child(odd) .volunteering-image {
+    order: 2;
+    margin-left: 1rem;
+}
+
+.volunteering-item:nth-child(odd) .volunteering-content {
+    order: 1;
+}
+
+.volunteering-item:nth-child(even) .volunteering-image {
+    order: 1;
+    margin-right: 1rem;
+}
+
+.volunteering-item:nth-child(even) .volunteering-content {
+    order: 2;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .volunteering-item {
-        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .volunteering-image, .volunteering-content {
+        order: unset;
+        margin: 0;
+    }
+
+    .fade-right::after, .fade-left::after {
+        display: none;
     }
 }
-
-
 
 /* Footer */
 footer {
