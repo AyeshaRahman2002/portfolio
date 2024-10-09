@@ -709,6 +709,70 @@ nav ul li a:hover {
     color: #00cc7a;
 }
 
+/* Volunteering Section */
+.volunteering-section {
+    background-color: #111;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: left;
+    border-top: 2px solid #fff;
+}
+
+.volunteering-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.volunteer-items {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.volunteer-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    flex: 1 1 calc(50% - 20px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.volunteer-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.volunteer-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.volunteer-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.volunteer-card li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .volunteer-card {
+        flex: 1 1 100%;
+    }
+}
+
+
 /* Footer */
 footer {
     text-align: center;
