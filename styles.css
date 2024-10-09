@@ -146,6 +146,10 @@ nav ul li a:hover {
     text-transform: uppercase;
 }
 
+.biography-section {
+    margin-bottom: 0; /* Remove any space below the Biography section */
+}
+
 /* Section Title */
 .projects-section h2 {
     text-align: center;
@@ -857,6 +861,7 @@ nav ul li a:hover {
     background-color: #222;
     position: relative;
     z-index: 2;
+    padding-top: 1rem;
 }
 
 .bubble-container {
