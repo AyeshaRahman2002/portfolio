@@ -269,6 +269,35 @@ nav ul li a:hover {
     }
 }
 
+/* Vertical text styling */
+.vertical-text-left,
+.vertical-text-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.vertical-text-left {
+    left: 5px; /* Adjust as needed for positioning */
+}
+
+.vertical-text-right {
+    right: 5px; /* Adjust as needed for positioning */
+}
+
+/* Ensure the vertical text stays in place relative to the project section */
+.projects-section {
+    position: relative;
+}
+
+
 
 
 /* Work Section with Moving Swirls Background */
