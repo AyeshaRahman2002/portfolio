@@ -63,3 +63,8 @@ workCards.forEach(card => {
     });
 });
 
+// Function to toggle the navigation menu
+function toggleMenu() {
+    const navList = document.getElementById("nav-list");
+    navList.classList.toggle("active");
+}
