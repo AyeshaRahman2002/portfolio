@@ -90,23 +90,25 @@ nav ul li a:hover {
 }
 
 /* Resume Download Button */
-.resume-button {
+.download-resume {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid #fff;
+    border-radius: 50px; /* Circular border */
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 20px;
 }
 
-.resume-button .download-resume {
-    background-color: #87CEEB;
-    color: #111;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+.download-resume:hover {
+    background-color: #fff; /* White background on hover */
+    color: #111; /* Black text on hover */
 }
 
-.resume-button .download-resume:hover {
-    background-color: #00cc7a;
-}
 
 
 /* Stats Section */
