@@ -519,9 +519,10 @@ nav ul li a:hover {
 /* Grid for Art Gallery */
 .art-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts based on available space */
-    grid-gap: 15px; /* Adjust the space between the images */
-    justify-items: center; /* Centers the images horizontally */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible based on available space */
+    grid-auto-rows: 1fr; /* Ensure equal height rows */
+    gap: 10px; /* Remove extra space between the images */
+    justify-items: center;
 }
 
 .art-piece {
@@ -531,6 +532,7 @@ nav ul li a:hover {
 
 .art-piece img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -549,7 +551,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Ensure it stays behind the art section */
+    z-index: 0; /* Ensure it stays behind the art section */
     pointer-events: none; /* Prevent any interaction with the background */
 }
 
@@ -558,28 +560,21 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     left: -150px;
-    width: 200%;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    width: 250%;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     border-radius: 50%;
     animation: swirlAnimation 10s linear infinite;
-    transform: rotate(15deg);
-    opacity: 0.5;
+    transform: rotate(20deg);
+    opacity: 0.6;
 }
 
 /* Swirl Animation */
 @keyframes swirlAnimation {
     0% {
-        transform: translateX(-100%) rotate(15deg);
+        transform: translateX(-100%) rotate(20deg);
     }
     100% {
-        transform: translateX(100%) rotate(15deg);
-    }
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-    .art-piece {
-        width: 100%; /* Adjust for smaller screens */
+        transform: translateX(100%) rotate(20deg);
     }
 }
