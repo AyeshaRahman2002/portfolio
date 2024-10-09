@@ -117,10 +117,10 @@ nav ul li a:hover {
 .linkedin-link {
     display: inline-block;
     padding: 12px 24px;
-    border: 2px solid #0077B5; /* LinkedIn blue */
-    border-radius: 50px;
-    background-color: transparent;
-    color: #0077B5;
+    border: 2px solid #fff; /* Same border as the resume button */
+    border-radius: 50px; /* Circular border like the resume button */
+    background-color: transparent; /* Make it transparent to match the resume button */
+    color: #fff; /* White text to match the resume button */
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
@@ -128,9 +128,10 @@ nav ul li a:hover {
 }
 
 .linkedin-link:hover {
-    background-color: #0077B5;
-    color: #fff;
+    background-color: #fff; /* White background on hover */
+    color: #111; /* Black text on hover */
 }
+
 
 /* Stats Section */
 .stats {
