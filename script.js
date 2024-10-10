@@ -36,6 +36,19 @@ function showDetails(projectId) {
                 <li>Focus: Task Management, Web Development</li>
             </ul>
         `;
+    } else if (projectId === "health-ai-autism") {
+        modalText.innerHTML = `
+            <h2>Health AI Prototype for Identifying Autism in Adults</h2>
+            <p>This project explores the development of a healthcare application using AI to identify Autism Spectrum Disorder (ASD) in adults, with a focus on gender-specific diagnosis challenges.</p>
+            <ul>
+                <li>Uses AI techniques like eye-movement tracking and sentiment analysis to assist in ASD diagnosis.</li>
+                <li>Focuses on gender differences in diagnosis, especially addressing the challenges women face in being diagnosed with ASD.</li>
+                <li>Integrates the Autism Spectrum Quotient (AQ) and the CAT-Q questionnaires for more accurate results.</li>
+                <li>Designed with ethical considerations, such as reducing bias in the AI model and ensuring data privacy.</li>
+            </ul>
+            <p>Future work includes collaborating with healthcare professionals to refine the system and improving eye-tracking accuracy.</p>
+            <button class="download-btn" onclick="window.open('path_to_your_dissertation.pdf', '_blank')">Download Dissertation</button>
+        `;
     }
 
     modal.style.display = "block";
