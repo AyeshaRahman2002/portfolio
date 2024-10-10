@@ -995,7 +995,7 @@ nav ul li a:hover {
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
-    color: #00ffcc;
+    color: #ADD8E6;
     text-shadow: 0 0 10px rgb(173, 216, 230); /* Glowing text */
 }
 
@@ -1018,7 +1018,7 @@ nav ul li a:hover {
     background-color: #111;
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid #00ffcc;
+    border: 1px solid #ADD8E6;
     box-shadow: 0 0 15px rgb(173, 216, 230); /* Neon box shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1030,7 +1030,7 @@ nav ul li a:hover {
 
 .competency-item h3 {
     font-size: 1.5rem;
-    color: #00ffcc;
+    color: #ADD8E6;
     text-shadow: 0 0 10px rgb(173, 216, 230);
     margin-bottom: 1rem;
     border-bottom: 2px solid #00ffcc;
@@ -1054,7 +1054,7 @@ nav ul li a:hover {
     content: ">";
     position: absolute;
     left: 0;
-    color: #00ffcc;
+    color: #ADD8E6;
     font-weight: bold;
 }
 
