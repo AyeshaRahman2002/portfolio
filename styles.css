@@ -13,10 +13,79 @@ body {
 }
 
 /* Navigation */
+/* Navigation Styling */
 nav {
     background-color: #333;
     padding: 10px;
+    position: relative;
 }
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+.nav-list li a:hover {
+    background-color: #575757;
+}
+
+/* Hide menu icon on large screens */
+.menu-icon {
+    display: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        color: white;
+        text-align: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-icon:hover {
+        background-color: #575757;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 50px; /* Below the menu icon */
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        padding: 15px;
+    }
+}
+
 
 nav ul {
     list-style-type: none;
