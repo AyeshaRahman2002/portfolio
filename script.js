@@ -47,7 +47,7 @@ function showDetails(projectId) {
                 <li>Designed with ethical considerations, such as reducing bias in the AI model and ensuring data privacy.</li>
             </ul>
             <p>Future work includes collaborating with healthcare professionals to refine the system and improving eye-tracking accuracy.</p>
-            <a href="Desertation.pdf" download class="download-btn">Download Dissertation Report</a>
+            <a href="files/Desertation.pdf" download="Dessertation.pdf" class="download-btn">Download Dissertation Report</a>
         `;
     }
 
