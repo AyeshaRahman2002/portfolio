@@ -211,6 +211,7 @@ nav ul li a:hover {
     color: #fff;
     background-color: #000; /* Jet black background */
     padding: 1rem;
+    margin-top: 2rem;
     width: 100%;
     text-transform: uppercase;
 }
