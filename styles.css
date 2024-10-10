@@ -372,6 +372,7 @@ nav ul li a:hover {
 
 /* Projects Section */
 .projects-section {
+    position: relative;
     padding: 2rem;
     background-color: #222;
     margin-top: 0; /* Add more space above the section */
