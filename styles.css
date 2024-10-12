@@ -344,7 +344,8 @@ nav ul li a:hover {
     padding: 20px;
     text-align: center;
     height: 100%; /* Ensure it fills the height of the card */
-    overflow-y: auto; /* Add a vertical scroll bar */
+    max-height: 300px; /* Set a max height for the content */
+    overflow-y: auto; /* Add vertical scroll when content overflows */
 }
 
 .flip-card-back h3 {
