@@ -394,6 +394,14 @@ nav ul li a:hover {
     width: 60%;
     border-radius: 10px;
     color: white;
+    max-height: 80%; /* Limit the max height */
+    overflow: hidden; /* Hide the overflow initially */
+}
+
+.modal-scrollable {
+    max-height: 60vh; /* Set a fixed height for scrollable content */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding-right: 10px; /* Add some padding on the right */
 }
 
 .close {
