@@ -338,19 +338,21 @@ nav ul li a:hover {
     color: white;
     transform: rotateY(180deg);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns content to the top */
     align-items: center;
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    height: 100%;
-    overflow-y: auto; /* Add vertical scroll when content overflows */
+    height: 100%; /* Ensure the back takes up the full card height */
+    max-height: 400px; /* Adjust this if necessary */
+    overflow-y: auto; /* Allow scrolling if content is too large */
 }
 
 .flip-card-back h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    margin-top: 30px;
+    margin: 0; /* Remove extra margins around the title */
+    padding-bottom: 10px; /* Space under the title */
+    font-size: 1.5rem; /* Adjust title font size */
+    color: white; /* Title color */
 }
 
 .flip-card-back p {
