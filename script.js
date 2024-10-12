@@ -51,6 +51,24 @@ function showDetails(projectId) {
             <p>Future work includes collaborating with healthcare professionals to refine the system and improving eye-tracking accuracy.</p>
             <a href="files/Desertation.pdf" download="Dessertation.pdf" class="download-btn">Download Dissertation Report</a>
         `;
+    } else if (projectId === "autonomous-navigation") {
+        modalText.innerHTML = `
+            <h2>Autonomous Navigation and Detection System for Spacecraft</h2>
+            <p>This project aimed to develop a robust autonomous navigation system for spacecraft, specifically addressing the challenge of determining a spacecraft's precise location after being knocked off course by an explosion. The system employs various AI techniques, laser scanning, and machine learning to ensure successful navigation and location detection.</p>
+            <p>Key components of the system include:</p>
+            <ul>
+                <li><strong>Navigation Initialization:</strong> The robotic unit starts by receiving predefined target coordinates (entrances and centers of spacecraft modules) to autonomously move between points. ROS 2's action framework allows the system to handle real-time movement adjustments.</li>
+                <li><strong>Red and Green Sign Detection:</strong> The robot uses image processing techniques to detect red and green signs at entrances. A green sign allows entry to a module, while a red sign prompts the robot to avoid the room. The sign detection is achieved using HSV masks and contour detection.</li>
+                <li><strong>Wall Navigation and Obstacle Avoidance:</strong> The robot uses LaserScan data to detect walls and obstacles. PID controllers ensure the robot maintains a consistent distance from walls while navigating safely. This feature was thoroughly tested in various simulated environments to confirm its reliability.</li>
+                <li><strong>Window Detection and Heuristic Prediction:</strong> Heuristic methods are employed to predict the possible locations of windows within a room. The robot checks for rectangular shapes with specific characteristics (e.g., a white border and a predominantly black interior) to identify windows. Once a window is detected, the robot aligns itself to the window and captures screenshots for further analysis.</li>
+                <li><strong>Screenshot and Image Stitching:</strong> The robot takes multiple screenshots of the detected windows and stitches them together into a panorama. This panorama is then analyzed to detect celestial bodies such as Earth, Moon, Mars, and Mercury.</li>
+                <li><strong>Planet Detection and Distance Measurement:</strong> Using machine learning models (ResNet18), the system detects planets within the panorama and measures their distances based on the size and positions of the planets in the images. A custom heuristic method ensures accurate distance calculations between detected planets.</li>
+                <li><strong>Testing and Validation:</strong> The system was tested in both simulated and real-world environments. Simple navigation and heuristic grid navigation were tested, revealing the system's robustness in dynamic environments. However, issues with LaserScan data in real-world scenarios led to the proposal of "LaserScan Stretching" to improve data consistency.</li>
+            </ul>
+            <p>This comprehensive system offers precise spacecraft navigation, robust obstacle avoidance, and accurate planetary detection and measurement capabilities, making it suitable for autonomous missions in challenging space environments.</p>
+            <p>This project was done as group project for an assignment based at University of Leeds.</p>
+            <a href="files/Robotics.pdf" download="Robotics.pdf" class="download-btn">Download Robotics Project Report</a>
+        `;
     }
 
     modal.style.display = "block";
