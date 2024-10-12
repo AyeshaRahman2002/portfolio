@@ -344,7 +344,7 @@ nav ul li a:hover {
     padding: 20px;
     text-align: center;
     height: 100%; /* Ensure it fills the height of the card */
-    max-height: 400px; /* Set a max height for the content */
+    max-height: 500px; /* Set a max height for the content */
     overflow-y: auto; /* Add vertical scroll when content overflows */
 }
 
