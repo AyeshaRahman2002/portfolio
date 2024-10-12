@@ -343,8 +343,6 @@ nav ul li a:hover {
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    height: 100%; /* Ensure it fills the height of the card */
-    max-height: 500px; /* Set a max height for the content */
     overflow-y: auto; /* Add vertical scroll when content overflows */
 }
 
