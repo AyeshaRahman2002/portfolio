@@ -108,6 +108,20 @@ function showDetails(projectId) {
             </ul>
             <p>This project underscored my proficiency in Python, data analysis, and machine learning libraries such as NumPy and Scikit-learn.</p>
         `;
+    } else if (projectId === "decision-tree") {
+        modalText.innerHTML = `
+            <h2>Decision Tree Learning and Pruning Algorithms</h2>
+            <p>This coursework aimed to assess understanding of decision tree learning and pruning algorithms. It involved adapting provided code to implement decision tree methods, utilizing datasets to learn and evaluate decision trees for predicting outcomes.</p>
+            <p>Key steps in the project included:</p>
+            <ul>
+                <li><strong>Learning a Decision Tree:</strong> Implemented the learn_tennis_tree function to create a decision tree model predicting the variable "Play" from the tennis dataset. Utilized the DataSet object to load and manage the dataset.</li>
+                <li><strong>Testing the Decision Tree:</strong> Developed the test_tennis_tree function to evaluate the model's performance by calculating the error ratio using training and test data splits. Employed a 80/20 training/testing strategy to validate the model's accuracy.</li>
+                <li><strong>Generating Synthetic Data:</strong> Completed tasks to generate synthetic datasets using SyntheticRestaurant methods. Learned decision trees from these datasets while analyzing performance as training set sizes increased.</li>
+                <li><strong>Pruning the Decision Tree:</strong> Implemented the pruning process to enhance the model's performance by removing nodes created from overfitting. Utilized statistical methods to evaluate the need for pruning based on the p-value.</li>
+                <li><strong>Statistical Evaluation:</strong> Completed various statistical functions, including deviation and evaluate, to assess the tree's effectiveness and the necessity for pruning.</li>
+            </ul>
+            <p>This coursework provided hands-on experience in implementing and refining decision tree algorithms, enhancing skills in data analysis, model evaluation, and statistical techniques in machine learning.</p>
+        `;
     }
 
     modal.style.display = "block";
