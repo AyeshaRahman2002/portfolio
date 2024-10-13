@@ -1256,6 +1256,47 @@ nav ul li a:hover {
     }
 }
 
+/* Skills Section */
+.skills-section {
+    background-color: #222;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.skill-bar {
+    background-color: #444;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-level {
+    background-color: #87CEEB;
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+    color: #111;
+    border-radius: 5px;
+}
+
 
 /* Footer */
 footer {
