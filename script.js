@@ -1,3 +1,26 @@
+// Add custom styles for download buttons
+const style = document.createElement('style');
+style.innerHTML = `
+    .download-btn {
+        background-color: white;
+        border: 2px solid white;
+        color: black; /* Text color for contrast */
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+        background-color: transparent; /* On hover, make the background transparent */
+        color: white; /* Change text color to white on hover */
+        border-color: white; /* Keep the white border */
+    }
+`;
+document.head.appendChild(style);
+
 // Function to display the modal with project details
 function showDetails(projectId) {
     const modal = document.getElementById("project-details");
