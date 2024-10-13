@@ -216,7 +216,39 @@ function showDetails(projectId) {
             <p>The "Hotel Price Data Scraping Tool" project exemplifies the intersection of finance and technology, demonstrating how modern computational tools can elevate traditional financial analysis methods. The ability to gather real-time data, analyze trends, and provide actionable insights had a tangible impact on UTI Mutual Fund’s approach to hotel industry investments, showcasing the value of automation and technology in finance.</p>
             <a href="files/ProjectProposal-Hotels.pdf" download="ProjectProposal-Hotels.pdf" class="download-btn">Download Project Proposal</a>
         `;
+    } else if (projectId === "flight-proposal") {
+        modalText.innerHTML = `
+            <h2>Flight Price Data Scraping Tool</h2>
+            <p>This project, developed as part of my internship at UTI Mutual Fund, focused on the automation of flight data collection through web scraping using Python. The goal was to create a sophisticated tool capable of retrieving large datasets from Google Flights based on user-defined parameters such as travel dates, locations, and preferences. The tool provided crucial insights for analysts by streamlining the data acquisition process, replacing manual efforts with an automated solution that integrated seamlessly into the team's workflow.</p>
+    
+            <h3>Technical Aspects and Implementation:</h3>
+            <ul>
+                <li><strong>User Input and Interface:</strong> The system was designed with a user-friendly interface that allowed for input of multiple parameters, such as trip type, departure and arrival locations, dates, and flight preferences (non-stop flights only).</li>
+                <li><strong>Web Scraping Engine:</strong> Utilized Playwright for browser automation and LexborHTMLParser for large-scale HTML parsing to scrape flight data, including real-time prices, schedules, flight numbers, and layover durations.</li>
+                <li><strong>Advanced Data Processing:</strong> After scraping the data, it was cleaned and structured using Pandas, ensuring each row represented a distinct flight with columns for price, airline, and more, ready for export into Excel or CSV formats for further analysis.</li>
+                <li><strong>Error Handling and Data Validation:</strong> Implemented robust error-handling mechanisms to manage network issues, changes in Google Flights HTML structure, and data validation checks for accuracy and consistency.</li>
+                <li><strong>Scalability and Performance Optimization:</strong> Asynchronous programming was used to handle multiple scraping sessions concurrently, optimizing the tool for both short-term and long-term travel plans.</li>
+                <li><strong>Ethical Scraping and Compliance:</strong> Adhered to Google Flights’ terms of service by limiting scraping to publicly available data, avoiding excessive requests, and respecting the platform's data protection policies.</li>
+                <li><strong>Data Storage and Visualization:</strong> Stored scraped data in a SQLite database, allowing easy querying and visualization using Matplotlib and Seaborn to analyze flight price trends over time.</li>
+            </ul>
+    
+            <h3>Predictive Insights and Future Enhancements:</h3>
+            <p>The flight data collected by this tool could be integrated into market analysis models to inform investment strategies in the travel and tourism sectors. By analyzing flight pricing trends, occupancy rates, and travel patterns, the tool supported predictive modeling for future market behavior. Future enhancements could include adding machine learning algorithms to predict flight price trends, expanding the tool to scrape hotel booking data, and integrating APIs for real-time flight tracking.</p>
+    
+            <h3>Achievements and Impact:</h3>
+            <ul>
+                <li><strong>Increased Efficiency:</strong> Manual data collection efforts were reduced by over 60%, enabling analysts to focus on high-level financial analysis and decision-making.</li>
+                <li><strong>Predictive Insights:</strong> The data collected was used for predictive modeling in hospitality and airline sectors, providing UTI Mutual Fund with a competitive edge in identifying investment opportunities.</li>
+                <li><strong>Scalability:</strong> The tool’s design allowed it to be extended to multiple platforms like Expedia and Agoda, making it highly adaptable for various data collection needs.</li>
+                <li><strong>Impact on Team Workflow:</strong> The project improved the workflow of the equity research team by integrating real-time data collection into their analysis models, leading to more accurate investment strategies.</li>
+            </ul>
+    
+            <p>This project demonstrated advanced web scraping techniques and their application in finance, while showcasing the potential of integrating data science into financial workflows. It provided invaluable insights into travel-related investments, significantly impacting the equity research team’s analysis capabilities.</p>
+    
+            <a href="files/ProjectProposal-Flights.pdf" download="ProjectProposal-Flights.pdf" class="download-btn">Download Project Proposal</a>
+        `;
     }
+
 
     modal.style.display = "block";
 }
