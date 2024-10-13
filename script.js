@@ -70,7 +70,7 @@ function showDetails(projectId) {
         `;
     } else if (projectId === "3d-rendering") {
         modalText.innerHTML = `
-            <h2>Creating a Classification Model Using Online Sentiment to Determine Stock Price</h2>
+            <h2>Interactive 3D Rendering Application</h2>
             <p>The project begins with implementing essential matrix and vector functions, such as matrix-matrix and matrix-vector multiplication, which are critical for transformations in 3D space. These functions were tested rigorously using the Catch2 testing framework to verify the correctness of mathematical operations, ensuring accurate rendering in later stages.</p>
             <p>The 3D rendering pipeline was initiated by loading a Wavefront OBJ file representing the terrain mesh. This involved setting up OpenGL using GLFW for window management and GLAD for function loading. Shaders were employed to handle vertex transformations and fragment coloring, with a simple vertex shader to transform model coordinates into screen space and a fragment shader for basic shading. The camera system allowed users to navigate the scene using keyboard inputs (WSAD keys for movement) and mouse input for view control, simulating a first-person perspective.</p>
             <p>Following the basic rendering setup, texture mapping was applied to the terrain. Orthophotos were used as textures, which required configuring vertex buffer objects (VBOs) and vertex array objects (VAOs) to include texture coordinates. The fragment shader was modified to sample textures correctly and map them onto the terrain surface. Initial challenges included incorrect texture application, which was resolved through adjustments to the texture sampling and proper handling of texture coordinates.</p>
