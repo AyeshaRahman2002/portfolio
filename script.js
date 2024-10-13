@@ -28,14 +28,28 @@ function showDetails(projectId) {
     } else if (projectId === "todo-app") {
         modalText.innerHTML = `
             <h2>Assessment To-Do List Application</h2>
-            <p>
-                A web application built using Flask for managing assessment tasks. The app allows users to add, delete, and search for tasks, 
-                providing a simple and intuitive interface for students to track their work.
-            </p>
+            <p>During my recent group project, we developed a web-based assessment task management system that allowed users to efficiently create, update, and track their tasks. As part of the project, I took a lead role in both the backend and frontend development, ensuring seamless integration between user interfaces and the core logic of the application. This project, built with Flask (Python), SQLite, and HTML/CSS, aimed to simplify task management for students and professionals alike by providing an intuitive platform for tracking assessment deadlines and progress.</p>
+            <p>The system was designed to help users manage various assessments by categorizing tasks into completed, in-progress, and incomplete statuses. With features like real-time task updates, user authentication, and a powerful search function, the system provided an efficient way for users to track their progress and manage deadlines.</p>
+            <p>Key Features:</p>
             <ul>
-                <li>Technology: Flask, HTML5, CSS3</li>
-                <li>Focus: Task Management, Web Development</li>
+                <li><strong>Task Creation and Management:</strong>We developed an easy-to-use interface that allowed users to create tasks, specifying essential details like the task name, description, due date, and priority. Each task was categorized based on its status, offering users a clear view of what they needed to focus on.</li>
+                <li><strong>Task Status Tracking:</strong>The system provided real-time task updates, enabling users to move tasks through various stages (incomplete, in-progress, completed). Each update was reflected immediately in the database, ensuring an accurate and up-to-date task list.</li>
+                <li><strong>User Authentication:</strong>As part of the security measures, we implemented a user authentication system where each user could register and log in to manage their personalized task list. This feature ensured that tasks were securely stored and accessible only by their respective users.</li> 
+                <li><strong>Responsive Frontend:</strong>The frontend was built using HTML5, CSS3, and JavaScript to ensure a responsive design that worked smoothly across different devices, from desktops to mobile phones. The goal was to create an intuitive and visually appealing interface that users would find easy to navigate.</li> 
+                <li><strong>Backend and Database:</strong>On the backend, we utilized Flask to handle the application logic and SQLAlchemy for database management. The tasks and user information were stored securely in an SQLite database, allowing for efficient data handling and quick retrieval of task-related information.</li> 
+                <li><strong>Search Functionality:</strong>One of the key highlights of this project was the search feature, which allowed users to find specific tasks based on their name, description, or due date. This functionality made it easy for users with multiple tasks to quickly locate and prioritize their work.</li> 
+                <li><strong>Data Management and Efficiency:</strong>Throughout the project, I worked on optimizing the data storage and retrieval processes, ensuring the app performed efficiently even as the number of users and tasks grew.</li> 
             </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li><strong>Streamlining User Experience:</strong> By focusing on user-friendly design principles, we were able to develop a system that made task management simple and effective. I worked closely on the user interface to ensure that task creation, updates, and tracking could be done with minimal clicks and maximum clarity.</li> 
+                <li><strong>Optimized Data Handling:</strong> Through the use of SQLAlchemy, we optimized the handling of task and user data, making sure that the application scaled well as more users and tasks were added. This also ensured data consistency and security, which were critical to the project’s success.</li> 
+                <li><strong>Collaboration with Frontend and Backend:</strong> A key achievement of the project was the seamless collaboration between the frontend and backend components. I played a crucial role in ensuring that the backend logic (e.g., task creation, status updates) integrated smoothly with the frontend interface, delivering a consistent user experience.</li> 
+                <li><strong>Search Feature Efficiency:</strong> The search feature allowed users to find tasks quickly, which became one of the most appreciated elements of the system. It empowered users to manage their workload more effectively, especially when dealing with a large number of assessments.</li> 
+                <li><strong>Real-Time Task Updates:</strong> The ability to change task statuses in real-time without needing to refresh the page significantly improved the app’s efficiency. I implemented this feature to ensure users always had an up-to-date view of their task progress.</li> 
+                <li><strong>Successful Group Collaboration:</strong> Working closely with my team, we successfully divided responsibilities to tackle the various challenges of the project. I focused on the database management, backend logic, and integration, while other members handled different aspects, like design and testing.</li> 
+            </ul>
+            <p>This project taught me valuable lessons in both backend database management and frontend development, as well as how to optimize web applications for real-time performance and security. It was an enriching experience that allowed me to merge both technical skills and collaborative project management, resulting in a robust, user-friendly platform for assessment management.</p>
         `;
     } else if (projectId === "health-ai-autism") {
         modalText.innerHTML = `
