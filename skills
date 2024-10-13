@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skills - Ayesha Rahman</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-list" class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2>Technical Competencies</h2>
+        <p>Visual representation of my skills in AI, Finance, and Software Development.</p>
+        
+        <div class="skills-grid">
+            <!-- Skill Item Example -->
+            <div class="skill-item">
+                <h3>Python</h3>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;">90%</div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <h3>Machine Learning</h3>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%;">85%</div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <h3>Data Analysis</h3>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;">80%</div>
+                </div>
+            </div>
+
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
