@@ -1223,10 +1223,10 @@ nav ul li a:hover {
 }
 
 .text-content {
-    flex: 2;
-    max-width: 600px;
-    line-height: 1.8;
+    flex: 1;
+    max-width: 50%; /* Adjusted to cover half the width */
     text-align: justify;
+    line-height: 1.8;
     font-size: 1.1rem;
 }
 
@@ -1244,8 +1244,13 @@ nav ul li a:hover {
     }
 
     .text-content, .lottie-container {
-        max-width: 100%;
+        max-width: 100%; /* Full width for smaller screens */
         margin-bottom: 1.5rem;
+    }
+
+    .text-below {
+        margin-top: 1.5rem;
+        text-align: justify;
     }
 }
 
