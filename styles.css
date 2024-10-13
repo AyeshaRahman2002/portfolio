@@ -1188,53 +1188,53 @@ nav ul li a:hover {
     }
 }
 
-/* Section Styling for Why I Chose AI in Finance */
-#ai-workflow {
-    background-color: #1a1a1a; /* Dark background for contrast */
+/* AI Workflow Section */
+.ai-workflow-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #222;
     color: #fff;
-    padding: 4rem 2rem; /* Add padding for spacing */
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    margin-bottom: 2rem;
-    text-align: center; /* Center align text */
 }
 
-/* Typography Enhancements for AI in Finance */
-#ai-workflow h2 {
-    font-size: 2.5rem;
-    color: #ADD8E6; /* Soft blue for title */
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    text-align: center;
+.workflow-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure it wraps for smaller screens */
 }
 
-#ai-workflow p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #ddd;
-    margin-bottom: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto; /* Center the paragraph */
-    text-align: justify;
+.text-content {
+    flex: 1;
+    max-width: 600px; /* Limit text content width */
+    padding-right: 2rem; /* Add some space between text and lottie */
 }
 
-#ai-workflow .lottie-player {
-    margin-top: 2rem; /* Space around the Lottie animation */
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto; /* Center the Lottie animation */
-    border-radius: 10px;
+.lottie-container {
+    flex: 1;
+    max-width: 500px; /* Control maximum width of the Lottie */
 }
 
-/* Divider Under Title */
-#ai-workflow h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #87CEEB;
-    margin: 1rem auto;
-    border-radius: 2px;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .workflow-content {
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .text-content {
+        padding-right: 0; /* Remove padding on smaller screens */
+        text-align: center;
+    }
+
+    .lottie-container {
+        margin-top: 1.5rem; /* Add some space above the Lottie */
+        width: 100%;
+        max-width: 100%; /* Make sure the Lottie fills the width */
+    }
 }
 
 
