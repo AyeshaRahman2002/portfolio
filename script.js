@@ -112,6 +112,16 @@ function showDetails(projectId) {
             </ul>
             <p>This coursework provided hands-on experience in implementing and refining decision tree algorithms, enhancing skills in data analysis, model evaluation, and statistical techniques in machine learning.</p>
         `;
+    } else if (projectId === "ai-psychological-treatments") {
+        modalText.innerHTML = `
+            <h2>Use of AI in Psychological Treatments</h2>
+            <p>This project explores how Artificial Intelligence (AI) is increasingly being applied to psychological treatments, providing both opportunities and challenges. The paper focuses on key AI-based methodologies, particularly Virtual Reality Therapy and Internet-delivered Cognitive Behavioral Therapy (iCBT), as modern tools aiding psychological treatment.</p>
+            <p>AI's integration in clinical psychology is already visible in several forms, such as self-help websites, AI-powered chatbots for mental health support, and Virtual Reality (VR)-based therapy for exposure treatments. Virtual Reality Therapy creates immersive, realistic experiences that allow patients to confront fears in controlled environments, making it especially useful for treating anxiety disorders, phobias, and PTSD. For example, a patient with a fear of heights can experience simulations of such scenarios to gradually reduce their fear through exposure. This method effectively bridges the gap between traditional therapy and the technological world.</p>
+            <p>Another key innovation, Internet-delivered Cognitive Behavioral Therapy (iCBT), provides accessible, affordable, and high-fidelity treatment for patients with conditions like depression. This method eliminates geographical barriers and can reach a larger audience, offering personalized therapeutic experiences through AI algorithms.</p>
+            <p>However, the application of AI in psychological treatments raises certain ethical and practical concerns. AI systems lack emotional intelligence and the therapeutic connection between a patient and therapist. Additionally, some AI applications risk prescribing incorrect treatment if not supervised, posing risks in situations that require human intuition and flexibility. The connection between patients and therapists, which is essential for trust and therapeutic success, may be diminished as patients rely on technology.</p>
+            <p>Despite these risks, the paper concludes that AI will continue to play a pivotal role in enhancing psychological treatments. The evolving nature of AI technologies like virtual reality and AI-driven behavioral analysis will offer more opportunities for psychologists to treat patients more effectively. As AI continues to improve, it holds the potential to complement traditional therapeutic methods and make mental health care more accessible to wider populations.</p>
+            <a href="files/AIinPsychologicalTreatements.pdf" download="AIinPsychologicalTreatements.pdf" class="download-btn">Download Project Report</a>
+        `;
     }
 
     modal.style.display = "block";
