@@ -1276,6 +1276,7 @@ nav ul li a:hover {
     background-color: #333;
     padding: 1rem;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .skill-bar {
@@ -1296,6 +1297,7 @@ nav ul li a:hover {
     color: #111;
     border-radius: 5px;
 }
+
 
 
 /* Footer */
