@@ -23,6 +23,7 @@ function showDetails(projectId) {
             <p>I also created the free() function, which deallocates memory blocks previously assigned by malloc(). This function checks for null pointers and properly handles memory release by merging adjacent free blocks, thus preventing fragmentation.</p>
             <p>A key feature of my implementation was the rqstMem() function, which requests additional memory from the operating system when required. The function employs the system call sbrk(), adjusting the program's data space and dynamically increasing the memory when needed. This efficient management ensures that memory is only expanded when absolutely necessary, minimizing system overhead.</p>
             <p>Throughout this project, I deepened my understanding of how memory management works in low-level systems programming. I gained valuable experience in debugging complex C programs, learned to manage dynamic memory efficiently, and enhanced my understanding of how operating systems handle memory allocation and deallocation at the kernel level. This project not only strengthened my skills in C programming but also gave me hands-on exposure to core operating system concepts.</p>
+            <a href="files/comp2211report_sc21ar.pdf" download="comp2211report_sc21ar.pdf" class="download-btn">Download Project Report</a>
         `;
     } else if (projectId === "todo-app") {
         modalText.innerHTML = `
