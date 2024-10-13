@@ -1190,50 +1190,59 @@ nav ul li a:hover {
 
 /* AI Workflow Section */
 .ai-workflow-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 2rem;
     background-color: #222;
     color: #fff;
+    display: flex;
+    justify-content: center;  /* Center the content in the section */
 }
 
 .workflow-content {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px;  /* Limit the max width */
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Ensure it wraps for smaller screens */
 }
 
 .text-content {
-    flex: 1;
-    max-width: 600px; /* Limit text content width */
-    padding-right: 2rem; /* Add some space between text and lottie */
+    flex: 1;  /* Take up half the width on larger screens */
+    max-width: 600px;
+    padding-right: 2rem;  /* Space between text and Lottie */
 }
 
 .lottie-container {
-    flex: 1;
-    max-width: 500px; /* Control maximum width of the Lottie */
+    flex: 1;  /* Take up half the width on larger screens */
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-end;  /* Align Lottie to the right */
 }
 
-/* Media query for smaller screens */
+.lottie-container lottie-player {
+    width: 100%;  /* Ensure the Lottie fills its container */
+    height: auto;
+}
+
+/* Media Query for smaller screens */
 @media (max-width: 768px) {
     .workflow-content {
-        flex-direction: column; /* Stack the elements vertically */
-        align-items: center; /* Center align items */
+        flex-direction: column;  /* Stack text and Lottie vertically */
     }
 
     .text-content {
-        padding-right: 0; /* Remove padding on smaller screens */
-        text-align: center;
+        padding-right: 0;  /* Remove right padding for smaller screens */
+        text-align: center;  /* Center the text on smaller screens */
     }
 
     .lottie-container {
-        margin-top: 1.5rem; /* Add some space above the Lottie */
+        margin-top: 1.5rem;  /* Add space above the Lottie */
+        justify-content: center;  /* Center Lottie on smaller screens */
+    }
+
+    .lottie-container lottie-player {
         width: 100%;
-        max-width: 100%; /* Make sure the Lottie fills the width */
+        max-width: 300px;  /* Limit Lottie size on smaller screens */
     }
 }
 
