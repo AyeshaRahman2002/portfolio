@@ -6,6 +6,111 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ayesha Rahman | Work Experience</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f0f0f;
+            color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00acee;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2.5em;
+            color: #00acee;
+        }
+        .work-section {
+            padding: 30px;
+        }
+        .work-detail-card {
+            background-color: #1e1e1e;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .work-detail-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #00acee;
+        }
+        p, ul {
+            text-align: justify;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .linkedin-button a {
+            display: inline-block;
+            background-color: #00acee;
+            color: #f2f2f2;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .linkedin-button a:hover {
+            background-color: #008cba;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .animated-swirl {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            height: 200px;
+            width: 200px;
+            background: linear-gradient(45deg, #00acee, #008cba);
+            border-radius: 50%;
+            animation: swirl 4s infinite alternate;
+            opacity: 0.5;
+        }
+        @keyframes swirl {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
 
@@ -37,7 +142,7 @@
             <h2>Equity Research Analyst</h2>
             <p><strong>UTI Mutual Fund</strong></p>
             <p><em>July 2023 – September 2023 | Mumbai, India</em></p>
-            <p>During my role at UTI Mutual Fund, I worked closely with the equity research team to support analysis and evaluations of mutual funds and their performance against benchmarks. I developed a comprehensive understanding of the financial markets, investment strategies, and the critical components that drive fund performance. My primary focus was on financial model analysis, market research, and generating actionable insights to guide senior analysts.</p>
+            <p>During my role at UTI Mutual Fund, I worked closely with the equity research team to support analysis and evaluations of mutual funds and their performance against benchmarks. I developed a comprehensive understanding of the financial markets, investment strategies, and the critical components that drive fund performance.</p>
             
             <h3>Key Responsibilities:</h3>
             <ul>
@@ -52,17 +157,18 @@
                 <li><strong>Sector-Specific Analysis:</strong> Conducted a deep dive into the performance of technology-focused mutual funds, identifying key drivers of growth in the sector and potential risk factors.</li>
                 <li><strong>Macroeconomic Insights:</strong> Provided insights into the impact of global macroeconomic conditions (such as inflation rates and interest rate fluctuations) on the fund’s overall performance.</li>
                 <li><strong>Portfolio Realignment:</strong> Assisted in the realignment of portfolios by providing data-driven recommendations based on market forecasts, enhancing overall returns by 5% in the subsequent quarter.</li>
-                <li><strong>Project 1 - Hotels Price Data Scraper:</strong> Developed a Python-based web scraping tool for extracting hotel pricing data across different platforms. This tool was designed to help the company analyze trends in the hospitality sector and assess their impact on real estate investments. 
+                <li><strong>Project 1 - Hotels Price Data Scraper:</strong> Developed a Python-based web scraping tool for extracting hotel pricing data across different platforms.
                     <div class="linkedin-button">
                         <a href="files/ProjectProposal-Hotels.pdf" download>Download Full Project</a>
                     </div>
                 </li>
-                <li><strong>Project 2 - Flights Data Scraper:</strong> Built a tool to gather flight price data based on multiple parameters such as departure and arrival locations, using web scraping methods. This tool enabled UTI to better analyze travel-related investments. 
+                <li><strong>Project 2 - Flights Data Scraper:</strong> Built a tool to gather flight price data based on multiple parameters such as departure and arrival locations, using web scraping methods.
                     <div class="linkedin-button">
                         <a href="files/ProjectProposal-Flights.pdf" download>Download Full Project</a>
                     </div>
                 </li>
             </ul>
+            <div class="animated-swirl"></div>
         </div>
 
         <!-- Brand Manager -->
@@ -70,7 +176,7 @@
             <h2>Brand Manager</h2>
             <p><strong>Student Cribs</strong></p>
             <p><em>October 2022 – September 2023 | Leeds, UK</em></p>
-            <p>As the Brand Manager at Student Cribs, I led marketing initiatives aimed at increasing occupancy rates for student housing properties. My role focused on understanding market trends, student needs, and how best to position the brand within the highly competitive student accommodation market. I spearheaded promotional campaigns, digital marketing strategies, and liaised with property managers to enhance the overall student experience.</p>
+            <p>As the Brand Manager at Student Cribs, I led marketing initiatives aimed at increasing occupancy rates for student housing properties. My role focused on understanding market trends, student needs, and how best to position the brand within the highly competitive student accommodation market.</p>
 
             <h3>Key Responsibilities:</h3>
             <ul>
@@ -93,7 +199,7 @@
             <h2>Events Promoter and Night Staff</h2>
             <p><strong>University of Leeds</strong></p>
             <p><em>November 2023 – August 2024 | Leeds, UK</em></p>
-            <p>In my role as Events Promoter and Night Staff at the University of Leeds, I was responsible for increasing student engagement through organizing and promoting events for the Indian Society, as well as providing night-time support for campus events. I coordinated multiple large-scale events, contributing to the cultural vibrancy of the student community.</p>
+            <p>In my role as Events Promoter and Night Staff at the University of Leeds, I was responsible for increasing student engagement through organizing and promoting events for the Indian Society, as well as providing night-time support for campus events.</p>
 
             <h3>Key Responsibilities:</h3>
             <ul>
@@ -129,10 +235,11 @@
                 <li><strong>Exhibitions:</strong> Participated in local exhibitions, showcasing original artwork that attracted significant interest from collectors and art enthusiasts.</li>
             </ul>
         </div>
+
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>© 2024 Ayesha Rahman. All rights reserved.</p>
     </footer>
 
