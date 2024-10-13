@@ -84,7 +84,7 @@ function showDetails(projectId) {
         `;
     } else if (projectId === "predictive-modeling") {
         modalText.innerHTML = `
-            <h2>Autonomous Navigation and Detection System for Spacecraft</h2>
+            <h2>Predictive Modeling for Health Data Analysis</h2>
             <p>In this project, I applied advanced machine learning techniques to analyze and predict patterns from a provided dataset. The task involved working with both clean and corrupted data, which required implementing data preprocessing strategies to handle missing values, outliers, and inconsistencies.</p>
             <p>Key steps in the project included:</p>
             <ul>
