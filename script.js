@@ -94,6 +94,20 @@ function showDetails(projectId) {
             <p>Overall, the coursework successfully demonstrated advanced 3D rendering techniques in OpenGL, integrating various components such as matrix transformations, lighting, animation, and performance optimization. The project’s culmination in a dynamic, interactive 3D scene reflects a deep understanding of modern graphics programming and the complexities of real-time rendering systems.</p>
             <a href="files/GraphicsCW.pdf" download="GraphicsCW.pdf" class="download-btn">Download Project Report</a>
         `;
+    } else if (projectId === "predictive-modeling") {
+        modalText.innerHTML = `
+            <h2>Autonomous Navigation and Detection System for Spacecraft</h2>
+            <p>In this project, I applied advanced machine learning techniques to analyze and predict patterns from a provided dataset. The task involved working with both clean and corrupted data, which required implementing data preprocessing strategies to handle missing values, outliers, and inconsistencies.</p>
+            <p>Key steps in the project included:</p>
+            <ul>
+                <li><strong>Data Cleaning and Preprocessing:</strong> I worked with both clean and corrupted datasets, applying techniques to normalize the data, impute missing values, and remove noise. This step was crucial to ensure the model’s input data was optimized for performance.</li>
+                <li><strong>Feature Engineering:</strong>I utilized feature selection methods to reduce dimensionality, identifying key variables that had the greatest influence on the target predictions.</li>
+                <li><strong>Model Training and Evaluation:</strong> I trained machine learning models using the provided Training_data.csv and Training_data_targets.csv. Various algorithms were experimented with, including decision trees, random forests, and support vector machines (SVM). I evaluated the models based on accuracy, precision, recall, and F1 scores to ensure reliable predictions.</li>
+                <li><strong>Handling Corrupted Data:</strong> I implemented custom strategies to deal with the corrupted data file, corrupted_data.npy, which involved reconstructing lost data points and re-evaluating model performance after correction.</li>
+                <li><strong>Final Output and Model Optimization:</strong> After extensive tuning and cross-validation, I was able to achieve high performance on the cleaned dataset, demonstrating robust prediction accuracy. The assignment highlighted my ability to preprocess large datasets, apply machine learning models, and analyze the outcomes critically.</li>
+            </ul>
+            <p>This project underscored my proficiency in Python, data analysis, and machine learning libraries such as NumPy and Scikit-learn.</p>
+        `;
     }
 
     modal.style.display = "block";
