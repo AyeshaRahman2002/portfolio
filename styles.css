@@ -1194,55 +1194,65 @@ nav ul li a:hover {
     background-color: #222;
     color: #fff;
     display: flex;
-    justify-content: center;  /* Center the content in the section */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .workflow-content {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;  /* Limit the max width */
+    max-width: 1200px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .text-content {
-    flex: 1;  /* Take up half the width on larger screens */
+    flex: 1;
     max-width: 600px;
-    padding-right: 2rem;  /* Space between text and Lottie */
+    padding-right: 2rem;
+    line-height: 1.8; /* Increase line spacing */
+    font-size: 1.1rem; /* Slightly increase font size for readability */
+}
+
+.text-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Adjust header size for better hierarchy */
+    line-height: 1.4; /* Line height for the title */
+}
+
+.text-content p {
+    margin-bottom: 1.2rem; /* Add more space between paragraphs */
 }
 
 .lottie-container {
-    flex: 1;  /* Take up half the width on larger screens */
+    flex: 1;
     max-width: 500px;
     display: flex;
-    justify-content: flex-end;  /* Align Lottie to the right */
+    justify-content: flex-end;
 }
 
 .lottie-container lottie-player {
-    width: 100%;  /* Ensure the Lottie fills its container */
+    width: 100%;
     height: auto;
 }
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
     .workflow-content {
-        flex-direction: column;  /* Stack text and Lottie vertically */
+        flex-direction: column;
     }
 
     .text-content {
-        padding-right: 0;  /* Remove right padding for smaller screens */
-        text-align: center;  /* Center the text on smaller screens */
+        padding-right: 0;
+        text-align: center;
+        max-width: 100%;
     }
 
     .lottie-container {
-        margin-top: 1.5rem;  /* Add space above the Lottie */
-        justify-content: center;  /* Center Lottie on smaller screens */
-    }
-
-    .lottie-container lottie-player {
-        width: 100%;
-        max-width: 300px;  /* Limit Lottie size on smaller screens */
+        margin-top: 1.5rem;
+        justify-content: center;
+        max-width: 100%;
     }
 }
 
