@@ -69,7 +69,7 @@ function showDetails(projectId) {
             <p>This project was done as group project for an assignment based at University of Leeds.</p>
             <a href="files/Robotics.pdf" download="Robotics.pdf" class="download-btn">Download Robotics Project Report</a>
         `;
-    } else if (projectId === "stock-market-analysis") {
+    } else if (projectId === "ai-analysis") {
         modalText.innerHTML = `
             <h2>Creating a Classification Model Using Online Sentiment to Determine Stock Price</h2>
             <p>The group project aimed to develop a robust sentiment analysis-based classification model to predict stock price movements. The project explored the intersection of Artificial Intelligence, Natural Language Processing (NLP), and financial market analysis, focusing on the ability of sentiment data to forecast stock price trends. This project utilized large-scale, unstructured data from social platforms such as Amazon and Twitter, emphasizing the influence of customer reviews and public opinion on market performance.</p>
