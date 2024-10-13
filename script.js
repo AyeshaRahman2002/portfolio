@@ -304,6 +304,33 @@ function showDetails(projectId) {
             <p><strong>Conclusion:</strong> GreenMyCloud represents a forward-thinking initiative that addresses the environmental challenges posed by cloud computing. By focusing on energy efficiency, renewable energy integration, carbon footprint monitoring, and innovative cooling solutions, the project sets the stage for a future where cloud services and sustainability can coexist. As the cloud computing industry continues to expand, initiatives like GreenMyCloud are crucial in ensuring that technological progress does not come at the cost of the environment.</p>
             <a href="files/GreenMyCloud.pdf" download="GreenMyCloud.pdf" class="download-btn">Download GreenMyCloud Project Report</a>
         `;
+    } else if (projectId === "AarogyaSetu-vs-COVIDSafe") {
+        modalText.innerHTML = `
+            <h2>Aarogya Setu vs. COVIDSafe Project Analysis</h2>
+            <p>The project titled "Aarogya Setu vs COVIDSafe" provides an in-depth comparative analysis of two government-endorsed contact tracing applications developed in response to the COVID-19 pandemic: Aarogya Setu from India and COVIDSafe from Australia. Both applications were launched in April 2020 with the aim of mitigating the spread of the virus by identifying, alerting, and guiding users who had come into contact with an infected person, primarily through the use of Bluetooth technology. However, Aarogya Setu also utilized GPS tracking, which introduced additional functionality and raised more privacy concerns than its Australian counterpart.</p>
+            
+            <p><strong>Key Features of Aarogya Setu and COVIDSafe:</strong> Aarogya Setu combines Bluetooth and GPS tracking to detect the proximity of users to each other and logs interactions between users. It provides real-time information regarding the COVID-19 status in the vicinity, tracks health status, and offers updates on vaccination slots, symptom checkers, and risk assessments. The app also acted as a self-assessment tool and became compulsory for millions of Indians, as it was required for travel, access to public places, and certain work environments.</p>
+    
+            <p>COVIDSafe relies solely on Bluetooth proximity data to track close contacts. The app logs encrypted data about user interactions and requires manual verification if a user tests positive. COVIDSafe was voluntary and aimed to protect user privacy by not using location tracking (no GPS). It provided notifications to users if they had come in contact with an infected person within the past 21 days. However, the app faced challenges in gaining widespread adoption, resulting in limitations in its effectiveness.</p>
+    
+            <p><strong>Technical Comparison:</strong> The project examines the technical implementation of both apps, noting the trade-offs between privacy and functionality. Aarogya Setu’s GPS tracking allowed for more detailed data on user movement and regional hotspots, giving users and government authorities a more comprehensive view of the pandemic’s spread. However, this raised serious privacy concerns due to the app’s broad access to personal data, particularly as it was mandatory in many circumstances.</p>
+    
+            <p>COVIDSafe, on the other hand, opted for a privacy-first approach by excluding location data and solely using Bluetooth for proximity detection. While this was a positive step in ensuring user privacy, the lack of GPS data limited its ability to provide real-time localized data, and the app's voluntary nature meant it struggled to reach a critical mass of users required for effective contact tracing.</p>
+    
+            <p><strong>Privacy Concerns:</strong> Aarogya Setu’s mandatory nature, combined with the use of GPS tracking, stirred debates about data privacy, security, and potential misuse of personal information. While the app provided detailed infection mapping and robust tracking, it was criticized for not being open-source during the initial phases, limiting transparency.</p>
+    
+            <p>COVIDSafe, by design, was more focused on user privacy, encrypting data, and using decentralized storage. It adopted a voluntary opt-in model that respected individual choice, but this approach, combined with a lower adoption rate, significantly reduced its efficacy in tracking COVID-19 infections and controlling the pandemic spread.</p>
+    
+            <p><strong>Adoption and Efficacy:</strong> Aarogya Setu had a significantly higher adoption rate, partly because of its mandatory usage policy in public spaces, workplaces, and for travel in India. However, this raised ethical concerns about forcing a population to use technology that collected sensitive personal information.</p>
+    
+            <p>Conversely, COVIDSafe faced several challenges in achieving widespread adoption due to its voluntary nature. Australia’s decentralized health system, combined with privacy-first policies, meant that many citizens were reluctant to install the app. Technical issues, like Bluetooth connectivity failures and battery drainage, also contributed to the app's limited success. Moreover, its dependency on manual input from health officials and users slowed down its ability to quickly identify and isolate cases.</p>
+    
+            <p><strong>Limitations and Future Outlook:</strong> Both apps had significant limitations in ensuring optimal performance. Aarogya Setu’s GPS reliance made it more resource-heavy and prone to privacy breaches, which could dissuade user trust. Meanwhile, COVIDSafe’s reliance on voluntary adoption and Bluetooth-only tracking rendered it less effective in identifying close contacts in a timely manner, especially in cases where individuals failed to manually report symptoms or test results.</p>
+    
+            <p>The project concludes by highlighting potential improvements that could be made to both applications. It suggests that future iterations of such apps should focus on balancing privacy with functionality, possibly by adopting a decentralized model that gives users more control over their data, while still allowing health authorities to monitor outbreaks effectively.</p>
+    
+            <p>In the end, the project demonstrates how Aarogya Setu and COVIDSafe represented two distinct approaches to public health technology—one prioritizing comprehensive data collection and compulsory usage, and the other emphasizing privacy and voluntary participation. Both approaches had their merits and challenges, but neither emerged as a definitive solution to pandemic management through digital contact tracing.</p>
+        `;
     }
 
 
