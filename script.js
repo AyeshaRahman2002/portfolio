@@ -92,7 +92,7 @@ function showDetails(projectId) {
             <p>The rocket model was then animated to simulate a launch sequence. Using a state machine, the animation progressed through phases, including vertical lift-off, transition to horizontal flight, and continuous movement. This was implemented using time-based animation functions, ensuring smooth transitions between different phases of the rocket’s motion.</p>
             <p>Performance measurements were taken to evaluate the GPU’s handling of various tasks, including terrain rendering, instancing, and custom model rendering. The analysis showed a significant increase in rendering time for more complex tasks, particularly when adding textures and custom models. The performance data also indicated that camera positioning had a noticeable impact on frame rates, with rendering times increasing as the camera moved further from the main objects of interest.</p>
             <p>Overall, the coursework successfully demonstrated advanced 3D rendering techniques in OpenGL, integrating various components such as matrix transformations, lighting, animation, and performance optimization. The project’s culmination in a dynamic, interactive 3D scene reflects a deep understanding of modern graphics programming and the complexities of real-time rendering systems.</p>
-            <a href="files/DataMiningProjectReport.pdf" download="DataMiningProjectReport.pdf" class="download-btn">Download Project Report</a>
+            <a href="files/GraphicsCW.pdf" download="GraphicsCW.pdf" class="download-btn">Download Project Report</a>
         `;
     }
 
