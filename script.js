@@ -87,6 +87,7 @@ function showDetails(projectId) {
             <p>The prototype was developed in two phases: the first focusing on improving an existing application framework and the second involving research and the creation of the AI models for ASD detection. The project demonstrated the potential of AI in healthcare, emphasizing adaptability and continuous improvement as diagnostic needs evolve.</p>
             <p>Key outcomes include successful model training for eye movement and note tracking, high levels of accuracy, and user engagement with the prototype's interactive tools. While the prototype has limitations, such as the need for further refinement and expansion, it represents a significant step toward improving adult ASD diagnosis using AI technologies.</p>
             <p>Future work includes collaborating with healthcare professionals to refine the system and improving eye-tracking accuracy.</p>
+            <a href="https://github.com/AyeshaRahman2002/larks" class="download-btn">View on GitHub</a>
             <a href="files/Desertation.pdf" download="Dessertation.pdf" class="download-btn">Download Dissertation Report</a>
         `;
     } else if (projectId === "autonomous-navigation") {
