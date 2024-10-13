@@ -331,6 +331,69 @@ function showDetails(projectId) {
     
             <p>In the end, the project demonstrates how Aarogya Setu and COVIDSafe represented two distinct approaches to public health technology—one prioritizing comprehensive data collection and compulsory usage, and the other emphasizing privacy and voluntary participation. Both approaches had their merits and challenges, but neither emerged as a definitive solution to pandemic management through digital contact tracing.</p>
         `;
+    } else if (projectId === "Lyft-System-Design") {
+        modalText.innerHTML = `
+            <h2>Lyft System Design Forage Project</h2>
+            <p>The Lyft System Design project is a comprehensive software system that simulates the functionality of car manufacturing and maintenance. This project applies object-oriented programming principles and modular design to create a flexible and scalable system that can handle different car models with varying components such as engines, batteries, and tires. Each stage of the project builds on the previous one, adding more complexity and features to create a complete simulation of car serviceability.</p>
+            
+            <h3>Key Components</h3>
+            <p>The main components of the system include engines, batteries, and tires, which are assembled to form different car models. Each component has its own service criteria, making the system highly modular and extensible.</p>
+            <ul>
+                <li><strong>Engines:</strong> Capulet, Willoughby, and Sternman Engines.</li>
+                <li><strong>Batteries:</strong> Spindler and Nubbin Batteries.</li>
+                <li><strong>Tires:</strong> Carrigan and Octoprime Tires (added in Stage 4).</li>
+            </ul>
+
+            <h3>System Architecture</h3>
+            <p>The system follows an object-oriented design with a clear separation of concerns between components. Here's how the system is structured:</p>
+            <ul>
+                <li><strong>Car Factory:</strong> The factory pattern is used to create different car models. The CarFactory class is responsible for assembling cars by combining engines, batteries, and tires based on the model.</li>
+                <li><strong>Car Class:</strong> This is the core of the system that integrates various components—engine, battery, and tires—and determines when the car needs servicing.</li>
+                <li><strong>Serviceable Interface:</strong> Ensures that each component implements the <code>needs_service()</code> method, which determines if the component needs maintenance.</li>
+            </ul>
+
+            <h3>Stage 4 Enhancements</h3>
+            <ul>
+                <li><strong>Tires:</strong> Two types of tires (Carrigan and Octoprime) were introduced in Stage 4 to expand the car model's serviceability.</li>
+                <li><strong>Expanded Testing:</strong> Unit tests were significantly expanded to cover all the components (engines, batteries, and tires) ensuring accurate serviceability checks.</li>
+            </ul>
+
+            <h3>Project Structure</h3>
+            <pre>
+            .
+            ├── car_factory.py        # Factory for creating car models
+            ├── car.py                # Car class that integrates engine, battery, and tires
+            ├── engine/               # Different engine classes (Capulet, Sternman, Willoughby)
+            ├── battery/              # Battery classes (Spindler, Nubbin)
+            ├── tires/                # Tire classes (Carrigan, Octoprime)
+            ├── test/                 # Unit tests for engines, batteries, and tires
+            └── serviceable.py        # Serviceable interface for components
+            </pre>
+
+            <h3>How It Works</h3>
+            <p>The <strong>CarFactory</strong> class is the entry point for creating cars. Depending on the model, it assembles a car with different combinations of engines, batteries, and tires. The car's <code>needs_service()</code> method checks whether any component requires servicing based on its specific conditions.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Modularity:</strong> Each component (engine, battery, tire) can be independently swapped or modified, making the system highly extensible.</li>
+                <li><strong>Factory Design Pattern:</strong> Simplifies the creation of different car models and ensures that components are correctly assembled.</li>
+                <li><strong>Unit Testing:</strong> The project includes comprehensive unit tests that cover every component, ensuring that the system behaves as expected.</li>
+            </ul>
+
+            <h3>Testing</h3>
+            <p>The project includes extensive unit testing to verify that each component of the car works correctly. These tests ensure that:</p>
+            <ul>
+                <li>Engines, batteries, and tires are correctly serviced based on their respective conditions.</li>
+                <li>The car's overall service status is accurate, based on the service status of its individual components.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>The Lyft System Design project is a comprehensive, modular, and well-structured simulation of a car manufacturing and servicing system. Each stage builds on the previous one, adding new components and expanding the system’s capabilities. The final stage (Stage 4) introduces tire components and further enhances the system’s testing, making it a robust and extensible solution for simulating car serviceability.</p>
+
+            <p>This project demonstrates a strong understanding of object-oriented design, modularity, and software testing, making it a valuable asset for any portfolio.</p>
+
+            <a href="https://github.com/AyeshaRahman2002/lyft" class="download-btn">View on GitHub</a>
+        `;
     }
 
 
