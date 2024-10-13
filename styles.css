@@ -1194,65 +1194,58 @@ nav ul li a:hover {
     background-color: #222;
     color: #fff;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Allows the below text to flow naturally */
 }
 
 .workflow-content {
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
     justify-content: space-between;
     align-items: flex-start;
-}
-
-.text-content {
-    flex: 1;
-    max-width: 600px;
-    padding-right: 2rem;
-    line-height: 1.8; /* Increase line spacing */
-    font-size: 1.1rem; /* Slightly increase font size for readability */
-}
-
-.text-content h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem; /* Adjust header size for better hierarchy */
-    line-height: 1.4; /* Line height for the title */
-}
-
-.text-content p {
-    margin-bottom: 1.2rem; /* Add more space between paragraphs */
+    gap: 2rem;
+    flex-wrap: wrap; /* Adjust for responsiveness */
 }
 
 .lottie-container {
     flex: 1;
     max-width: 500px;
-    display: flex;
-    justify-content: flex-end;
 }
 
-.lottie-container lottie-player {
+.text-content {
+    flex: 2;
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.text-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.text-below {
+    margin-top: 2rem; /* Separate from the above text */
     width: 100%;
-    height: auto;
+    text-align: justify;
 }
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
     .workflow-content {
         flex-direction: column;
-    }
-
-    .text-content {
-        padding-right: 0;
         text-align: center;
-        max-width: 100%;
     }
 
     .lottie-container {
-        margin-top: 1.5rem;
-        justify-content: center;
         max-width: 100%;
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+
+    .text-below {
+        margin-top: 1.5rem;
+        text-align: justify;
     }
 }
 
