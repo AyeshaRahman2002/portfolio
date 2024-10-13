@@ -18,10 +18,11 @@ function showDetails(projectId) {
     } else if (projectId === "xv6-memory") {
         modalText.innerHTML = `
             <h2>xv6 Memory Management</h2>
-            <p>
-                This project involved implementing memory management functions like malloc() and free() in xv6. 
-                The goal was to understand low-level memory allocation and improve system performance through efficient memory management.
-            </p>
+            <p>In this project for COMP2211: Operating Systems, I implemented memory management functions for the xv6-riscv operating system, specifically focusing on the malloc() and free() operations. The xv6 operating system, designed as a teaching tool, provided a robust platform to understand how memory allocation works within an operating system's kernel.</p>
+            <p>The malloc() function I implemented dynamically allocates memory using the concept of circular linked lists. The function checks if the requested size is valid and assigns memory using a circular linked list structure, where the last node links back to the first node. This structure allowed efficient memory allocation and management, particularly useful in minimizing wasted space and optimizing memory use.</p>
+            <p>I also created the free() function, which deallocates memory blocks previously assigned by malloc(). This function checks for null pointers and properly handles memory release by merging adjacent free blocks, thus preventing fragmentation.</p>
+            <p>A key feature of my implementation was the rqstMem() function, which requests additional memory from the operating system when required. The function employs the system call sbrk(), adjusting the program's data space and dynamically increasing the memory when needed. This efficient management ensures that memory is only expanded when absolutely necessary, minimizing system overhead.</p>
+            <p>Throughout this project, I deepened my understanding of how memory management works in low-level systems programming. I gained valuable experience in debugging complex C programs, learned to manage dynamic memory efficiently, and enhanced my understanding of how operating systems handle memory allocation and deallocation at the kernel level. This project not only strengthened my skills in C programming but also gave me hands-on exposure to core operating system concepts.</p>
         `;
     } else if (projectId === "todo-app") {
         modalText.innerHTML = `
