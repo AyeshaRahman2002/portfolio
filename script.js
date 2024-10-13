@@ -37,7 +37,7 @@ function showDetails(projectId) {
         `;
     } else if (projectId === "health-ai-autism") {
         modalText.innerHTML = `
-            <h2>Health AI Prototype for Identifying Autism in Adults</h2>
+            <h2>Development and Implementation of a Digital Health AI Prototype for Identifying Autism Spectrum Disorder in Adults</h2>
             <p>This project explored the development and implementation of an AI-based digital health prototype for diagnosing Autism Spectrum Disorder (ASD) in adults. The project aimed to fill the gap in diagnostic tools that typically focus on children, using machine learning to analyze eye movements, textual input, and social interactions. The application features several modules, including eye-tracking analysis, a machine-learning-based note-tracking system, and a natural language processing (NLP) game that simulates social scenarios.</p>
             <ul>
                 <li>Uses AI techniques like eye-movement tracking and sentiment analysis to assist in ASD diagnosis.</li>
