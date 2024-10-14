@@ -86,7 +86,6 @@ nav {
     }
 }
 
-
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -232,7 +231,6 @@ nav ul li a:hover {
     background-color: #fff; /* White background on hover */
     color: #111; /* Black text on hover */
 }
-
 
 /* Stats Section */
 .stats {
@@ -617,10 +615,6 @@ nav ul li a:hover {
     transform: translateY(-10px); /* Lift the card on hover */
 }
 
-
-
-
-
 /* Certificates Section */
 .certificates-section {
     width: 100%;
@@ -668,7 +662,6 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-
 .certificate-item button {
     background-color: #87CEEB;
     color: #111;
@@ -688,23 +681,6 @@ nav ul li a:hover {
     .certificate-item {
         flex: 1 1 100%; /* Make certificates full-width on smaller screens */
     }
-}
-
-/* Art & Design Section */
-.art-section {
-    background-color: #222;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-    position: relative; /* Ensure swirls are positioned behind */
-    z-index: 1; /* Art content stays above swirls */
-}
-
-.art-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    color: #fff; /* Set title to white */
 }
 
 /* Art & Design Section */
@@ -761,7 +737,6 @@ nav ul li a:hover {
         column-count: 1;
     }
 }
-
 
 /* 3D Moving Swirl Background */
 .swirl-background {
@@ -1326,8 +1301,6 @@ nav ul li a:hover {
     font-size: 1rem;
     color: #999;
 }
-
-
 
 /* Footer */
 footer {
