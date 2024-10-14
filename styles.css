@@ -183,7 +183,7 @@ nav ul li a:hover {
 
 .hero-image img {
     width: 100%;
-    max-width: 300px; /* Control the maximum width of the image */
+    max-width: 100%; /* Control the maximum width of the image */
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -1339,5 +1339,36 @@ footer {
     .projects {
         flex-direction: column; /* Stack the cards vertically */
         align-items: center; /* Center them */
+    }
+}
+
+@media (max-width: 768px) {
+    .download-resume, .linkedin-link {
+        width: 100%; /* Full width buttons */
+        font-size: 1rem; /* Adjust font size */
+        padding: 10px; /* Adjust padding for smaller buttons */
+    }
+}
+
+@media (max-width: 768px) {
+    .biography-section h2, .projects-section h2 {
+        font-size: 2rem; /* Smaller titles */
+    }
+
+    .biography-section p {
+        font-size: 1rem; /* Smaller paragraph size */
+        padding: 1rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+@media (max-width: 768px) {
+    .work-section {
+        padding: 2rem 1rem; /* Adjust padding */
     }
 }
