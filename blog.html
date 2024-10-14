@@ -5,27 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ayesha Rahman | Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styling */
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #6fffe9;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Blog post styling */
+        .blog-posts {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-post {
+            background-color: #1c1c1e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .blog-post h2 a {
+            color: #6fffe9;
+            font-weight: 600;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-post h2 a:hover {
+            color: #a29bfe;
+        }
+
+        .blog-post p {
+            color: #a9a9a9;
+            font-size: 1rem;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #181818;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #6fffe9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 1rem;
+            color: #666;
+            background-color: #181818;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <ul id="nav-list" class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#biography">Biography</a></li>
-            <li><a href="index.html#why-hire-me">Why Hire Me</a></li>
-            <li><a href="AIinFinance.html">AI in Finance</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#work">Work</a></li>
-            <li><a href="index.html#volunteering">Volunteering</a></li>
-            <li><a href="index.html#art">Art & Design</a></li>
-            <li><a href="certificates.html">Certifications</a></li>
-            <li><a href="skills.html">Technical Competencies</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="instagram.html">Instagram</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="index.html#biography">Biography</a>
+        <a href="index.html#why-hire-me">Why Hire Me</a>
+        <a href="AIinFinance.html">AI in Finance</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#volunteering">Volunteering</a>
+        <a href="index.html#art">Art & Design</a>
+        <a href="certificates.html">Certifications</a>
+        <a href="skills.html">Technical Competencies</a>
+        <a href="blog.html">Blog</a>
+        <a href="instagram.html">Instagram</a>
+        <a href="index.html#contact">Contact</a>
     </nav>
 
     <!-- Blog Section -->
