@@ -301,7 +301,7 @@ nav ul li a:hover {
     width: 300px;
     height: 400px;
     perspective: 1000px;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 .flip-card-inner {
@@ -1331,7 +1331,10 @@ nav ul li a:hover {
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff;
-    margin-top: 0.5rem;
+    margin-top: 10px; /* Add space between the image and title */
+    padding: 5px; /* Ensure text has padding */
+    background-color: #222; /* Background for better contrast */
+    border-radius: 10px; /* Optional: add rounded corners */
 }
 
 /* Footer */
