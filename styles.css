@@ -579,25 +579,25 @@ nav ul li a:hover {
 /* Swirls for background effect */
 .swirl {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 40vw; /* Make size relative to viewport width */
+    height: 40vw; /* Maintain a square aspect ratio */
     background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     top: 20%;
-    left: 30%;
+    left: 10%; /* Adjust position */
     animation: swirl 10s linear infinite; /* Speed up */
     z-index: 0;
 }
 
 .swirl-reverse {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 35vw; /* Scale based on viewport */
+    height: 35vw;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    top: 40%;
-    left: 40%;
-    animation: swirl-reverse 15s linear infinite; /* Speed up */
+    top: 50%;
+    left: 50%; /* Adjusted to fit screen */
+    animation: swirl-reverse 15s linear infinite;
     z-index: 0;
 }
 
@@ -624,6 +624,16 @@ nav ul li a:hover {
     left: 60%;
     animation: swirl 12s linear infinite; /* Extra swirl */
     z-index: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .swirl, .swirl-reverse, .swirl-faster, .swirl-extra {
+        width: 60vw;
+        height: 60vw;
+        left: 20%; /* Ensure it stays centered on smaller screens */
+        top: 10%; /* Adjust the top position for better visibility */
+    }
 }
 
 /* Ensure no transformations affect the text */
