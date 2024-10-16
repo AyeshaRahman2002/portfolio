@@ -1124,8 +1124,8 @@ nav ul li a:hover {
     border: none;
     position: relative;
     z-index: 2;
-    padding-top: 0; /* Reduce top padding */
-    margin-bottom: 2rem; /* Add more bottom margin to prevent overlap */
+    padding-top: 0;
+    margin-bottom: 2rem;
 }
 
 .bubble-container {
@@ -1136,6 +1136,7 @@ nav ul li a:hover {
     border-radius: 30px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     max-width: 800px;
+    width: 90%;
     position: relative;
     z-index: 2;
     transform: perspective(500px) rotateX(10deg) rotateY(0deg); /* Slight 3D effect */
@@ -1173,7 +1174,8 @@ nav ul li a:hover {
     .bubble-container {
         padding: 1.5rem;
         border-radius: 20px;
-        transform: perspective(500px) rotateX(5deg); /* Adjust for smaller screens */
+        transform: none; /* Remove the 3D effect on smaller screens */
+        width: 100%; /* Take full width on small screens */
     }
 
     .bubble-content h2 {
