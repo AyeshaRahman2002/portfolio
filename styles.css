@@ -911,7 +911,9 @@ nav ul li a:hover {
 }
 
 .contact-section iframe {
-    border: none;
+    width: 100%;
+    max-width: 640px;
+    height: 689px;
     border-radius: 10px;
 }
 
@@ -928,6 +930,21 @@ nav ul li a:hover {
 
 .contact-info a:hover {
     color: #00cc7a;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .contact-section iframe {
+        width: 100%; /* Make iframe full width on small screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .contact-info {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
 }
 
 /* Volunteering Section */
