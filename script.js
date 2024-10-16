@@ -249,7 +249,7 @@ function showDetails(projectId) {
         `;
     } else if (projectId === "flight-proposal") {
         modalText.innerHTML = `
-            <h2>Flight Price Data Scraping Tool</h2>
+            <h2>Financial Modeling Flights Price Data Scraping Tool</h2>
             <p>This project, developed as part of my internship at UTI Mutual Fund, focused on the automation of flight data collection through web scraping using Python. The goal was to create a sophisticated tool capable of retrieving large datasets from Google Flights based on user-defined parameters such as travel dates, locations, and preferences. The tool provided crucial insights for analysts by streamlining the data acquisition process, replacing manual efforts with an automated solution that integrated seamlessly into the team's workflow.</p>
     
             <h3>Technical Aspects and Implementation:</h3>
