@@ -47,6 +47,8 @@ function showDetails(projectId) {
             <p>A key feature of my implementation was the rqstMem() function, which requests additional memory from the operating system when required. The function employs the system call sbrk(), adjusting the program's data space and dynamically increasing the memory when needed. This efficient management ensures that memory is only expanded when absolutely necessary, minimizing system overhead.</p>
             <p>Throughout this project, I deepened my understanding of how memory management works in low-level systems programming. I gained valuable experience in debugging complex C programs, learned to manage dynamic memory efficiently, and enhanced my understanding of how operating systems handle memory allocation and deallocation at the kernel level. This project not only strengthened my skills in C programming but also gave me hands-on exposure to core operating system concepts.</p>
             <a href="files/comp2211report_sc21ar.pdf" download="comp2211report_sc21ar.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/MemoryManagement-C';">View on GitHub</button>
+
         `;
     } else if (projectId === "todo-app") {
         modalText.innerHTML = `
@@ -73,6 +75,7 @@ function showDetails(projectId) {
                 <li><strong>Successful Group Collaboration:</strong> Working closely with my team, we successfully divided responsibilities to tackle the various challenges of the project. I focused on the database management, backend logic, and integration, while other members handled different aspects, like design and testing.</li> 
             </ul>
             <p>This project taught me valuable lessons in both backend database management and frontend development, as well as how to optimize web applications for real-time performance and security. It was an enriching experience that allowed me to merge both technical skills and collaborative project management, resulting in a robust, user-friendly platform for assessment management.</p>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/Coursework-Management-Application';">View on GitHub</button>
         `;
     } else if (projectId === "health-ai-autism") {
         modalText.innerHTML = `
@@ -106,6 +109,7 @@ function showDetails(projectId) {
             </ul>
             <p>This comprehensive system offers precise spacecraft navigation, robust obstacle avoidance, and accurate planetary detection and measurement capabilities, making it suitable for autonomous missions in challenging space environments.</p>
             <p>This project was done as group project for an assignment based at University of Leeds.</p>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/PlanetDetection-Robotics';">View on GitHub</button>
             <a href="files/Robotics.pdf" download="Robotics.pdf" class="download-btn">Download Robotics Project Report</a>
         `;
     } else if (projectId === "3d-rendering") {
@@ -120,6 +124,7 @@ function showDetails(projectId) {
             <p>The rocket model was then animated to simulate a launch sequence. Using a state machine, the animation progressed through phases, including vertical lift-off, transition to horizontal flight, and continuous movement. This was implemented using time-based animation functions, ensuring smooth transitions between different phases of the rocket’s motion.</p>
             <p>Performance measurements were taken to evaluate the GPU’s handling of various tasks, including terrain rendering, instancing, and custom model rendering. The analysis showed a significant increase in rendering time for more complex tasks, particularly when adding textures and custom models. The performance data also indicated that camera positioning had a noticeable impact on frame rates, with rendering times increasing as the camera moved further from the main objects of interest.</p>
             <p>Overall, the coursework successfully demonstrated advanced 3D rendering techniques in OpenGL, integrating various components such as matrix transformations, lighting, animation, and performance optimization. The project’s culmination in a dynamic, interactive 3D scene reflects a deep understanding of modern graphics programming and the complexities of real-time rendering systems.</p>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/ComputerGraphics_3D_Rendering';">View on GitHub</button>
             <a href="files/GraphicsCW.pdf" download="GraphicsCW.pdf" class="download-btn">Download Project Report</a>
         `;
     } else if (projectId === "predictive-modeling") {
@@ -171,6 +176,7 @@ function showDetails(projectId) {
             <p>From a technical perspective, the project made extensive use of object-oriented programming (OOP) principles, which helped to modularize the different components of the video editor. This approach made it easier to integrate new features as the project evolved and allowed team members to work on different aspects of the application simultaneously without causing conflicts. The team used C++ libraries to handle video rendering and file management efficiently, ensuring that the application could process high-definition video files smoothly.</p>
             <p>Testing played a critical role in the development process. The team conducted several rounds of testing to ensure the application was stable and free from bugs. User feedback was gathered at multiple stages of the project, which helped guide improvements in both functionality and design. The final version of the application was thoroughly tested for performance, particularly with large video files, and it met the team’s benchmarks for speed and reliability.</p>
             <p>Overall, the Video Editing Application project was a successful demonstration of the team's ability to collaborate effectively and apply C++ programming skills to solve real-world problems. The project highlighted the team's capacity for developing a complex application that combined technical precision with user-focused design. By delivering an editing tool that was both powerful and accessible, the group demonstrated their commitment to creating software that meets the needs of diverse users, and their final product stands as a testament to their proficiency in software development and design.</p>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/VideoEditingApplication';">View on GitHub</button>
             <a href="files/UserInterface.pdf" download="UserInterface.pdf" class="download-btn">Download Project Report</a>
         `;
     } else if (projectId === "sports-management") {
@@ -194,6 +200,7 @@ function showDetails(projectId) {
             <p><strong>Project Outcome and Reflection:</strong></p>
             <p>The Sports Management System was well-received, and we successfully demonstrated the system’s capabilities, highlighting its practical applications for managing a sports center's operations. The project not only improved my technical skills in Python and Flask but also honed my ability to manage group projects effectively, particularly in a collaborative setting where multiple technologies and frameworks were in use.</p>
             <p>This project was a valuable learning experience, blending backend development, frontend design, and database management to create a fully functional and scalable system. It demonstrated the importance of security, user experience, and efficient data handling in building robust web applications.</p>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/SportsManagementSystem';">View on GitHub</button>
         `;
     } else if (projectId === "hotel-proposal") {
         modalText.innerHTML = `
