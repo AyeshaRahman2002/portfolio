@@ -290,7 +290,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
     padding: 2rem;
     background-color: #222;
 }
@@ -1331,10 +1331,14 @@ nav ul li a:hover {
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff;
-    margin-top: 10px; /* Add space between the image and title */
-    padding: 5px; /* Ensure text has padding */
-    background-color: #222; /* Background for better contrast */
-    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 10px; /* Add space above the title */
+    padding: 5px;
+    background-color: #222; /* Background for contrast */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    width: 100%; /* Ensure the title spans the full width of the card */
+    position: absolute;
+    bottom: -35px; /* Position the title just below the card */
+    left: 0;
 }
 
 /* Footer */
