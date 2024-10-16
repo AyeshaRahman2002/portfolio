@@ -1331,7 +1331,7 @@ nav ul li a:hover {
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff;
-    margin-top: 10px; /* Add space above the title */
+    margin-top: 20px; /* Add space above the title */
     padding: 5px;
     background-color: #222; /* Background for contrast */
     border-radius: 8px; /* Rounded corners for a softer look */
