@@ -464,7 +464,8 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .flip-card {
         width: 100%;
-        height: 350px;
+        max-width: 350px;
+        height: auto;
     }
 
     .projects {
@@ -496,12 +497,25 @@ nav ul li a:hover {
     right: 5px; /* Adjust as needed for positioning */
 }
 
+/* Ensure both sides are visible on smaller screens */
+@media (max-width: 768px) {
+    .vertical-text-left {
+        left: 5px;
+        font-size: 0.9rem;
+    }
+
+    .vertical-text-right {
+        right: 5px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Projects Section */
 .projects-section {
     position: relative;
     padding: 2rem;
     background-color: #222;
-    margin-top: 0; /* Add more space above the section */
+    margin-top: 0;
 }
 
 /* Work Section */
