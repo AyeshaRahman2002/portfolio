@@ -480,8 +480,8 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .flip-card {
         width: 100%;
-        max-width: 350px;
-        height: auto;
+        height: auto; /* Allow card height to adjust */
+        max-width: 350px; /* Limit card width */
     }
 
     .projects {
@@ -1458,6 +1458,92 @@ nav ul li a:hover {
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+/* Adjust the flip-card and project title styles for smaller screens */
+@media (max-width: 768px) {
+    .flip-card {
+        width: 100%;
+        height: auto; /* Allow card height to adjust */
+        max-width: 350px; /* Limit card width */
+    }
+
+    .flip-card-front img {
+        height: 100%; /* Ensure the image scales properly */
+        object-fit: cover; /* Keep the image aspect ratio */
+    }
+
+    .flip-card-back {
+        padding: 10px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .flip-card-back p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .flip-card-back button {
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+
+    /* Adjust the title position and size */
+    .project-title {
+        font-size: 1rem; /* Adjust the font size */
+        padding: 5px; /* Adjust padding */
+        bottom: -50px; /* Bring the title closer to the card */
+    }
+
+    /* Vertical text becomes hidden on smaller screens for better spacing */
+    .vertical-text-left, .vertical-text-right {
+        display: none;
+    }
+
+    /* Make the hover text adjust better on small screens */
+    .projects {
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center the projects */
+    }
+}
+
+/* General adjustments for font sizes on smaller screens */
+@media (max-width: 600px) {
+    .flip-card-back h3 {
+        font-size: 1rem;
+    }
+
+    .flip-card-back p {
+        font-size: 0.8rem;
+    }
+
+    .flip-card-back button {
+        font-size: 0.8rem;
+    }
+
+    .project-title {
+        font-size: 0.9rem; /* Further reduce the font size */
+    }
+}
+
+/* Other sections like Biography and Why Hire Me */
+@media (max-width: 768px) {
+    .biography-section p {
+        font-size: 1rem; /* Adjust font size for readability */
+    }
+
+    .why-hire-me-section .bubble-container {
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    .why-hire-me-section .bubble-content h2 {
+        font-size: 2rem; /* Reduce font size */
+    }
+
+    .why-hire-me-section .bubble-content p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
 }
 
 /* Footer */
