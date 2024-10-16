@@ -402,8 +402,97 @@ function showDetails(projectId) {
 
             <a href="https://github.com/AyeshaRahman2002/lyft" class="download-btn">View on GitHub</a>
         `;
+    } else if (projectId === "olympic-medal-analysis") {
+        modalText.innerHTML = `
+            <h2>Olympic Medal Analysis Using Data Visualizations</h2>
+            <p>The Olympic Medal Analysis project focuses on examining historical Olympic medal data from 1896 to 2020. The project’s primary objective was to analyze medal distributions across countries and over time using a combination of visual techniques and data analysis methodologies. The goal was to evaluate the effectiveness of different visualization techniques in communicating complex historical data and trends.</p>
+    
+            <p><strong>Project Objectives:</strong></p>
+            <ul>
+                <li>To analyze Olympic medal counts from 1896 to 2020, highlighting trends and patterns across countries.</li>
+                <li>To evaluate how visual representations (line charts, bar charts, and area charts) improve data comprehension and user engagement.</li>
+                <li>To test participant understanding of Olympic medal trends using various interactive visualizations.</li>
+            </ul>
+    
+            <p><strong>Technical Approach:</strong></p>
+            <p>The analysis was performed using Python's Flask framework for backend development, while Matplotlib was used to generate dynamic visualizations. These visualizations provided clear insights into medal distributions and how certain countries performed across different eras of Olympic history. The project relied on a combination of line graphs, bar charts, and area charts to depict changes over time.</p>
+    
+            <p>The system allowed users to interact with the data, select specific countries, and view their respective medal counts across different years. The backend handled requests for customized visualizations, and the system dynamically generated charts based on user inputs.</p>
+    
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Historical medal analysis across multiple Olympic Games from 1896 to 2020.</li>
+                <li>Use of data visualizations to compare countries' performances over time, with filters for specific sports or events.</li>
+                <li>Evaluation of different visualization techniques to present complex data effectively.</li>
+            </ul>
+    
+            <p><strong>Challenges and Learnings:</strong></p>
+            <p>The project’s major challenge was ensuring that the visualizations communicated complex historical data clearly and concisely. While developing the analysis, we explored various methods to handle data anomalies and incomplete datasets. This project helped enhance my understanding of data visualization techniques and reinforced the importance of clear, interpretable visuals in conveying complex information effectively.</p>
+    
+            <p><strong>Outcome:</strong></p>
+            <p>The analysis provided valuable insights into the evolution of Olympic medal distributions, particularly noting which countries consistently performed well. Furthermore, the interactive visualizations were highly effective in helping participants understand data trends. The project concluded that dynamic, interactive visualizations could significantly improve users' comprehension of historical datasets, particularly for non-expert audiences.</p>
+    
+            <a href="files/Cw2_Info_Vis_Group40.pdf" download="Cw2_Info_Vis_Group40.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/InfoVis-MedalAnalysis';">View on GitHub</button>
+        `;
+    } else if (projectId === "2d-rendering") {
+        modalText.innerHTML = `
+            <h2>2D Rendering Application - Computer Graphics</h2>
+            <p>This project focuses on the development of a 2D rendering application that highlights key concepts in computer graphics, specifically in the area of geometric shape rendering and transformations. The main objectives of the project were to render 2D objects using line-drawing algorithms, implement transformations (such as scaling, rotation, and translation), and fill shapes with color using advanced rasterization techniques.</p>
+    
+            <h3>Line Drawing Algorithms</h3>
+            <p>The project implements fundamental line-drawing algorithms such as Bresenham's Line Algorithm and the Digital Differential Analyzer (DDA) algorithm. These algorithms ensure efficient and accurate rendering of lines on a pixel grid. Bresenham's algorithm, in particular, was chosen for its speed and precision, minimizing the use of floating-point operations. This ensures that lines drawn on the screen appear smooth and continuous, even for large or steep line segments. The DDA algorithm was also used to compare the performance and visual outcomes of different approaches to line rendering.</p>
+    
+            <h3>Geometric Transformations</h3>
+            <p>To manipulate 2D objects dynamically, the project implemented basic geometric transformations, including translation, scaling, and rotation. These operations were applied using matrix multiplication techniques. The transformations allow users to interact with the shapes by changing their position, size, and orientation in the 2D space. The project explored both uniform and non-uniform scaling, ensuring that objects maintain their aspect ratio when desired or stretch dynamically based on input.</p>
+    
+            <h3>Shape Filling and Rasterization</h3>
+            <p>In addition to drawing shapes, the application employs scanline algorithms for filling polygons and other geometric forms. The scanline algorithm was used to fill shapes with solid or interpolated colors, depending on the desired effect. By interpolating color values across the surface of the shape, the application can produce visually appealing gradients, giving depth to the 2D objects. The project carefully handles edge cases, such as concave polygons and self-intersecting shapes, ensuring that the rasterization is robust and accurate.</p>
+    
+            <h3>Polygon Clipping and Windowing</h3>
+            <p>The project also includes polygon clipping, where objects that extend beyond a defined viewing window are truncated to fit within the visible area. The Sutherland-Hodgman algorithm was used to efficiently clip polygons against a rectangular clipping boundary. This feature is particularly useful for creating complex scenes where not all objects are fully visible within the viewport.</p>
+    
+            <h3>User Interaction and Controls</h3>
+            <p>The application provides an interactive interface, allowing users to manipulate the 2D shapes in real-time. Users can input translation vectors, scaling factors, and rotation angles to see the immediate effect of these transformations on the rendered objects. Additionally, the application supports mouse-based selection and transformation, enhancing the usability and interactivity of the tool.</p>
+    
+            <h3>Anti-Aliasing and Smoothing</h3>
+            <p>To improve the visual quality of the rendered shapes, the project incorporates basic anti-aliasing techniques. By smoothing jagged edges on diagonal or curved lines, the application produces more aesthetically pleasing images. The anti-aliasing algorithm works by blending the colors of edge pixels with their neighbors, reducing the stark contrast that typically causes aliasing artifacts.</p>
+    
+            <h3>Performance and Optimization</h3>
+            <p>Performance was a key consideration throughout the development process. The project optimized the line-drawing and filling algorithms to minimize computational overhead, ensuring that even complex scenes with multiple objects and transformations could be rendered in real-time. Additionally, the application efficiently manages memory usage by dynamically allocating space for pixel buffers only when necessary, reducing the overall resource footprint.</p>
+    
+            <h3>Testing and Validation</h3>
+            <p>Extensive testing was conducted to validate the accuracy of the rendering algorithms. The application was tested on a variety of shapes and transformations, including regular polygons, concave shapes, and complex overlapping objects. Special attention was given to ensuring that transformations such as rotation preserved the integrity of the shapes, even when applied repeatedly.</p>
+    
+            <h3>Future Improvements</h3>
+            <p>While the project successfully implements the core features of 2D rendering, there are several areas for future improvement. Potential enhancements include adding support for advanced shading techniques, integrating additional anti-aliasing algorithms, and expanding the transformation capabilities to include shear and reflection operations. Additionally, the application could be extended to support more complex user interactions, such as dragging and resizing objects directly on the canvas.</p>
+    
+            <p>This project demonstrates a solid understanding of fundamental computer graphics concepts, from line drawing and shape rendering to geometric transformations and rasterization. The efficient implementation of these techniques allows the application to handle real-time rendering of complex 2D scenes with minimal computational overhead.</p>
+    
+            <a href="files/RenderingProjectReport.pdf" download="RenderingProjectReport.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/ComputerGraphics-2d-Rendering';">View on GitHub</button>
+        `;
+    } else if (projectId === "ml-coursework") {
+        modalText.innerHTML = `
+            <h2>Machine Learning Coursework - Predictive Modeling for Data Analysis</h2>
+            <p>This project, undertaken as part of my COMP3611 coursework, involved applying machine learning techniques to predict outcomes from provided training data. The core objective was to build a predictive model that could accurately classify data from a structured dataset while handling both clean and corrupted data formats.</p>
+            
+            <p><strong>Data Preprocessing:</strong> The project began with data cleaning and preprocessing steps. I handled the corrupted data file <code>corrupted_data.npy</code>, which involved identifying and managing missing or inconsistent data. Using Python libraries such as NumPy and Pandas, I cleaned the dataset to prepare it for effective model training.</p>
+            
+            <p><strong>Feature Extraction and Engineering:</strong> Once the data was cleaned, feature engineering techniques were applied to extract important variables from the dataset. These features helped to improve model accuracy by selecting the most relevant information for predictions.</p>
+            
+            <p><strong>Model Training:</strong> Various machine learning algorithms were employed for classification, including decision trees, support vector machines (SVM), and random forests. The models were trained using the cleaned dataset from <code>Training_data.csv</code>, with corresponding target values from <code>Training_data_targets.csv</code>. Each model's performance was evaluated using accuracy, precision, recall, and F1 scores to identify the most effective algorithm for the given task.</p>
+            
+            <p><strong>Handling Corrupted Data:</strong> A unique aspect of this project was dealing with corrupted data files. I developed strategies to reconstruct lost data points from the <code>corrupted_data.npy</code> file and re-trained the model with this modified data to test how well it could generalize despite missing information.</p>
+            
+            <p><strong>Model Evaluation and Tuning:</strong> After initial model training, hyperparameter tuning was conducted to optimize performance. Cross-validation techniques were employed to ensure that the model would generalize well on unseen data. The best-performing model achieved a high accuracy score on the clean dataset, showcasing robust predictive capabilities.</p>
+            
+            <p>This coursework demonstrated my ability to apply machine learning techniques to solve real-world problems. It involved hands-on experience in data cleaning, feature engineering, model training, and evaluation. The final model was able to provide valuable predictions despite the challenges presented by the corrupted data.</p>
+            
+            <a href="files/COMP3611_Assessment.ipynb" download="COMP3611_Assessment.ipynb" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/ML-CW1';">View on GitHub</button>
+        `;
     }
-
 
     modal.style.display = "block";
 }
