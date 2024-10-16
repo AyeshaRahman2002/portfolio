@@ -277,6 +277,30 @@ nav ul li a:hover {
     letter-spacing: 1px;
 }
 
+/* Responsive Adjustments for Hero Section */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem; /* Reduce font size */
+    }
+
+    .hero-text p {
+        font-size: 1.2rem; /* Adjust paragraph size */
+    }
+
+    .stat-item h2 {
+        font-size: 2rem; /* Adjust stat number size */
+    }
+
+    .stat-item p {
+        font-size: 0.9rem; /* Adjust stat text size */
+    }
+
+    .download-resume, .linkedin-link {
+        font-size: 0.9rem; /* Adjust button text size */
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}
+
 /* Biography Title */
 .biography-section h2 {
     text-align: center;
