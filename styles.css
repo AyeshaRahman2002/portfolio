@@ -10,7 +10,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #111;
     color: #fff;
+    overflow-x: hidden;
 }
+
 
 /* Navigation */
 /* Navigation Styling */
@@ -157,6 +159,23 @@ nav ul li a:hover {
     width: 100%;
     max-width: 1200px;
     flex-wrap: wrap; /* For responsive wrapping */
+}
+
+/* Adjust hero content */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text, .hero-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* Adjust to fit the screen */
+    }
 }
 
 .hero-text {
@@ -420,7 +439,7 @@ nav ul li a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .flip-card {
-        width: 250px;
+        width: 100%;
         height: 350px;
     }
 
@@ -476,6 +495,17 @@ nav ul li a:hover {
     margin-bottom: 2rem;
     text-transform: uppercase;
     text-align: center; /* Center align title */
+}
+
+/* Adjust work section */
+@media (max-width: 768px) {
+    .work-section {
+        padding: 1rem;
+    }
+
+    .work-item {
+        padding: 1rem;
+    }
 }
 
 /* Work Item Styling */
@@ -1339,6 +1369,12 @@ nav ul li a:hover {
     position: absolute;
     bottom: -75px; /* Position the title just below the card */
     left: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 /* Footer */
