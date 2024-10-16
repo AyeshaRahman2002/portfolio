@@ -81,17 +81,18 @@ nav {
     }
 
     .nav-list {
-        max-height: 80vh; /* Max height is 80% of the viewport height */
-        overflow-y: auto; /* Enable vertical scrolling */
+        display: none;
+        flex-direction: column;
+        background-color: #333;
         position: absolute;
-        top: 50px; /* Below the menu icon */
+        top: 50px;
         left: 0;
-        width: 100%;
-        background-color: #333; /* Ensure it looks good */
+        width: 100%; /* Ensure the navigation takes the full screen width */
     }
 
     .nav-list.active {
         display: flex;
+        width: 100%; /* Ensure the navigation width follows the screen width */
     }
 
     .nav-list li {
@@ -101,6 +102,7 @@ nav {
 
     .nav-list li a {
         padding: 15px;
+        width: 100%; /* Each item will take the full width */
     }
 }
 
