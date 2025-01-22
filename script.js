@@ -492,6 +492,31 @@ function showDetails(projectId) {
             <a href="files/COMP3611_Assessment.ipynb" download="COMP3611_Assessment.ipynb" class="download-btn">Download Project Report</a>
             <button onclick="window.location.href='https://github.com/AyeshaRahman2002/ML-CW1';">View on GitHub</button>
         `;
+    }  else if (projectId === "logical-representation") {
+        modalText.innerHTML = `
+            <h2>Logical Representation and Proof Using Prover9</h2>
+            <p>This project was part of the COMP5450M module on Knowledge Representation and Reasoning. It involved encoding reasoning problems into propositional and first-order logic (FOL) and validating them using the Prover9 automated theorem prover.</p>
+            
+            <p><strong>The Commuter Problem:</strong> This scenario focused on travel modes and weather conditions. The logical encoding captured relationships such as:
+            - "Rain implies no skateboarding."
+            - "Being outside in the rain without a helmet leads to wet hair."
+            The objective was to prove that a person would be splashed by cars unless traveling by taxi.</p>
+            
+            <p><strong>Sunny Farm Problem:</strong> This problem required detailed FOL representations of a farm with animals like lambs and weasels. Key aspects included:
+            - "No carnivores live at Sunny Farm."
+            - "Lambs are animals that do not eat other animals."
+            - "Every gentle animal helps every other gentle animal."
+            The goal was to demonstrate the presence of a contented lamb at the farm through logical deductions.</p>
+            
+            <p><strong>Key Skills Demonstrated:</strong></p>
+            <ul>
+                <li>Translation of English statements into logical formulae.</li>
+                <li>Use of propositional and first-order logic for formal reasoning.</li>
+                <li>Automated theorem proving with Prover9 to verify logical consistency and derive proofs.</li>
+            </ul>
+            
+            <p>This project enhanced my understanding of formal logic, reasoning, and theorem proving, which are critical in AI and computational logic. The work showcased the ability to model complex real-world scenarios using formal representations and validate them using computational tools.</p>
+        `;
     }
 
     modal.style.display = "block";
