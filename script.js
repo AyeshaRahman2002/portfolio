@@ -517,7 +517,33 @@ function showDetails(projectId) {
             
             <p>This project enhanced my understanding of formal logic, reasoning, and theorem proving, which are critical in AI and computational logic. The work showcased the ability to model complex real-world scenarios using formal representations and validate them using computational tools.</p>
         `;
+    } else if (projectId === "logical-kb-project") {
+        modalText.innerHTML = `
+            <h2>Knowledge Base and Logical Reasoning System</h2>
+            <p>This project, part of the COMP5450M module on Knowledge Representation and Reasoning, involved creating a Prolog-based Knowledge Base (KB) and reasoning system. The KB was structured to encode and infer complex relationships within defined domains, such as animals, habitats, governance, and conservation, using logical rules and inference mechanisms.</p>
+            
+            <p><strong>River Crossing Problem:</strong> This scenario focused on modeling the classic problem where a farmer must transport a wolf, a goat, and a cabbage across a river. Logical encoding captured constraints and actions like:
+            - "The wolf cannot be left alone with the goat."
+            - "The goat cannot be left alone with the cabbage."
+            The objective was to encode all constraints and infer a sequence of safe actions to complete the crossing.</p>
+            
+            <p><strong>Zookeeper's Knowledge Base:</strong> This scenario modeled relationships in a zoo environment involving predators, prey, zookeepers, and conservation authorities. Key aspects included:
+            - "Predators must be relocated if they threaten prey in the same zoo."
+            - "Zookeepers must alert authorities about risks to prey."
+            - "Conservation plans must be initiated for at-risk prey."
+            The goal was to infer emergency measures, resource allocations, and safety evaluations based on the KB's logical rules.</p>
+            
+            <p><strong>Key Skills Demonstrated:</strong></p>
+            <ul>
+                <li>Encoding complex real-world scenarios into a structured Knowledge Base using Prolog.</li>
+                <li>Designing and implementing logical inference mechanisms with multi-depth reasoning.</li>
+                <li>Utilizing logical operators, predicates, and negation for automated reasoning and consistency checks.</li>
+            </ul>
+            
+            <p>This project deepened my understanding of knowledge representation, logical reasoning, and automated inference systems. It highlighted the power of logic-based frameworks in solving structured reasoning problems and modeling real-world domains.</p>
+        `;
     }
+
 
     modal.style.display = "block";
 }
