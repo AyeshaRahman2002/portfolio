@@ -37,90 +37,121 @@
         </ul>
     </nav>
 
-    <!-- Projects Section -->
-    <section class="projects-section">
+        <main class="proj-container">
         <h1>Projects</h1>
+        <div class="proj-grid">
 
-        <!-- In-Progress Projects Section -->
-        <h2>In-Progress Projects</h2>
-        <div class="projects-container">
-            <div class="project-item">
-                <img src="images/inflation-prediction.png" alt="Inflation Prediction for PCE">
-                <div class="project-details">
-                    <h3>Inflation Prediction for PCE using AI</h3>
-                    <p>This is my current master's dissertation project, focusing on predicting inflation for PCE using AI models such as LSTM, XGBOOST, N-BEATS, ARDL, N-BEATSx, etc. The project integrates multiple exogenous variables to improve forecasting accuracy.</p>
-                    <button onclick="showDetails('inflation-prediction')">More Details</button>
+            <!-- AI Stock Price Prediction -->
+            <div class="proj-card" id="ai-analysis">
+                <img src="images/ai-stock-prediction.png" alt="AI Stock Price Prediction">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Creating a Classification Model Using Online Sentiment to Determine Stock Price</h2>
+                    <p class="proj-card-description">This project explores the intersection of AI, NLP, and financial market analysis to predict stock price trends using sentiment data from social platforms.</p>
+                    <div class="proj-buttons">
+                        <a href="files/DataMiningProjectReport.pdf" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/larks" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-item">
-                <img src="images/finance-manager.png" alt="Smart Personal Finance Manager">
-                <div class="project-details">
-                    <h3>Smart Personal Finance Manager</h3>
-                    <p>This ongoing project involves developing an AI-powered financial assistant to help users manage their savings, investments, and expenses effectively. The system will use predictive analytics and visual dashboards to provide insights.</p>
-                    <button onclick="showDetails('finance-manager')">More Details</button>
+            <!-- Memory Management -->
+            <div class="proj-card" id="xv6-memory">
+                <img src="images/xv6-memory.png" alt="xv6 Memory Management">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">xv6 Memory Management</h2>
+                    <p class="proj-card-description">Implementation of malloc() and free() functions for the xv6-riscv operating system, using circular linked lists for dynamic memory allocation.</p>
+                    <div class="proj-buttons">
+                        <a href="files/comp2211report_sc21ar.pdf" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/MemoryManagement-C" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Health AI Autism -->
+            <div class="proj-card" id="health-ai-autism">
+                <img src="images/health-ai-autism.png" alt="Health AI Prototype for Autism">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Digital Health AI Prototype for Autism</h2>
+                    <p class="proj-card-description">An AI-based tool leveraging machine learning and NLP for diagnosing Autism Spectrum Disorder in adults through eye-tracking analysis.</p>
+                    <div class="proj-buttons">
+                        <a href="files/Desertation.pdf" download class="proj-btn">Download Dissertation</a>
+                        <a href="https://github.com/AyeshaRahman2002/larks" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autonomous Navigation -->
+            <div class="proj-card" id="autonomous-navigation">
+                <img src="images/autonomous-navigation.png" alt="Autonomous Navigation System">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Autonomous Navigation and Detection System</h2>
+                    <p class="proj-card-description">Developed a machine-learning-based autonomous navigation system for spacecraft, ensuring reliable course correction after unexpected deviations.</p>
+                    <div class="proj-buttons">
+                        <a href="files/Robotics.pdf" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/PlanetDetection-Robotics" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Rendering -->
+            <div class="proj-card" id="3d-rendering">
+                <img src="images/3d-rendering.png" alt="3D Rendering Application">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Interactive 3D Rendering Application</h2>
+                    <p class="proj-card-description">A real-time 3D rendering system built using OpenGL, incorporating custom models, texture mapping, lighting, and physics-based animations.</p>
+                    <div class="proj-buttons">
+                        <a href="files/GraphicsCW.pdf" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/ComputerGraphics_3D_Rendering" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predictive Modeling -->
+            <div class="proj-card" id="predictive-modeling">
+                <img src="images/predictive-modeling.png" alt="Predictive Modeling">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Predictive Modeling for Health Data Analysis</h2>
+                    <p class="proj-card-description">Developed advanced machine learning models for health data analysis, handling missing values and improving predictive accuracy.</p>
+                    <div class="proj-buttons">
+                        <a href="files/COMP3611_Assessment.ipynb" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/ML-CW1" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI in Psychological Treatments -->
+            <div class="proj-card" id="ai-psychological-treatments">
+                <img src="images/ai-psychological.png" alt="AI in Psychological Treatments">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Use of AI in Psychological Treatments</h2>
+                    <p class="proj-card-description">Research on AI's role in therapy, including VR-based exposure treatment and Internet-delivered Cognitive Behavioral Therapy (iCBT).</p>
+                    <div class="proj-buttons">
+                        <a href="files/AIinPsychologicalTreatements.pdf" download class="proj-btn">Download Report</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Olympic Medal Analysis -->
+            <div class="proj-card" id="olympic-medal-analysis">
+                <img src="images/olympic-medal.png" alt="Olympic Medal Analysis">
+                <div class="proj-card-content">
+                    <h2 class="proj-card-title">Olympic Medal Analysis Using Data Visualizations</h2>
+                    <p class="proj-card-description">Explored Olympic medal distributions from 1896-2020, using Matplotlib-based interactive visualizations to compare country performances.</p>
+                    <div class="proj-buttons">
+                        <a href="files/Cw2_Info_Vis_Group40.pdf" download class="proj-btn">Download Report</a>
+                        <a href="https://github.com/AyeshaRahman2002/InfoVis-MedalAnalysis" target="_blank" class="proj-btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more projects following the same structure -->
+
         </div>
+    </main>
 
-        <!-- Completed Projects Section -->
-        <h2>Completed Projects</h2>
-        <div class="projects-container">
-            <div class="project-item">
-                <img src="images/stock-analysis.png" alt="Stock Market Sentiment Analysis">
-                <div class="project-details">
-                    <h3>AI-Based Stock Market Sentiment Analysis</h3>
-                    <p>Utilized machine learning to analyze sentiment data from Amazon and Twitter, predicting stock price movements based on public sentiment. The project involved NLP, data cleaning, and sentiment polarity analysis to build a classification model.</p>
-                    <a href="files/DataMiningProjectReport.pdf" download="DataMiningProjectReport.pdf" class="download-btn">Download Report</a>
-                    <button onclick="showDetails('ai-analysis')">More Details</button>
-                </div>
-            </div>
+    <footer>
+        <p>&copy; 2025 Ayesha Rahman. All rights reserved.</p>
+    </footer>
 
-            <div class="project-item">
-                <img src="images/autism-health-ai.png" alt="Autism AI Prototype">
-                <div class="project-details">
-                    <h3>Digital Health AI Prototype for Autism</h3>
-                    <p>Developed an AI-based prototype to diagnose Autism Spectrum Disorder (ASD) in adults using machine learning models, eye-tracking analysis, and NLP for social interaction simulations.</p>
-                    <a href="files/Dessertation.pdf" download="Dessertation.pdf" class="download-btn">Download Report</a>
-                    <button onclick="window.location.href='https://github.com/AyeshaRahman2002/larks';">View on GitHub</button>
-                    <button onclick="showDetails('health-ai-autism')">More Details</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <img src="images/autonomous-spacecraft.png" alt="Autonomous Navigation for Spacecraft">
-                <div class="project-details">
-                    <h3>Autonomous Navigation for Spacecraft</h3>
-                    <p>Developed a robust AI-driven autonomous navigation system for spacecraft, determining precise locations after unexpected course deviations.</p>
-                    <a href="files/Robotics.pdf" download="Robotics.pdf" class="download-btn">Download Report</a>
-                    <button onclick="showDetails('autonomous-navigation')">More Details</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <img src="images/advanced-software-eng.png" alt="Software Engineering Refactoring">
-                <div class="project-details">
-                    <h3>Refactoring & Design Patterns in Software Development</h3>
-                    <p>Improved software maintainability by refactoring an existing codebase, implementing SOLID principles, and restructuring system architecture.</p>
-                    <button onclick="showDetails('cw2-advanced-software-eng')">More Details</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to Home Button -->
-        <div class="back-to-home">
-            <a href="index.html" class="back-button">Back to Home</a>
-        </div>
-    </section>
-
-    <!-- Project Details Modal -->
-    <div id="project-details" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails()">&times;</span>
-            <div id="modal-text" class="modal-scrollable"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
