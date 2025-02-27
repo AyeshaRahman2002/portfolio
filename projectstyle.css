@@ -1,0 +1,47 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-item img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-details {
+    flex: 1;
+}
+
+.download-btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #343a40;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
