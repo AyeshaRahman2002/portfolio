@@ -558,8 +558,6 @@ function showDetails(projectId) {
     
             <p>The project provided hands-on experience in handling real-world datasets and building predictive systems using Python libraries such as NumPy, Pandas, Scikit-learn, and Matplotlib.</p>
     
-            <a href="files/DataScienceCoursework.pdf" download="DataScienceCoursework.pdf" class="download-btn">Download Project Report</a>
-            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/DataScienceProject';">View on GitHub</button>
         `;
     } else if (projectId === "krr-assignment1") {
         modalText.innerHTML = `
@@ -576,7 +574,6 @@ function showDetails(projectId) {
     
             <p>The project provided deep insights into formal logic, automated reasoning, and the application of theorem proving in artificial intelligence.</p>
     
-            <a href="files/KRR_Assignment1.pdf" download="KRR_Assignment1.pdf" class="download-btn">Download Assignment Report</a>
         `;
     } else if (projectId === "krr-assignment2") {
         modalText.innerHTML = `
@@ -593,7 +590,6 @@ function showDetails(projectId) {
     
             <p>The project demonstrated practical applications of logic-based AI techniques in automated reasoning systems.</p>
     
-            <a href="files/KRR_Assignment2.pdf" download="KRR_Assignment2.pdf" class="download-btn">Download Assignment Report</a>
         `;
     } else if (projectId === "cw2-advanced-software-eng") {
         modalText.innerHTML = `
@@ -611,8 +607,6 @@ function showDetails(projectId) {
     
             <p>The project provided hands-on experience in designing large-scale software systems, adhering to modern software engineering principles.</p>
     
-            <a href="files/AdvancedSoftwareEngineering.pdf" download="AdvancedSoftwareEngineering.pdf" class="download-btn">Download Project Report</a>
-            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/AdvancedSoftwareEngineering';">View on GitHub</button>
         `;
     }
 
