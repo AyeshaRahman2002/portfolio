@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-/* Ensure background is light for projects */
+/* Dark Background for Projects Section */
 .proj-container {
     width: 90%;
     max-width: 1200px;
@@ -14,8 +14,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff !important; /* Override dark background */
-    color: #111 !important; /* Ensure text is readable */
+    background-color: #111 !important; /* Dark background */
+    color: #fff !important; /* White text */
 }
 
 /* Individual Project Cards */
@@ -23,17 +23,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: #f9f9f9 !important; /* Override styles.css background */
+    background: #222 !important; /* Darker card background */
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease-in-out;
     width: 100%;
-    max-width: 900px; /* Keeps a good width for readability */
+    max-width: 900px;
 }
 
-/* Add hover effect */
+/* Hover Effect */
 .proj-card:hover {
     transform: translateY(-5px);
 }
@@ -42,7 +42,7 @@
 .proj-card img {
     width: 40%;
     height: auto;
-    max-height: 200px; /* Ensures uniform height */
+    max-height: 200px; /* Keep height consistent */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -55,7 +55,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #111 !important; /* Override any global text colors */
+    color: #fff !important; /* Force text to white */
 }
 
 /* Project Title */
@@ -63,12 +63,13 @@
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #fff !important; /* Ensure title is white */
 }
 
 /* Project Description */
 .proj-card-description {
     font-size: 16px;
-    color: #333 !important; /* Ensure readable text */
+    color: #ccc !important; /* Light gray text for readability */
     margin-bottom: 15px;
 }
 
