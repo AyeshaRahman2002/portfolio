@@ -542,8 +542,79 @@ function showDetails(projectId) {
             
             <p>This project deepened my understanding of knowledge representation, logical reasoning, and automated inference systems. It highlighted the power of logic-based frameworks in solving structured reasoning problems and modeling real-world domains.</p>
         `;
+    } else if (projectId === "predictive-modeling-ds") {
+        modalText.innerHTML = `
+            <h2>Advanced Predictive Modeling in Data Science</h2>
+            <p>This coursework focused on developing predictive models using advanced machine learning techniques to analyze large-scale structured datasets. The project required preprocessing raw data, handling corrupted files, and building robust machine learning models to extract meaningful insights.</p>
+    
+            <h3>Project Breakdown:</h3>
+            <ul>
+                <li><strong>Data Preprocessing:</strong> Cleaned and structured datasets by handling missing values, normalizing data, and performing feature engineering to optimize input variables.</li>
+                <li><strong>Corrupted Data Handling:</strong> Developed robust strategies to deal with missing or inconsistent data from the provided corrupted_data.npy file.</li>
+                <li><strong>Machine Learning Model Development:</strong> Implemented various models, including Random Forest, Decision Trees, and Support Vector Machines (SVM), evaluating performance using accuracy, precision, recall, and F1-score.</li>
+                <li><strong>Hyperparameter Optimization:</strong> Fine-tuned models using cross-validation techniques to enhance prediction accuracy and minimize overfitting.</li>
+                <li><strong>Final Model Evaluation:</strong> Compared multiple models to select the best-performing one for deployment.</li>
+            </ul>
+    
+            <p>The project provided hands-on experience in handling real-world datasets and building predictive systems using Python libraries such as NumPy, Pandas, Scikit-learn, and Matplotlib.</p>
+    
+            <a href="files/DataScienceCoursework.pdf" download="DataScienceCoursework.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/DataScienceProject';">View on GitHub</button>
+        `;
+    } else if (projectId === "logical-reasoning-krr1") {
+        modalText.innerHTML = `
+            <h2>Logical Representation & Theorem Proving</h2>
+            <p>This project, completed as part of my Knowledge Representation and Reasoning module, involved encoding real-world problems into propositional and first-order logic and proving statements using the Prover9 theorem prover.</p>
+    
+            <h3>Project Highlights:</h3>
+            <ul>
+                <li><strong>Formalizing Logical Statements:</strong> Translated natural language problems into propositional and first-order logic.</li>
+                <li><strong>Using Prover9 for Automated Theorem Proving:</strong> Validated logical consistency and derived conclusions using formal reasoning techniques.</li>
+                <li><strong>Scenario-Based Reasoning:</strong> Applied logical reasoning to real-world problems, such as a commuting scenario where different travel methods affect outcomes.</li>
+                <li><strong>Inference and Justification:</strong> Demonstrated proofs for logical assertions and tested various logical constraints.</li>
+            </ul>
+    
+            <p>The project provided deep insights into formal logic, automated reasoning, and the application of theorem proving in artificial intelligence.</p>
+    
+            <a href="files/KRR_Assignment1.pdf" download="KRR_Assignment1.pdf" class="download-btn">Download Assignment Report</a>
+        `;
+    } else if (projectId === "logical-kb-reasoning-krr2") {
+        modalText.innerHTML = `
+            <h2>Knowledge Base & Automated Logical Reasoning</h2>
+            <p>This project involved developing a structured knowledge base (KB) in Prolog to model logical relationships and infer solutions through automated reasoning.</p>
+    
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Encoding Knowledge in Prolog:</strong> Designed a structured knowledge base for real-world reasoning problems.</li>
+                <li><strong>Inference and Logical Queries:</strong> Implemented logical inference mechanisms to answer complex queries.</li>
+                <li><strong>Reasoning Scenarios:</strong> Modeled knowledge domains, such as habitat classification, conservation decisions, and food chain analysis.</li>
+                <li><strong>Testing Logical Consistency:</strong> Used Prolog's backward chaining to verify reasoning paths and validate the correctness of logical assertions.</li>
+            </ul>
+    
+            <p>The project demonstrated practical applications of logic-based AI techniques in automated reasoning systems.</p>
+    
+            <a href="files/KRR_Assignment2.pdf" download="KRR_Assignment2.pdf" class="download-btn">Download Assignment Report</a>
+        `;
+    } else if (projectId === "advanced-software-eng") {
+        modalText.innerHTML = `
+            <h2>Software Engineering for Large-Scale Systems</h2>
+            <p>This project focused on the design, development, and implementation of a scalable software system following software engineering best practices.</p>
+    
+            <h3>Project Components:</h3>
+            <ul>
+                <li><strong>Software Design Principles:</strong> Applied object-oriented design patterns and architectural best practices.</li>
+                <li><strong>Agile Development Methodology:</strong> Followed Agile and Scrum frameworks to iteratively develop and refine the system.</li>
+                <li><strong>Code Refactoring & Optimization:</strong> Enhanced software maintainability through modular code and performance tuning.</li>
+                <li><strong>Scalability & Performance Testing:</strong> Evaluated system efficiency under high-load conditions using stress testing techniques.</li>
+                <li><strong>Security & Data Protection:</strong> Implemented authentication mechanisms and data encryption for user privacy.</li>
+            </ul>
+    
+            <p>The project provided hands-on experience in designing large-scale software systems, adhering to modern software engineering principles.</p>
+    
+            <a href="files/AdvancedSoftwareEngineering.pdf" download="AdvancedSoftwareEngineering.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/AdvancedSoftwareEngineering';">View on GitHub</button>
+        `;
     }
-
 
     modal.style.display = "block";
 }
