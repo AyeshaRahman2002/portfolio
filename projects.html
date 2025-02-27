@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ayesha Rahman | Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-list" class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#biography">Biography</a></li>
+            <li><a href="index.html#why-hire-me">Why Hire Me</a></li>
+            <li><a href="AIinFinance.html">AI in Finance</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#volunteering">Volunteering</a></li>
+            <li><a href="index.html#art">Art & Design</a></li>
+            <li><a href="certificates.html">Certifications</a></li>
+            <li><a href="skills.html">Technical Competencies</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="instagram.html">Instagram</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h1>Projects</h1>
+
+        <!-- In Progress Section -->
+        <h2>In-Progress Projects</h2>
+        <div class="projects-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/inflation-prediction.png" alt="Inflation Prediction for PCE">
+                    </div>
+                    <h3 class="project-title">Inflation Prediction for PCE using AI</h3>
+                    <div class="flip-card-back">
+                        <h3>Inflation Prediction for PCE using AI</h3>
+                        <p>This is my current master's dissertation project, focusing on predicting inflation for PCE using AI models such as LSTM, XGBOOST, N-BEATS, ARDL, N-BEATSx, etc. The project integrates multiple exogenous variables to improve forecasting accuracy.</p>
+                        <button onclick="showDetails('inflation-prediction')">More Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/finance-manager.png" alt="Smart Personal Finance Manager">
+                    </div>
+                    <h3 class="project-title">Smart Personal Finance Manager</h3>
+                    <div class="flip-card-back">
+                        <h3>Smart Personal Finance Manager</h3>
+                        <p>This ongoing project involves developing an AI-powered financial assistant to help users manage their savings, investments, and expenses effectively. The system will use predictive analytics and visual dashboards to provide insights.</p>
+                        <button onclick="showDetails('finance-manager')">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Projects Section -->
+        <h2>Completed Projects</h2>
+        <div class="projects-grid">
+            <!-- Predictive Data Analysis and ML Models -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/data-science-cw.png" alt="Data Science Coursework">
+                    </div>
+                    <h3 class="project-title">Predictive Data Analysis and Machine Learning Models</h3>
+                    <div class="flip-card-back">
+                        <h3>Predictive Data Analysis and Machine Learning Models</h3>
+                        <p>Worked with structured and unstructured datasets to develop machine learning models for predictive analysis. Used Python, Pandas, NumPy, and Scikit-Learn for data preprocessing and model building.</p>
+                        <button onclick="showDetails('data-science-cw')">More Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logical Reasoning and Theorem Proving -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/krr-assignment1.png" alt="KRR Assignment 1">
+                    </div>
+                    <h3 class="project-title">Logical Reasoning and Theorem Proving</h3>
+                    <div class="flip-card-back">
+                        <h3>Logical Reasoning and Theorem Proving</h3>
+                        <p>Used Prover9 for formal logic encoding and automated theorem proving. Worked on translating real-world problems into formal logic statements and validating conclusions computationally.</p>
+                        <button onclick="showDetails('krr-assignment1')">More Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Refactoring and Design Patterns -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/advanced-software-eng.png" alt="Advanced Software Engineering Project">
+                    </div>
+                    <h3 class="project-title">Refactoring and Design Patterns in Software Development</h3>
+                    <div class="flip-card-back">
+                        <h3>Refactoring and Design Patterns in Software Development</h3>
+                        <p>Focused on improving software maintainability by refactoring code and implementing SOLID principles. The project optimized architecture, performance, and modularity.</p>
+                        <button onclick="showDetails('cw2-advanced-software-eng')">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Home Button -->
+        <div class="back-to-home">
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetails()">&times;</span>
+            <div id="modal-text" class="modal-scrollable"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
