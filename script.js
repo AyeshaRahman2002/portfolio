@@ -542,7 +542,7 @@ function showDetails(projectId) {
             
             <p>This project deepened my understanding of knowledge representation, logical reasoning, and automated inference systems. It highlighted the power of logic-based frameworks in solving structured reasoning problems and modeling real-world domains.</p>
         `;
-    } else if (projectId === "predictive-modeling-ds") {
+    } else if (projectId === "data-science-cw") {
         modalText.innerHTML = `
             <h2>Advanced Predictive Modeling in Data Science</h2>
             <p>This coursework focused on developing predictive models using advanced machine learning techniques to analyze large-scale structured datasets. The project required preprocessing raw data, handling corrupted files, and building robust machine learning models to extract meaningful insights.</p>
@@ -561,7 +561,7 @@ function showDetails(projectId) {
             <a href="files/DataScienceCoursework.pdf" download="DataScienceCoursework.pdf" class="download-btn">Download Project Report</a>
             <button onclick="window.location.href='https://github.com/AyeshaRahman2002/DataScienceProject';">View on GitHub</button>
         `;
-    } else if (projectId === "logical-reasoning-krr1") {
+    } else if (projectId === "krr-assignment1") {
         modalText.innerHTML = `
             <h2>Logical Representation & Theorem Proving</h2>
             <p>This project, completed as part of my Knowledge Representation and Reasoning module, involved encoding real-world problems into propositional and first-order logic and proving statements using the Prover9 theorem prover.</p>
@@ -578,7 +578,7 @@ function showDetails(projectId) {
     
             <a href="files/KRR_Assignment1.pdf" download="KRR_Assignment1.pdf" class="download-btn">Download Assignment Report</a>
         `;
-    } else if (projectId === "logical-kb-reasoning-krr2") {
+    } else if (projectId === "krr-assignment2") {
         modalText.innerHTML = `
             <h2>Knowledge Base & Automated Logical Reasoning</h2>
             <p>This project involved developing a structured knowledge base (KB) in Prolog to model logical relationships and infer solutions through automated reasoning.</p>
@@ -595,7 +595,7 @@ function showDetails(projectId) {
     
             <a href="files/KRR_Assignment2.pdf" download="KRR_Assignment2.pdf" class="download-btn">Download Assignment Report</a>
         `;
-    } else if (projectId === "advanced-software-eng") {
+    } else if (projectId === "cw2-advanced-software-eng") {
         modalText.innerHTML = `
             <h2>Software Engineering for Large-Scale Systems</h2>
             <p>This project focused on the design, development, and implementation of a scalable software system following software engineering best practices.</p>
