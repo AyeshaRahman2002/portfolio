@@ -21,7 +21,6 @@
 /* Individual Project Cards */
 .proj-card {
     display: flex;
-    flex-direction: row;
     align-items: center;
     background: #222 !important; /* Darker card background */
     border-radius: 10px;
@@ -33,16 +32,15 @@
     max-width: 900px;
 }
 
-/* Hover Effect */
-.proj-card:hover {
-    transform: translateY(-5px);
+/* Fix duplicate title issue */
+.proj-card h2:first-of-type {
+    display: none;
 }
 
 /* Left Image Styling */
 .proj-card img {
     width: 40%;
-    height: auto;
-    max-height: 200px; /* Keep height consistent */
+    height: 200px; /* Fixed height */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -58,8 +56,8 @@
     color: #fff !important; /* Force text to white */
 }
 
-/* Project Title */
-.proj-card-title {
+/* Fix duplicate title */
+.proj-card-content h2 {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -69,7 +67,7 @@
 /* Project Description */
 .proj-card-description {
     font-size: 16px;
-    color: #ccc !important; /* Light gray text for readability */
+    color: #ccc !important; /* Light gray text */
     margin-bottom: 15px;
 }
 
@@ -123,3 +121,4 @@
         font-size: 14px;
     }
 }
+
