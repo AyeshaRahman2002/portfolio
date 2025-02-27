@@ -1,10 +1,22 @@
+/* General Page Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container to Center Projects */
 .proj-container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Individual Project Cards */
 .proj-card {
     display: flex;
     align-items: center;
@@ -14,51 +26,62 @@
     margin-bottom: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 900px; /* Keeps a good width for readability */
 }
 
 .proj-card:hover {
     transform: translateY(-5px);
 }
 
+/* Left Image Styling */
 .proj-card img {
     width: 40%;
-    height: auto;
+    height: 200px; /* Fixed height to keep images uniform */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
+/* Right Content Section */
 .proj-card-content {
     width: 60%;
-    padding: 20px 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* Project Title */
 .proj-card-title {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
+/* Project Description */
 .proj-card-description {
     font-size: 16px;
     color: #555;
     margin-bottom: 15px;
 }
 
+/* Button Container */
 .proj-buttons {
-    margin-top: 15px;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
 }
 
+/* Buttons */
 .proj-btn {
-    display: inline-block;
     text-decoration: none;
     background: #007bff;
-    color: #fff;
+    color: white;
     padding: 10px 15px;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s ease;
-    margin-right: 10px;
 }
 
 .proj-btn:hover {
