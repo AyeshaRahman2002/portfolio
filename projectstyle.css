@@ -1,123 +1,75 @@
-/* General Page Styling */
-* {
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Dark Background for Projects Section */
-.proj-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+.nav-menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #111; /* Dark background */
-    color: #fff; /* White text */
+    justify-content: center;
+    background: #333;
+    padding: 1rem;
 }
 
-/* Individual Project Cards */
-.proj-card {
+.nav-menu li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.projects-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.projects-container {
     display: flex;
-    align-items: center;
-    background: #222; /* Darker card background */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-box {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 30px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    text-align: left;
+}
+
+.project-box img {
     width: 100%;
-    max-width: 900px;
-}
-
-/* Left Image Styling */
-.proj-card img {
-    width: 40%;
-    height: 200px; /* Fixed height */
+    height: 200px;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
 }
 
-/* Right Content Section */
-.proj-card-content {
-    width: 60%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff; /* Ensure text is white */
+.project-content {
+    padding: 15px;
 }
 
-/* Title Styling */
-.proj-card-content h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff; /* Ensure title is white */
-}
-
-/* Project Description */
-.proj-card-content p {
-    font-size: 16px;
-    color: #ccc; /* Light gray text */
-    margin-bottom: 15px;
-}
-
-/* Button */
 .download-btn {
-    background: #007bff;
+    display: inline-block;
+    background: #007BFF;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    display: inline-block;
     margin-top: 10px;
-    transition: background 0.3s ease;
+    display: block;
+    text-align: center;
 }
 
-.download-btn:hover {
-    background: #0056b3;
-}
-
-/* Back Button */
-.back-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #343a40;
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.back-button:hover {
-    background: #1d2124;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .proj-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .proj-card img {
-        width: 100%;
-        height: 200px;
-        border-radius: 10px 10px 0 0;
-    }
-
-    .proj-card-content {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .download-btn {
-        padding: 8px;
-        font-size: 14px;
-    }
+    margin-top: 20px;
 }
