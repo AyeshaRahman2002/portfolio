@@ -1,47 +1,79 @@
-.projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.project-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: #f8f9fa;
+/* Unique styling for project page */
+.proj-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.proj-card {
+    background-color: #1a1a1a;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.project-item img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
+.proj-card:hover {
+    transform: translateY(-5px);
 }
 
-.project-details {
-    flex: 1;
+.proj-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid #ffffff;
 }
 
-.download-btn {
-    background: #007bff;
+.proj-card-content {
+    padding: 15px;
     color: white;
+}
+
+.proj-card-title {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.proj-card-description {
+    font-size: 1em;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+.proj-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.proj-btn {
+    background-color: white;
+    border: 2px solid white;
+    color: black;
     padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     text-decoration: none;
-    border-radius: 5px;
     display: inline-block;
-    margin-top: 10px;
 }
 
-.back-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #343a40;
+.proj-btn:hover {
+    background-color: transparent;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    border-color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .proj-grid {
+        grid-template-columns: 1fr;
+    }
 }
