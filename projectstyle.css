@@ -97,10 +97,11 @@ nav {
 }
 
 .project-box {
+    position: relative;
     display: flex;
-    flex-direction: row; /* Ensures image is on the left, text on the right */
-    align-items: center; /* Aligns content vertically */
-    width: 700px; /* Adjust width as needed */
+    flex-direction: column; /* Stack image on top */
+    width: 350px; /* Adjust as needed */
+    height: 450px; /* Fixed height for consistency */
     background: #1a1a1a;
     color: white;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
@@ -108,18 +109,25 @@ nav {
     overflow: hidden;
 }
 
+/* Image at the top-left corner */
 .project-box img {
-    width: 40%; /* Adjust the image width */
-    height: 100%;
+    width: 100%; /* Make it full width of the container */
+    height: 150px; /* Fixed height */
     object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
+/* Scrollable text content */
 .project-content {
-    width: 60%;
+    flex-grow: 1; /* Allows content to expand */
     padding: 15px;
+    overflow-y: auto; /* Scroll if text exceeds box height */
+    max-height: calc(100% - 150px); /* Adjust based on image height */
     text-align: left;
 }
 
+/* Download Button */
 .download-btn {
     display: inline-block;
     background: #007BFF;
@@ -130,6 +138,20 @@ nav {
     margin-top: 10px;
     display: block;
     text-align: center;
+}
+
+/* Scrollbar Styling */
+.project-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.project-content::-webkit-scrollbar-thumb {
+    background: #575757;
+    border-radius: 5px;
+}
+
+.project-content::-webkit-scrollbar-track {
+    background: #222;
 }
 
 footer {
