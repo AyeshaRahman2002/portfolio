@@ -90,30 +90,34 @@ nav {
 
 .projects-container {
     display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping to force horizontal layout */
-    overflow-x: auto;  /* Enables horizontal scrolling if needed */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    justify-content: center; /* Centers the projects */
     gap: 20px;
     padding: 20px;
 }
 
 .project-box {
-    flex: 0 0 300px; /* Ensures all project boxes stay the same width */
-    max-width: 300px; /* Limits the width */
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Ensures image is on the left, text on the right */
+    align-items: center; /* Aligns content vertically */
+    width: 700px; /* Adjust width as needed */
+    background: #1a1a1a;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    text-align: left;
 }
 
 .project-box img {
-    width: 100%;
-    height: 200px;
+    width: 40%; /* Adjust the image width */
+    height: 100%;
     object-fit: cover;
 }
 
 .project-content {
+    width: 60%;
     padding: 15px;
+    text-align: left;
 }
 
 .download-btn {
