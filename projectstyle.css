@@ -90,19 +90,20 @@ nav {
 
 .projects-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* Prevents wrapping to force horizontal layout */
+    overflow-x: auto;  /* Enables horizontal scrolling if needed */
     gap: 20px;
+    padding: 20px;
 }
 
 .project-box {
-    background: #333;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    flex: 0 0 300px; /* Ensures all project boxes stay the same width */
+    max-width: 300px; /* Limits the width */
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    width: 300px;
     text-align: left;
-    color: white;
 }
 
 .project-box img {
