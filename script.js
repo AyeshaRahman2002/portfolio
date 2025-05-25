@@ -259,7 +259,8 @@ function showDetails(projectId) {
             <p>The study highlighted the strengths and weaknesses of each technique. ACO excelled in fine-tuning local solutions due to its pheromone-based reinforcement mechanism, while PSO demonstrated rapid convergence but risked premature stagnation. GA offered greater diversity in exploring the search space but required careful tuning of crossover and mutation rates to avoid inefficiency.</p>
             <p>The project emphasized the applicability of bio-inspired algorithms to real-world scenarios where optimal solutions are difficult to determine analytically. Potential extensions of the project include applying these techniques to other domains such as feature selection, job scheduling, or dynamic system control.</p>
             <p>Through this project, I developed a deeper understanding of stochastic optimisation, algorithm design, and empirical analysis. The comparison study also laid the groundwork for future hybrid approaches that combine the strengths of multiple algorithms.</p>
-            <a href="files/BioInspiredProjectReport.pdf" download="BioInspiredProjectReport.pdf" class="download-btn">Download Project Report</a>
+            <a href="files/bio-inspired-cw2-report.pdf" download="BioInspiredProjectReport.pdf" class="download-btn">Download Project Report</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/bio-inspired-optimization';">View on GitHub</button>
         `;
     } else if (projectId === "flight-proposal") {
         modalText.innerHTML = `
