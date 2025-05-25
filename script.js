@@ -247,6 +247,20 @@ function showDetails(projectId) {
             <p>The "Hotel Price Data Scraping Tool" project exemplifies the intersection of finance and technology, demonstrating how modern computational tools can elevate traditional financial analysis methods. The ability to gather real-time data, analyze trends, and provide actionable insights had a tangible impact on UTI Mutual Fund’s approach to hotel industry investments, showcasing the value of automation and technology in finance.</p>
             <a href="files/ProjectProposal-Hotels.pdf" download="ProjectProposal-Hotels.pdf" class="download-btn">Download Project Proposal</a>
         `;
+    } else if (projectId === "bio-inspired-optimisation") {
+        modalText.innerHTML = `
+            <h2>Bio-Inspired Optimisation Algorithms for Solving Real-World Problems</h2>
+            <p>This project explored the implementation and comparison of three nature-inspired metaheuristic optimisation algorithms: Ant Colony Optimisation (ACO), Particle Swarm Optimisation (PSO), and Genetic Algorithms (GA). These algorithms simulate natural phenomena such as ant foraging behaviour, flocking of birds, and biological evolution to efficiently solve complex optimisation problems that are difficult for traditional methods to handle.</p>
+            <ul>
+                <li>Implemented ACO, PSO, and GA in Python to solve the Travelling Salesman Problem (TSP), a well-known NP-hard problem.</li>
+                <li>Compared algorithm performance in terms of convergence speed, solution quality, and robustness under different parameter settings.</li>
+                <li>Visualised the evolution of solutions across iterations using matplotlib to demonstrate how each algorithm explores the solution space.</li>
+            </ul>
+            <p>The study highlighted the strengths and weaknesses of each technique. ACO excelled in fine-tuning local solutions due to its pheromone-based reinforcement mechanism, while PSO demonstrated rapid convergence but risked premature stagnation. GA offered greater diversity in exploring the search space but required careful tuning of crossover and mutation rates to avoid inefficiency.</p>
+            <p>The project emphasized the applicability of bio-inspired algorithms to real-world scenarios where optimal solutions are difficult to determine analytically. Potential extensions of the project include applying these techniques to other domains such as feature selection, job scheduling, or dynamic system control.</p>
+            <p>Through this project, I developed a deeper understanding of stochastic optimisation, algorithm design, and empirical analysis. The comparison study also laid the groundwork for future hybrid approaches that combine the strengths of multiple algorithms.</p>
+            <a href="files/BioInspiredProjectReport.pdf" download="BioInspiredProjectReport.pdf" class="download-btn">Download Project Report</a>
+        `;
     } else if (projectId === "flight-proposal") {
         modalText.innerHTML = `
             <h2>Financial Modeling Flights Price Data Scraping Tool</h2>
