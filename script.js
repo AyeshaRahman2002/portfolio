@@ -93,6 +93,20 @@ function showDetails(projectId) {
             <a href="https://github.com/AyeshaRahman2002/larks" class="download-btn">View on GitHub</a>
             <a href="files/Desertation.pdf" download="Dessertation.pdf" class="download-btn">Download Dissertation Report</a>
         `;
+    } else if (projectId === "river-crossing") {
+        modalText.innerHTML = `
+            <h2>Solving a Complex River Crossing Puzzle Using Prolog</h2>
+            <p>This assignment for the module <strong>Knowledge Representation & Reasoning</strong> involved solving a constraint-based planning problem using the Prolog programming language. The task centered on a river crossing puzzle involving six animals — a dog, a chick, a mouse, and three foxes — with specific rules governing how and when each animal could cross a river using a boat.</p>
+            <ul>
+                <li>Implemented a symbolic state representation with Prolog, using the format: <code>[Action, LeftBank, RightBank, BoatLocation]</code>.</li>
+                <li>Encoded logical constraints and transitions using Prolog predicates such as <code>initial_state</code>, <code>goal_state</code>, <code>transition</code>, <code>legal_state</code>, and <code>equivalent_states</code>.</li>
+                <li>Used the <code>bb_planner</code> framework to perform forward chaining and identify a valid sequence of actions leading to the solution.</li>
+            </ul>
+            <p>The puzzle required careful attention to state legality, including rules such as: the mouse cannot be left alone, the chick cannot be left with foxes unless supervised by the dog or mouse, and only certain animals can cross together. Solving the problem involved finding a sequence of legal state transitions that successfully transported all animals across the river without violating constraints.</p>
+            <p>The final working Prolog program used logic programming and backtracking to find a 19-step solution. This demonstrated an understanding of declarative programming, recursive problem solving, and rule-based inference mechanisms.</p>
+            <p>This project deepened my skills in formal reasoning, constraint satisfaction, and symbolic AI, showcasing how logic-based systems can be used to plan complex multi-agent tasks in an explainable and verifiable manner.</p>
+            <a href="files/RiverCrossingReport.pdf" download="RiverCrossingReport.pdf" class="download-btn">Download Project Report</a>
+        `;
     } else if (projectId === "autonomous-navigation") {
         modalText.innerHTML = `
             <h2>Autonomous Navigation and Detection System for Spacecraft</h2>
