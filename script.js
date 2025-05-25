@@ -93,18 +93,24 @@ function showDetails(projectId) {
             <a href="https://github.com/AyeshaRahman2002/larks" class="download-btn">View on GitHub</a>
             <a href="files/Desertation.pdf" download="Dessertation.pdf" class="download-btn">Download Dissertation Report</a>
         `;
-    } else if (projectId === "river-crossing") {
+    } else if (projectId === "wildlife-kb") {
         modalText.innerHTML = `
-            <h2>Solving a Complex River Crossing Puzzle Using Prolog</h2>
-            <p>This assignment for the module <strong>Knowledge Representation & Reasoning</strong> involved solving a constraint-based planning problem using the Prolog programming language. The task centered on a river crossing puzzle involving six animals — a dog, a chick, a mouse, and three foxes — with specific rules governing how and when each animal could cross a river using a boat.</p>
+            <h2>Wildlife Knowledge Base & Inference System in Prolog</h2>
+            <p>This project involved constructing a large-scale Prolog knowledge base and rule-driven inference engine to model wildlife management scenarios within a zoo and conservation domain. Designed as part of a Knowledge Representation and Reasoning course, the system integrates structured domain facts with depth-based rule chaining to simulate intelligent reasoning across animal behavior, safety threats, and government interventions.</p>
             <ul>
-                <li>Implemented a symbolic state representation with Prolog, using the format: <code>[Action, LeftBank, RightBank, BoatLocation]</code>.</li>
-                <li>Encoded logical constraints and transitions using Prolog predicates such as <code>initial_state</code>, <code>goal_state</code>, <code>transition</code>, <code>legal_state</code>, and <code>equivalent_states</code>.</li>
-                <li>Used the <code>bb_planner</code> framework to perform forward chaining and identify a valid sequence of actions leading to the solution.</li>
+                <li>Defined over 68 facts across four domains: animals, habitats, personnel, and conservation governance.</li>
+                <li>Implemented 71 inference rules, using custom syntax (<code>==></code>) for readable logic expressions with strong and weak negation support.</li>
+                <li>Enabled multi-depth inference chaining (up to 10 depths) to model complex cascades like threat escalation, VIP involvement, and emergency protocols.</li>
             </ul>
-            <p>The puzzle required careful attention to state legality, including rules such as: the mouse cannot be left alone, the chick cannot be left with foxes unless supervised by the dog or mouse, and only certain animals can cross together. Solving the problem involved finding a sequence of legal state transitions that successfully transported all animals across the river without violating constraints.</p>
-            <p>The final working Prolog program used logic programming and backtracking to find a 19-step solution. This demonstrated an understanding of declarative programming, recursive problem solving, and rule-based inference mechanisms.</p>
-            <p>This project deepened my skills in formal reasoning, constraint satisfaction, and symbolic AI, showcasing how logic-based systems can be used to plan complex multi-agent tasks in an explainable and verifiable manner.</p>
+            <p>The system derives over 130 new facts, including compound relationships such as predator relocations, emergency declarations, government alerts, and policy reforms. Key mechanisms include:</p>
+            <ul>
+                <li><strong>Negation-based rules:</strong> Used to reason about absence of facts, such as inferring when predators pose no threat or when a prey is safe.</li>
+                <li><strong>Set-based reasoning:</strong> The <code>setof</code> predicate enables calculations like companion count, enhancing data-driven inference.</li>
+                <li><strong>Top-value predicates:</strong> Rules identify the most aggressive animal for targeted safety action (e.g., enclosure preparation, lockdown).</li>
+            </ul>
+            <p>Highlights include modeling emergency escalation logic: a cheetah identified as the most aggressive triggers zoo-level lockdown, VIP inspection, public alerts, and finally government and media involvement—demonstrating a complete cross-domain inference cascade.</p>
+            <p>This project showcases advanced use of Prolog in modeling real-world domains, leveraging logical inference and rule chaining to simulate intelligent behavior in a multi-agent wildlife governance system.</p>
+            <a href="files/WildlifeKnowledgeBase.pl" download="WildlifeKnowledgeBase.pl" class="download-btn">Download Prolog Code</a>
         `;
     } else if (projectId === "autonomous-navigation") {
         modalText.innerHTML = `
