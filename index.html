@@ -238,23 +238,23 @@
                 </div>
             </div>
 
-            <!-- River Crossing Puzzle – Knowledge Representation & Reasoning -->
+            <!-- Wildlife Prolog Knowledge Base – Knowledge Representation & Reasoning -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="images/river-crossing.png" alt="River Crossing Puzzle">
+                        <img src="images/knowledge-base.png" alt="Wildlife Knowledge Base">
                     </div>
-                    <h3 class="project-title">Solving the River Crossing Puzzle Using Prolog and bb_planner</h3>
+                    <h3 class="project-title">Wildlife Knowledge Base & Inference System in Prolog</h3>
                     <div class="flip-card-back">
-                        <h3>Solving the River Crossing Puzzle Using Prolog and bb_planner</h3>
-                        <p>This project, completed as part of the Knowledge Representation and Reasoning module, involved implementing a solution to a complex constraint-based planning problem using Prolog. A group of animals needed to cross a river under specific constraints that dictated who could travel together and under what conditions. We used the bb_planner Prolog framework to define the initial state, goal state, legal transitions, and equivalence conditions between states.</p>
+                        <h3>Wildlife Knowledge Base & Inference System in Prolog</h3>
+                        <p>This project, developed for the Knowledge Representation and Reasoning module, involved designing a comprehensive Prolog knowledge base to model zoo wildlife, habitat dynamics, and emergency response. The system uses a combination of structured facts and multi-depth inference rules to simulate reasoning about animal behavior, safety, governance, and conservation actions.</p>
                         <ul>
-                            <li>Implemented all required predicates: <code>initial_state</code>, <code>goal_state</code>, <code>transition</code>, <code>legal_state</code>, and <code>equivalent_states</code>.</li>
-                            <li>Used a structured state representation: [how_reached, left_side, right_side, boat_side] for compatibility with bb_planner.</li>
-                            <li>Successfully enforced puzzle constraints such as animal pairing limits and safety conditions for the mouse and chick.</li>
+                            <li>Defined 68 domain-specific facts and 71 inference rules covering animals, habitats, personnel, and government interventions.</li>
+                            <li>Implemented custom rule chaining with the <code>==></code> operator, supporting up to 10 depths of reasoning.</li>
+                            <li>Captured realistic logic such as predator-prey threats, emergency declarations, and policy reforms through derived facts.</li>
                         </ul>
-                        <p>We achieved a valid solution path consisting of 19 states, demonstrating the model’s capacity for constraint reasoning and search space pruning. This solution showcases the use of logic programming in AI planning and constraint satisfaction.</p>
-                        <button onclick="showDetails('river-crossing')">More Details</button>
+                        <p>The system inferred 139 facts over 11 depths, including emergency escalations, specialist deployments, and government reforms—showcasing powerful AI reasoning in a structured Prolog environment.</p>
+                        <button onclick="showDetails('wildlife-kb')">More Details</button>
                     </div>
                 </div>
             </div>
