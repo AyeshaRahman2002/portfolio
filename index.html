@@ -237,6 +237,27 @@
                     </div>
                 </div>
             </div>
+
+            <!-- River Crossing Puzzle – Knowledge Representation & Reasoning -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="images/river-crossing.png" alt="River Crossing Puzzle">
+                    </div>
+                    <h3 class="project-title">Solving the River Crossing Puzzle Using Prolog and bb_planner</h3>
+                    <div class="flip-card-back">
+                        <h3>Solving the River Crossing Puzzle Using Prolog and bb_planner</h3>
+                        <p>This project, completed as part of the Knowledge Representation and Reasoning module, involved implementing a solution to a complex constraint-based planning problem using Prolog. A group of animals needed to cross a river under specific constraints that dictated who could travel together and under what conditions. We used the bb_planner Prolog framework to define the initial state, goal state, legal transitions, and equivalence conditions between states.</p>
+                        <ul>
+                            <li>Implemented all required predicates: <code>initial_state</code>, <code>goal_state</code>, <code>transition</code>, <code>legal_state</code>, and <code>equivalent_states</code>.</li>
+                            <li>Used a structured state representation: [how_reached, left_side, right_side, boat_side] for compatibility with bb_planner.</li>
+                            <li>Successfully enforced puzzle constraints such as animal pairing limits and safety conditions for the mouse and chick.</li>
+                        </ul>
+                        <p>We achieved a valid solution path consisting of 19 states, demonstrating the model’s capacity for constraint reasoning and search space pruning. This solution showcases the use of logic programming in AI planning and constraint satisfaction.</p>
+                        <button onclick="showDetails('river-crossing')">More Details</button>
+                    </div>
+                </div>
+            </div>
             
             <!-- Decision Tree Learning and Pruning Algorithms -->
             <div class="flip-card">
