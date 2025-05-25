@@ -105,7 +105,6 @@ function showDetails(projectId) {
             <p>The puzzle required careful attention to state legality, including rules such as: the mouse cannot be left alone, the chick cannot be left with foxes unless supervised by the dog or mouse, and only certain animals can cross together. Solving the problem involved finding a sequence of legal state transitions that successfully transported all animals across the river without violating constraints.</p>
             <p>The final working Prolog program used logic programming and backtracking to find a 19-step solution. This demonstrated an understanding of declarative programming, recursive problem solving, and rule-based inference mechanisms.</p>
             <p>This project deepened my skills in formal reasoning, constraint satisfaction, and symbolic AI, showcasing how logic-based systems can be used to plan complex multi-agent tasks in an explainable and verifiable manner.</p>
-            <a href="files/RiverCrossingReport.pdf" download="RiverCrossingReport.pdf" class="download-btn">Download Project Report</a>
         `;
     } else if (projectId === "autonomous-navigation") {
         modalText.innerHTML = `
