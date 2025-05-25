@@ -236,7 +236,25 @@
                     <a href="files/ProjectProposal-Flights.pdf" download class="download-btn">Download Project Proposal</a>
                 </div>
             </div>
-            
+
+            <!-- River Crossing Puzzle Using Prolog -->
+            <div class="project-box">
+                <img src="images/river-crossing.png" alt="River Crossing Puzzle Using Prolog">
+                <div class="project-content">
+                    <h2>River Crossing Puzzle Using Prolog</h2>
+                    <p>This project, completed for the Knowledge Representation & Reasoning module, involved solving a constrained planning puzzle using logic programming. It required representing complex animal behaviors and safety rules symbolically, then using Prolog’s bb_planner framework to find a valid sequence of moves.</p>
+                    <p>Key aspects of the project included:</p>
+                    <ul>
+                        <li><strong>State Representation:</strong> Defined states using the format <code>[Action, LeftBank, RightBank, BoatLocation]</code> to track how each configuration was reached.</li>
+                        <li><strong>Transition Logic:</strong> Implemented Prolog predicates (<code>transition/2</code>, <code>legal_state/1</code>, <code>equivalent_states/2</code>) to enforce rules and enable legal crossings.</li>
+                        <li><strong>Safety Constraints:</strong> Encoded rules to prevent unsafe states, such as leaving the mouse alone or the chick with foxes unsupervised.</li>
+                        <li><strong>Search Strategy:</strong> Used the <code>bb_planner</code> to compute a valid 19-step solution path from initial to goal state.</li>
+                        <li><strong>Symbolic Reasoning:</strong> The puzzle demonstrated formal reasoning through symbolic logic, enabling a traceable and explainable solution path.</li>
+                    </ul>
+                    <p>The project deepened understanding of declarative programming and knowledge representation, showcasing how logical inference can be used to solve real-world planning problems.</p>
+                </div>
+            </div>
+ 
             <!-- Decision Tree Learning and Pruning Algorithms -->
             <div class="project-box">
                 <img src="images/decision-tree.png" alt="Decision Tree Learning and Pruning Algorithms">
