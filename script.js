@@ -110,7 +110,7 @@ function showDetails(projectId) {
             </ul>
             <p>Highlights include modeling emergency escalation logic: a cheetah identified as the most aggressive triggers zoo-level lockdown, VIP inspection, public alerts, and finally government and media involvement—demonstrating a complete cross-domain inference cascade.</p>
             <p>This project showcases advanced use of Prolog in modeling real-world domains, leveraging logical inference and rule chaining to simulate intelligent behavior in a multi-agent wildlife governance system.</p>
-            <a href="files/WildlifeKnowledgeBase.pl" download="WildlifeKnowledgeBase.pl" class="download-btn">Download Prolog Code</a>
+            <button onclick="window.location.href='https://github.com/AyeshaRahman2002/Wildlife-Knowledge-Base';">View on GitHub</button>
         `;
     } else if (projectId === "autonomous-navigation") {
         modalText.innerHTML = `
