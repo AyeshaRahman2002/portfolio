@@ -10,6 +10,7 @@ import Blog1 from "./components/blog1.jsx";
 import Blog2 from "./components/blog2.jsx";
 import Blog3 from "./components/blog3.jsx";
 import Resume from "./assets/Resume-Ayesha.pdf";
+const BASE = import.meta.env.BASE_URL;
 
 const LINKS = { 
   resume: Resume, 
@@ -421,17 +422,23 @@ export default function App() {
 
   // ---------- Tiny router ----------
   const [route, setRoute] = useState(window.location.pathname);
+  // push with BASE prefix
   const go = (to) => {
-    if (to !== window.location.pathname) {
-      window.history.pushState({}, "", to);
-      setRoute(to);
-      window.scrollTo({ top: 0, behavior: "instant" });
+    // allow both 'blog' or '/blog'
+    const cleaned = to.startsWith('/') ? to.slice(1) : to;
+    const target = BASE + cleaned;        // always '/portfolio/...'
+    if (target !== window.location.pathname) {
+      window.history.pushState({}, '', target);
+      setRoute(target);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
+  
+  // keep popstate in sync
   useEffect(() => {
     const onPop = () => setRoute(window.location.pathname);
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
   }, []);
 
   // ---------- Blog route helpers ----------
@@ -534,8 +541,8 @@ export default function App() {
                 key={tab}
                 onClick={() => {
                   setActiveTab(tab);
-                  if (tab === "Blog") go("/blog");
-                  else go("/");
+                  if (tab === "Blog") go("blog");
+                  else go("");
                 }}
                 style={{
                   border: "none",
