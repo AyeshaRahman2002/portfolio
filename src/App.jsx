@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { createNoise2D } from "simplex-noise";
 import myPic from "./profile.jpg";
-import ProjectCards from "./Components/ProjectCards";
-import WorkExperience from "./Components/WorkExperience";
-import Certifications from "./Components/Certifications";
-import TechnicalCompetencies from "./Components/TechnicalCompetencies";
-import ContactForm from "./Components/ContactForm";
-import Blog1 from "./Components/blog1.jsx";
-import Blog2 from "./Components/blog2.jsx";
-import Blog3 from "./Components/blog3.jsx";
+import ProjectCards from "./components/ProjectCards";
+import WorkExperience from "./components/WorkExperience";
+import Certifications from "./components/Certifications";
+import TechnicalCompetencies from "./components/TechnicalCompetencies";
+import ContactForm from "./components/ContactForm";
+import Blog1 from "./components/blog1.jsx";
+import Blog2 from "./components/blog2.jsx";
+import Blog3 from "./components/blog3.jsx";
 
 const LINKS = {
   resume: "/Resume-Ayesha.pdf",
