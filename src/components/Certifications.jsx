@@ -9,18 +9,8 @@ const CERTS = [
     platform: "Microsoft",
     tags: ["Microsoft"],
   },
-  {
-    title: "Microsoft Certified: Azure AI Fundamentals",
-    provider: "Microsoft",
-    platform: "Microsoft",
-    tags: ["Microsoft"],
-  },
-  {
-    title: "Microsoft Certified: Azure Fundamentals",
-    provider: "Microsoft",
-    platform: "Microsoft",
-    tags: ["Microsoft"],
-  },
+  { title: "Microsoft Certified: Azure AI Fundamentals", provider: "Microsoft", platform: "Microsoft", tags: ["Microsoft"] },
+  { title: "Microsoft Certified: Azure Fundamentals", provider: "Microsoft", platform: "Microsoft", tags: ["Microsoft"] },
 
   // Programming / CS
   { title: "Python for Everybody Specialization", provider: "University of Michigan", platform: "Coursera", tags: ["Programming/CS"] },
@@ -71,20 +61,18 @@ function CertCard({ cert }) {
 
 function Group({ label, items }) {
   const [collapsed, setCollapsed] = useState(true);
-  const limit = 6;
-  const visible = items.slice(0, collapsed ? Math.min(limit, items.length) : items.length);
+  const LIMIT = 6;
+  const visible = items.slice(0, collapsed ? Math.min(LIMIT, items.length) : items.length);
 
   return (
     <section className="group" role="region" aria-label={label}>
       <header className="group-head">
         <h3>{label}</h3>
-        <div className="group-actions">
-          {items.length > limit && (
-            <button className="link-btn" onClick={() => setCollapsed((v) => !v)}>
-              {collapsed ? "Show all" : "Collapse"}
-            </button>
-          )}
-        </div>
+        {items.length > LIMIT && (
+          <button className="link-btn" onClick={() => setCollapsed((v) => !v)} aria-expanded={!collapsed}>
+            {collapsed ? "Show all" : "Collapse"}
+          </button>
+        )}
       </header>
 
       <div className="grid" role="list">
@@ -140,53 +128,84 @@ export default function Certifications() {
       })}
 
       <style>{`
-        .wrap { width: 100%; max-width: 1100px; margin: 0 auto; }
+        /* ========= Layout & responsive globals ========= */
+        :root {
+          /* Adjust this if your navbar height changes.
+             We also include safe-area for iOS notch devices. */
+          --nav-h: 72px;            /* base (mobile) navbar height */
+          --sticky-gap: 8px;        /* extra breathing room under nav */
+          --wrap-pad-x: 16px;       /* horizontal page padding */
+        }
+        @media (min-width: 640px) {
+          :root { --nav-h: 84px; --wrap-pad-x: 24px; }
+        }
+        @media (min-width: 1024px) {
+          :root { --nav-h: 96px; --wrap-pad-x: 28px; }
+        }
 
-        /* Keep the search fixed in place so the list doesn't jump */
+        .wrap {
+          width: 100%;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding-inline: var(--wrap-pad-x);
+          padding-bottom: 32px;
+        }
+
+        /* ========= Sticky search bar (never overlaps content) ========= */
         .filterbar {
           position: sticky;
-          top: 115px; /* adjust to your navbar height */
-          padding-top: .25rem;
-          background: transparent;
-          z-index: 1;
-          margin-bottom: 1rem;
+          top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + var(--sticky-gap));
+          z-index: 50;                     /* above cards */
+          padding-top: 2px;                /* tiny visual offset */
+          margin: 8px 0 14px 0;
+          backdrop-filter: blur(0px);      /* keeps layout stable on iOS */
         }
         .search {
           width: 100%;
-          padding: .75rem .9rem;
+          height: 44px;
+          padding: 0 14px;
           border-radius: 14px;
           border: 1px solid rgba(0,0,0,0.08);
-          background: rgba(255,255,255,0.65);
+          background: rgba(255,255,255,0.85);
           box-shadow: 0 6px 18px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.4);
-          backdrop-filter: blur(10px);
           outline: none;
           font-size: 0.95rem;
         }
+        .search:focus { border-color: rgba(11, 99, 206, 0.45); }
 
+        /* ========= Group header ========= */
         .group { margin-top: 1.1rem; }
         .group-head {
           display: flex; align-items: center; justify-content: space-between;
           margin-bottom: .6rem;
+          gap: 12px;
         }
         .group-head h3 {
-          margin: 0; font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+          margin: 0; font-size: clamp(1.05rem, 2.2vw, 1.35rem);
           font-weight: 800; color: rgb(36,36,42);
+          line-height: 1.25;
         }
-        .group-actions .link-btn {
+        .link-btn {
           background: transparent; border: none; color: #0b63ce; font-weight: 700;
-          cursor: pointer; padding: .25rem .4rem; border-radius: 8px;
+          cursor: pointer; padding: .35rem .5rem; border-radius: 8px;
         }
-        .group-actions .link-btn:hover { text-decoration: underline; }
+        .link-btn:hover { text-decoration: underline; }
 
-        /* Flex so each card keeps its own height (no stretching) */
+        /* ========= Responsive grid ========= */
         .grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.9rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          gap: 12px;
+        }
+        @media (min-width: 420px) {
+          .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+        }
+        @media (min-width: 920px) {
+          .grid { gap: 14px; }
         }
 
+        /* ========= Card ========= */
         .chip {
-          flex: 1 1 280px;        /* min width */
           border-radius: 16px;
           background: rgba(255,255,255,0.28);
           border: 1px solid rgba(255,255,255,0.55);
@@ -195,8 +214,7 @@ export default function Certifications() {
           -webkit-backdrop-filter: blur(14px);
           padding: .95rem 1rem;
           transition: transform 220ms cubic-bezier(.22,.9,.35,1), box-shadow 220ms;
-          align-self: flex-start;
-          cursor: default;        /* no click */
+          cursor: default;
         }
         .chip:hover { transform: translateY(-3px) scale(1.005); box-shadow: 0 16px 36px rgba(0,0,0,0.18); }
 
@@ -206,18 +224,24 @@ export default function Certifications() {
           font-size: 0.98rem;
           letter-spacing: -0.01em;
           margin-bottom: .25rem;
+          line-height: 1.3;
         }
         .chip-meta {
-          display: flex; align-items: center; gap: .45rem;
+          display: flex; align-items: center; flex-wrap: wrap; gap: .45rem;
           color: rgba(36,36,42,0.72);
           font-weight: 700; font-size: .9rem;
         }
         .dot { opacity: 0.5; }
 
+        /* ========= Small-screen tuning ========= */
         @media (max-width: 720px) {
+          .search { height: 42px; }
           .chip { padding: .85rem .9rem; }
+          .chip-title { font-size: .96rem; }
+          .chip-meta { font-size: .88rem; }
         }
       `}</style>
     </div>
   );
 }
+
