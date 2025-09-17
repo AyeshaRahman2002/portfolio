@@ -9,7 +9,7 @@ import ContactForm from "./components/ContactForm";
 import Blog1 from "./components/blog1.jsx";
 import Blog2 from "./components/blog2.jsx";
 import Blog3 from "./components/blog3.jsx";
-import Resume from "../assets/Resume-Ayesha.pdf";
+import Resume from "./assets/Resume-Ayesha.pdf";
 
 const LINKS = { 
   resume: Resume, 
