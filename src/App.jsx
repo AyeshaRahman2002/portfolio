@@ -420,25 +420,32 @@ export default function App() {
     "15+ PROJECTS COMPLETED",
   ];
 
+  // Helper: strip BASE from pathname so routes match cleanly
+  const cleanPath = (p) => {
+    if (BASE && p.startsWith(BASE)) {
+      return p.slice(BASE.length - (BASE.endsWith("/") ? 1 : 0)) || "/";
+    }
+    return p;
+  };
+
   // ---------- Tiny router ----------
-  const [route, setRoute] = useState(window.location.pathname);
+  const [route, setRoute] = useState(cleanPath(window.location.pathname));
   // push with BASE prefix
   const go = (to) => {
-    // allow both 'blog' or '/blog'
-    const cleaned = to.startsWith('/') ? to.slice(1) : to;
-    const target = BASE + cleaned;        // always '/portfolio/...'
+    const cleaned = to.startsWith("/") ? to : `/${to}`;
+    const target = BASE + cleaned.slice(1);   // e.g. "/portfolio/blog"
     if (target !== window.location.pathname) {
-      window.history.pushState({}, '', target);
-      setRoute(target);
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.history.pushState({}, "", target);
+      setRoute(cleanPath(target));            // << normalize
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   };
   
   // keep popstate in sync
   useEffect(() => {
-    const onPop = () => setRoute(window.location.pathname);
-    window.addEventListener('popstate', onPop);
-    return () => window.removeEventListener('popstate', onPop);
+    const onPop = () => setRoute(cleanPath(window.location.pathname));
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
 
   // ---------- Blog route helpers ----------
