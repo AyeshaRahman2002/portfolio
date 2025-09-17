@@ -10,7 +10,6 @@ import Blog1 from "./components/blog1.jsx";
 import Blog2 from "./components/blog2.jsx";
 import Blog3 from "./components/blog3.jsx";
 
-// Make links work in dev and at /portfolio/ on GitHub Pages
 const RESUME_URL = new URL("Resume-Ayesha.pdf", import.meta.env.BASE_URL).toString();
 
 const LINKS = {
@@ -752,7 +751,7 @@ export default function App() {
                 </div>
 
                 <div className="home-cta">
-                  <a className="btn primary" href={LINKS.resume} download="Resume-Ayesha.pdf">
+                  <a className="btn primary" href={LINKS?.resume || "/Resume-Ayesha.pdf"} download>
                     Download Resume
                   </a>
                   <a className="btn ghost" href={LINKS?.linkedin} target="_blank" rel="noreferrer">
