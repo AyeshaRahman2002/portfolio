@@ -548,8 +548,9 @@ export default function App() {
                 key={tab}
                 onClick={() => {
                   setActiveTab(tab);
-                  if (tab === "Blog") go("blog");
-                  else go("");
+                  if (tab === "Home") go("/");
+                  else if (tab === "Blog") go("/blog");
+                  else go("/");
                 }}
                 style={{
                   border: "none",
