@@ -10,11 +10,10 @@ import Blog1 from "./components/blog1.jsx";
 import Blog2 from "./components/blog2.jsx";
 import Blog3 from "./components/blog3.jsx";
 
-const RESUME_URL = new URL("Resume-Ayesha.pdf", import.meta.env.BASE_URL).toString();
 
-const LINKS = {
-  resume: RESUME_URL,
-  linkedin: "https://www.linkedin.com/in/ayesha-rahman-ml/",
+const LINKS = { 
+  resume: "/Resume-Ayesha.pdf", 
+  linkedin: "https://www.linkedin.com/in/ayesha-rahman-ml/", 
   github: "https://github.com/AyeshaRahman2002",
 };
 
