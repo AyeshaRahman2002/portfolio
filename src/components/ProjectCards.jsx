@@ -19,22 +19,22 @@ import videoEditingPic from "../images/video_editing_project.jpg";
 import sportsMgmtPic from "../images/sports_mgmt_project.jpg";
 import todoProjectPic from "../images/assessment_todo_project.jpg";
 
-import aarogyaSlides from "../assets/AarogyaSetu-vs-COVIDSafe.pptx";
-import dataMiningReport from "../assets/DataMiningProjectReport.pdf";
-import digitalHealthReport from "../assets/Digital_Health_ASD_Report.pdf";
-import graphicsReport from "../assets/GraphicsCW.pdf";
-import greenMyCloudReport from "../assets/GreenMyCloud.pdf";
 import inflationGroupReport from "../assets/Inflation_Forecasting_with_Machine_Learning_Models__Group_Report.pdf";
 import inflationIndividualReport from "../assets/Inflation_Forecasting_with_Machine_Learning_Models__Individual_Report.pdf";
-import infoVisReport from "../assets/Info_Vis.pdf";
+import digitalHealthReport from "../assets/Digital_Health_ASD_Report.pdf";
+import dataMiningReport from "../assets/DataMiningProjectReport.pdf";
 import hotelProposal from "../assets/ProjectProposal-Hotels.pdf";
-import renderingReport from "../assets/RenderingProjectReport.pdf";
-import resumePdf from "../assets/Resume-Ayesha.pdf";
+import flightsProposal from "../assets/ProjectProposal-Flights.pdf"; // make sure this file exists in src/assets
+import graphicsReport from "../assets/GraphicsCW.pdf";
 import roboticsReport from "../assets/Robotics.pdf";
-import uiReport from "../assets/UserInterface.pdf";
 import bioOptReport from "../assets/bio-inspired-cw2-report.pdf";
-import viteLogo from "../assets/vite.svg";
 import xv6Report from "../assets/xv6MemoryManagement.pdf";
+import psychAIReport from "../assets/AIinPsychologicalTreatements.pdf";
+import twoDReport from "../assets/RenderingProjectReport.pdf";
+import covidSlides from "../assets/AarogyaSetu-vs-COVIDSafe.pptx";
+import infoVisReport from "../assets/Info_Vis.pdf";
+import greenMyCloudReport from "../assets/GreenMyCloud.pdf";
+import uiReport from "../assets/UserInterface.pdf";
 
 /** --------------------------
  * Small helper
@@ -1385,14 +1385,8 @@ export default function ProjectCards({ selectedCategory = "All" }) {
         "https://github.com/AyeshaRahman2002/Inflation-Forecasting-Group-Project",
       videoLink: "https://youtu.be/Dtd82dyeasE",
       reportLinks: [
-        {
-          name: "Group Report",
-          url: "/Inflation_Forecasting_with_Machine_Learning_Models__Group_Report.pdf",
-        },
-        {
-          name: "Individual Report",
-          url: "/Inflation_Forecasting_with_Machine_Learning_Models__Individual_Report.pdf",
-        },
+        { name: "Group Report", url: inflationGroupReport },
+        { name: "Individual Report", url: inflationIndividualReport },
       ],
       getResponse: inflationResponder,
     },
@@ -1403,7 +1397,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: asdBullets,
       githubLink: "https://github.com/AyeshaRahman2002/Digital-Health-ASD",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/Digital_Health_ASD_Report.pdf" }],
+      reportLinks: [{ name: "Project Report", url: digitalHealthReport }],
       getResponse: asdResponder,
     },
     {
@@ -1414,7 +1408,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: sentimentBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/DataMiningProjectReport.pdf" }],
+      reportLinks: [{ name: "Project Report", url: dataMiningReport }],
       getResponse: sentimentResponder,
     },
     {
@@ -1424,7 +1418,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: hotelBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [{ name: "Project Proposal", url: "/ProjectProposal-Hotels.pdf" }],
+      reportLinks: [{ name: "Project Proposal", url: hotelProposal }],
       getResponse: hotelResponder,
     },
     {
@@ -1434,7 +1428,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: flightsBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [{ name: "Project Proposal", url: "/ProjectProposal-Flights.pdf" }],
+      reportLinks: [{ name: "Project Proposal", url: flightsProposal }],
       getResponse: flightsResponder,
     },
     {
@@ -1445,7 +1439,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       githubLink:
         "https://github.com/AyeshaRahman2002/ComputerGraphics_3D_Rendering",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/GraphicsCW.pdf" }],
+      reportLinks: [{ name: "Project Report", url: graphicsReport }],
       getResponse: renderingResponder,
     },
     {
@@ -1455,7 +1449,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: spaceNavBullets,
       githubLink: "https://github.com/AyeshaRahman2002/PlanetDetection",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/Robotics.pdf" }],
+      reportLinks: [{ name: "Project Report", url: roboticsReport }],
       getResponse: spaceNavResponder,
     },
     {
@@ -1465,7 +1459,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: bioOptBullets,
       githubLink: "https://github.com/AyeshaRahman2002/bio-inspired-optimization",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/bio-inspired-cw2-report.pdf" }],
+      reportLinks: [{ name: "Project Report", url: bioOptReport }],
       getResponse: bioOptResponder,
     },
     {
@@ -1475,7 +1469,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: xv6Bullets,
       githubLink: "https://github.com/AyeshaRahman2002/MemoryManagement-C",
       videoLink: "",
-      reportLinks: [{ name: "Coursework Report", url: "/xv6MemoryManagement.pdf" }],
+      reportLinks: [{ name: "Coursework Report", url: xv6Report }],
       getResponse: xv6Responder,
     },
     {
@@ -1485,7 +1479,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: psychAIBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/AIinPsychologicalTreatements.pdf" }],
+      reportLinks: [{ name: "Project Report", url: psychAIReport }],
       getResponse: psychAIResponder,
     },
     {
@@ -1496,7 +1490,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       githubLink:
         "https://github.com/AyeshaRahman2002/ComputerGraphics-2d-Rendering",
       videoLink: "",
-      reportLinks: [{ name: "Project Report", url: "/RenderingProjectReport.pdf" }],
+      reportLinks: [{ name: "Project Report", url: twoDReport }],
       getResponse: twoDResponder,
     },
     {
@@ -1506,9 +1500,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: covidAppsBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [
-        { name: "Project Slides", url: "/AarogyaSetu-vs-COVIDSafe.pptx" },
-      ],
+      reportLinks: [{ name: "Project Slides", url: covidSlides }],
       getResponse: covidAppsResponder,
     },
     {
@@ -1518,60 +1510,59 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: medalsBullets,
       githubLink: "https://github.com/AyeshaRahman2002/InfoVis-MedalAnalysis",
       videoLink: "",
-      reportLinks: [{ name: "Report", url: "/Info_Vis.pdf" }],
+      reportLinks: [{ name: "Report", url: infoVisReport }],
       getResponse: olympicsResponder,
     },
     {
-        category: "Systems",
-        image: lyftProjectPic,
-        title: "Lyft System Design - Forage Project",
-        descriptionBullets: lyftBullets,
-        githubLink: "https://github.com/AyeshaRahman2002/lyft",
-        videoLink: "",
-        reportLinks: [],
-        getResponse: lyftResponder,
+      category: "Systems",
+      image: lyftProjectPic,
+      title: "Lyft System Design - Forage Project",
+      descriptionBullets: lyftBullets,
+      githubLink: "https://github.com/AyeshaRahman2002/lyft",
+      videoLink: "",
+      reportLinks: [],
+      getResponse: lyftResponder,
     },
     {
-        category: "Systems",
-        image: greenMyCloudPic,
-        title: "GreenMyCloud - Carbon Footprint Monitoring App",
-        descriptionBullets: greenMyCloudBullets,
-        githubLink: "",
-        videoLink: "",
-        reportLinks: [{ name: "Report", url: "/GreenMyCloud.pdf" }],
-        getResponse: greenMyCloudResponder,
+      category: "Systems",
+      image: greenMyCloudPic,
+      title: "GreenMyCloud - Carbon Footprint Monitoring App",
+      descriptionBullets: greenMyCloudBullets,
+      githubLink: "",
+      videoLink: "",
+      reportLinks: [{ name: "Report", url: greenMyCloudReport }],
+      getResponse: greenMyCloudResponder,
     },
     {
-        category: "HCI",
-        image: videoEditingPic,
-        title: "Video Editing Application - C++ UI Group Project",
-        descriptionBullets: videoEditingBullets,
-        githubLink: "https://github.com/AyeshaRahman2002/VideoEditingApplication",
-        videoLink: "https://youtu.be/fnO9mHOX-lA",
-        reportLinks: [{ name: "UI Report", url: "/UserInterface.pdf" }],
-        getResponse: videoEditingResponder,
+      category: "HCI",
+      image: videoEditingPic,
+      title: "Video Editing Application - C++ UI Group Project",
+      descriptionBullets: videoEditingBullets,
+      githubLink: "https://github.com/AyeshaRahman2002/VideoEditingApplication",
+      videoLink: "https://youtu.be/fnO9mHOX-lA",
+      reportLinks: [{ name: "UI Report", url: uiReport }],
+      getResponse: videoEditingResponder,
     },
-
     {
-        category: "Systems",
-        image: sportsMgmtPic,
-        title: "Sports Management Web Application",
-        descriptionBullets: sportsMgmtBullets,
-        githubLink: "https://github.com/AyeshaRahman2002/SportsManagementSystem",
-        videoLink: "",
-        reportLinks: [],
-        getResponse: sportsMgmtResponder,
+      category: "Systems",
+      image: sportsMgmtPic,
+      title: "Sports Management Web Application",
+      descriptionBullets: sportsMgmtBullets,
+      githubLink: "https://github.com/AyeshaRahman2002/SportsManagementSystem",
+      videoLink: "",
+      reportLinks: [],
+      getResponse: sportsMgmtResponder,
     },
-
     {
-        category: "HCI",
-        image: todoProjectPic,
-        title: "Assessment To-Do List (Flask + SQLite)",
-        descriptionBullets: todoBullets,
-        githubLink: "https://github.com/AyeshaRahman2002/Coursework-Management-Application",
-        videoLink: "",
-        reportLinks: [],
-        getResponse: todoResponder,
+      category: "HCI",
+      image: todoProjectPic,
+      title: "Assessment To-Do List (Flask + SQLite)",
+      descriptionBullets: todoBullets,
+      githubLink:
+        "https://github.com/AyeshaRahman2002/Coursework-Management-Application",
+      videoLink: "",
+      reportLinks: [],
+      getResponse: todoResponder,
     },
   ];
 
