@@ -24,14 +24,14 @@ import inflationIndividualReport from "../assets/Inflation_Forecasting_with_Mach
 import digitalHealthReport from "../assets/Digital_Health_ASD_Report.pdf";
 import dataMiningReport from "../assets/DataMiningProjectReport.pdf";
 import hotelProposal from "../assets/ProjectProposal-Hotels.pdf";
-import flightsProposal from "../assets/ProjectProposal-Flights.pdf"; // make sure this file exists in src/assets
+import flightsProposal from "../assets/ProjectProposal-Flights.pdf";
 import graphicsReport from "../assets/GraphicsCW.pdf";
 import roboticsReport from "../assets/Robotics.pdf";
 import bioOptReport from "../assets/bio-inspired-cw2-report.pdf";
 import xv6Report from "../assets/xv6MemoryManagement.pdf";
 import psychAIReport from "../assets/AIinPsychologicalTreatements.pdf";
 import twoDReport from "../assets/RenderingProjectReport.pdf";
-import covidSlides from "../assets/AarogyaSetu-vs-COVIDSafe.pptx";
+import covidSlides from "../assets/AarogyaSetu-vs-COVIDSafe.pdf";
 import infoVisReport from "../assets/Info_Vis.pdf";
 import greenMyCloudReport from "../assets/GreenMyCloud.pdf";
 import uiReport from "../assets/UserInterface.pdf";
