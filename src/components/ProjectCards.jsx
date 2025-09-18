@@ -18,6 +18,7 @@ import greenMyCloudPic from "../images/greenmycloud_project.jpg";
 import videoEditingPic from "../images/video_editing_project.jpg";
 import sportsMgmtPic from "../images/sports_mgmt_project.jpg";
 import todoProjectPic from "../images/assessment_todo_project.jpg";
+import multimodalPic from "../images/multimodal_project.jpg";
 
 import inflationGroupReport from "../assets/Inflation_Forecasting_with_Machine_Learning_Models__Group_Report.pdf";
 import inflationIndividualReport from "../assets/Inflation_Forecasting_with_Machine_Learning_Models__Individual_Report.pdf";
@@ -224,6 +225,16 @@ const todoBullets = [
     "Statuses and real-time flows: Incomplete → In-Progress → Completed with instant UI updates and optimistic saves.",
     "Powerful search and filters by text, due window, priority, label, and status; keyboard shortcuts for quick entry.",
     "Secure sessions, CSRF protection, hashed passwords (bcrypt), input validation; clear audit of changes and activity.",
+];
+
+/** --------------------------
+ * Multi-Modal CNN–RNN project
+ * -------------------------- */
+const multimodalBullets = [
+  "Architected an end-to-end pipeline coupling a CNN for high-dimensional visual feature extraction with an RNN for sequence-based caption generation.",
+  "Optimised TinyImageNet30 classification (13.5k images, 30 classes) via augmentation, dropout regularisation, and hyperparameter tuning for robust generalisation.",
+  "Enhanced captioning fidelity with transfer learning and transformer-driven embeddings for stronger semantic alignment.",
+  "Validated with confusion matrices, ROC curves, and leaderboard benchmarking; delivered reproducible PyTorch code and results.",
 ];
   
 /** --------------------------
@@ -1371,6 +1382,44 @@ const todoResponder = (raw) => {
   return "Oops! I missed that. Please ask about aims, stack, features, security schema, API, UX testing, roadmap, or the GitHub repo.";
 };
 
+const multimodalResponder = (raw) => {
+  const text = raw.trim();
+
+  if (has(text, "objective|overview|scope")) {
+    return "Objective: design and implement a multi-modal deep learning framework that combines visual recognition and language generation. The system integrates a CNN for image feature extraction with an RNN/transformer-based language model to generate semantically coherent captions, demonstrating expertise in multi-task learning and evaluation.";
+  }
+
+  if (has(text, "architecture|design|pipeline")) {
+    return "Architecture: CNN backbone (ResNet-style, trained from scratch and with transfer learning) produces high-dimensional feature maps. These are projected into a lower embedding space and fed into an RNN decoder for sequential caption generation. Extended with transformer-driven embeddings to improve semantic alignment. The full pipeline includes preprocessing, CNN training, feature projection, RNN/transformer captioning, and evaluation modules, all built in PyTorch with reproducible workflows.";
+  }
+
+  if (has(text, "dataset|tinyimagenet|cifar|data")) {
+    return "Datasets: • TinyImageNet30 (13.5k images, 30 classes) for CNN-based image classification. • CIFAR-10 (50k training, 10k test images) for fine-tuning and benchmarking transfer learning. • Curated captioning dataset for training RNN-based language generation. Data split into stratified train/validation/test folds with reproducible random seeds. Applied data augmentation (flips, crops, rotations, normalization) to mitigate overfitting.";
+  }
+
+  if (has(text, "training|tuning|regularization|optimizer|hyperparam")) {
+    return "Training setup: extensive regularization including dropout, weight decay, and data augmentation. Optimizers: Adam and AdamW with learning rate scheduling and early stopping. Hyperparameter sweeps over learning rate, dropout rate, hidden state size, embedding dimension, and sequence length. Explored frozen vs. fine-tuned CNN backbones to compare transfer learning strategies.";
+  }
+
+  if (has(text, "metrics|results|evaluation|roc|confusion")) {
+    return "Evaluation: for classification, reported accuracy, precision, recall, F1-score, per-class ROC/PR curves, and confusion matrices. For captioning, generated qualitative samples and assessed fluency, relevance, and semantic correctness. Conducted leaderboard submission (Kaggle) to benchmark against peers. Results highlighted robust CNN classification accuracy and meaningful captions with improved semantic coherence from transformer embeddings.";
+  }
+
+  if (has(text, "github|code|repo")) {
+    return "GitHub: (add when ready, e.g. https://github.com/yourusername/multimodal-cnn-rnn)";
+  }
+
+  if (has(text, "report|html|pdf|documentation|docs?")) {
+    return [
+      "Reports Multi-Modal:",
+      "• PDF  /COMP5625M_Summative_Assessment2025.pdf",
+      "• HTML /COMP5625M_Summative_Assessment2025.html",
+    ].join("\n");
+  }
+
+  return "Ask about objectives, architecture, datasets, training setup, metrics/results, Kaggle benchmarks, or links to GitHub and reports.";
+};
+
 /** --------------------------
  * Projects (with categories) + filtered render
  * -------------------------- */
@@ -1564,6 +1613,19 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       reportLinks: [],
       getResponse: todoResponder,
     },
+    {
+      category: "AI/ML",
+      image: multimodalPic,
+      title: "Multi-Modal CNN–RNN Framework for Visual Recognition and Image Captioning",
+      descriptionBullets: multimodalBullets,
+      githubLink: "",
+      videoLink: "",
+      reportLinks: [
+        { name: "PDF Report", url: multimodalPdf }
+      ],
+      getResponse: multimodalResponder,
+    },
+
   ];
 
   const visible =
