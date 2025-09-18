@@ -1406,18 +1406,14 @@ const multimodalResponder = (raw) => {
   }
 
   if (has(text, "github|code|repo")) {
-    return "GitHub: (add when ready, e.g. https://github.com/yourusername/multimodal-cnn-rnn)";
+    return "No Github link";
   }
 
   if (has(text, "report|html|pdf|documentation|docs?")) {
-    return [
-      "Reports Multi-Modal:",
-      "• PDF  /COMP5625M_Summative_Assessment2025.pdf",
-      "• HTML /COMP5625M_Summative_Assessment2025.html",
-    ].join("\n");
+    return "No Report";
   }
 
-  return "Ask about objectives, architecture, datasets, training setup, metrics/results, Kaggle benchmarks, or links to GitHub and reports.";
+  return "Oops! I missed that. Please ask about objectives, architecture, datasets, training setup, metrics/results, Kaggle benchmarks, or links to GitHub and reports.";
 };
 
 /** --------------------------
@@ -1620,9 +1616,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       descriptionBullets: multimodalBullets,
       githubLink: "",
       videoLink: "",
-      reportLinks: [
-        { name: "PDF Report", url: multimodalPdf }
-      ],
+      reportLinks: [],
       getResponse: multimodalResponder,
     },
 
