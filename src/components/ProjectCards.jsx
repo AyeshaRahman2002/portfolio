@@ -1477,6 +1477,16 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       getResponse: flightsResponder,
     },
     {
+      category: "AI/ML",
+      image: multimodalPic,
+      title: "Multi-Modal CNN–RNN Framework for Visual Recognition and Image Captioning",
+      descriptionBullets: multimodalBullets,
+      githubLink: "",
+      videoLink: "",
+      reportLinks: [],
+      getResponse: multimodalResponder,
+    },
+    {
       category: "Graphics",
       image: renderingProjectPic,
       title: "Interactive 3D Rendering Application",
@@ -1608,16 +1618,6 @@ export default function ProjectCards({ selectedCategory = "All" }) {
       videoLink: "",
       reportLinks: [],
       getResponse: todoResponder,
-    },
-    {
-      category: "AI/ML",
-      image: multimodalPic,
-      title: "Multi-Modal CNN–RNN Framework for Visual Recognition and Image Captioning",
-      descriptionBullets: multimodalBullets,
-      githubLink: "",
-      videoLink: "",
-      reportLinks: [],
-      getResponse: multimodalResponder,
     },
 
   ];
