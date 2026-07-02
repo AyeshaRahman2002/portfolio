@@ -441,6 +441,141 @@ const tabs = [
         </div>
       )}
 
+      <style>{`
+        .hero {
+          width: 100%;
+          min-height: calc(100vh - 200px);
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: column;
+          gap: 2rem;
+          padding-top: 10vh;
+        }
+        .hero-card-inner {
+          display: flex;
+          align-items: stretch;
+        }
+        .hero-photo-wrap {
+          flex-shrink: 0;
+          width: clamp(180px, 32%, 300px);
+          align-self: stretch;
+        }
+        .hero-photo {
+          display: block;
+          width: 100%;
+          height: 100%;
+          min-height: 380px;
+          object-fit: cover;
+          object-position: center top;
+        }
+        .hero-text {
+          flex: 1;
+          min-width: 0;
+          padding: clamp(1.5rem,4vw,2.8rem) clamp(1.5rem,5vw,3.2rem);
+        }
+        @media (max-width: 640px) {
+          .hero-card-inner { flex-direction: column; text-align: center; }
+          .hero-photo-wrap { width: 100%; }
+          .hero-photo { min-height: 240px; max-height: 300px; }
+          .hero-text { width: 100%; padding: 1.5rem; }
+          .role-line { justify-content: center; }
+          .home-cta { justify-content: center; }
+          .stats { align-items: center; }
+        }
+        .cs-nav-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 14px;
+          width: 100%;
+          max-width: 700px;
+        }
+        @media (max-width: 600px) {
+          .cs-nav-grid { grid-template-columns: 1fr; }
+        }
+        .cs-nav-card {
+          background: var(--card-color);
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 16px;
+          padding: 1rem 1.1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          cursor: pointer;
+          text-align: left;
+          transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+          backdrop-filter: blur(24px) saturate(160%);
+          -webkit-backdrop-filter: blur(24px) saturate(160%);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+          position: relative;
+          overflow: hidden;
+        }
+        .cs-nav-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: var(--card-color);
+          opacity: 0;
+          transition: opacity 0.18s;
+        }
+        .cs-nav-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.18); }
+        .cs-nav-card:hover::before { opacity: 1; }
+        .cs-nav-icon {
+          font-family: "Courier New", monospace;
+          font-size: 1.2rem;
+          font-weight: 800;
+          color: var(--card-accent);
+          letter-spacing: -0.02em;
+        }
+        .cs-nav-label {
+          font-size: 0.95rem;
+          font-weight: 800;
+          color: #f0f0f8;
+          line-height: 1.2;
+        }
+        .cs-nav-desc {
+          font-size: 0.78rem;
+          color: rgba(240,240,248,0.5);
+          font-weight: 500;
+          line-height: 1.3;
+        }
+        .cs-nav-arrow {
+          margin-top: 6px;
+          font-size: 1rem;
+          color: var(--card-accent);
+          font-weight: 700;
+          transition: transform 0.18s;
+        }
+        .cs-nav-card:hover .cs-nav-arrow { transform: translateX(4px); }
+        .role-line { margin-top: 10px; display: inline-flex; align-items: center; gap: 12px; font-weight: 600; font-size: clamp(1.05rem, 2.6vw, 1.25rem); color: rgba(240,240,248,0.75); }
+        .rotator { position: relative; height: 1.6em; width: auto; display: inline-block; vertical-align: middle; min-width: min(32ch, 88vw); }
+        .role-item { position: absolute; left:0; top:0; line-height:1.6em; min-height:1.6em; display:flex; align-items:center; color:#f0f0f8; font-size:clamp(1.15rem,3.2vw,1.5rem); font-weight:700; opacity:0; pointer-events:none; transition: opacity .4s cubic-bezier(.22,.9,.35,1); white-space:nowrap; }
+        .role-item.active { opacity: 1; pointer-events: auto; }
+        .stats { margin-top: 2.5rem; display:flex; flex-direction:column; gap:.6rem; align-items:flex-start; }
+        .stat-line { color:rgba(240,240,248,0.65); font-weight:600; font-size:clamp(.88rem,1.4vw,1rem); line-height:1.3; letter-spacing:-0.01em; white-space:nowrap; }
+        .home-cta { margin-top:20px; display:flex; gap:.6rem; flex-wrap:wrap; }
+        .btn { border:1px solid rgba(255,255,255,0.18); padding:.6rem 1rem; border-radius:12px; font-weight:800; cursor:pointer; background:rgba(255,255,255,0.08); backdrop-filter:blur(8px); transition: transform .15s ease, box-shadow .2s ease, background .2s; text-decoration:none; color:#f0f0f8; font-size:0.95rem; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.35); background:rgba(255,255,255,0.14); }
+        .btn.primary { background:rgba(255,255,255,0.95); color:#0d0d1a; border-color:transparent; }
+        .btn.primary:hover { background:#fff; }
+        .btn.ghost { background:rgba(255,255,255,0.07); }
+        @media (max-width: 920px) {
+          .hero { min-height: auto; padding-top: 6vh; }
+          .stats { margin-top: 1.5rem; align-items: flex-start; }
+          .stat-line { white-space: normal; }
+        }
+        @media (max-width: 600px) {
+          .rotator { min-width: 0; width: 100%; }
+          .role-item { white-space: normal; }
+          .home-cta { flex-direction: column; }
+        }
+        @media (max-width: 660px) {
+          .about-layout { flex-direction: column; align-items: center; }
+          .about-photo-wrap img { width: 200px !important; max-width: 60vw !important; }
+        }
+      `}</style>
+
       {/* Main */}
       <main
         style={{
@@ -477,21 +612,23 @@ const tabs = [
                   WebkitBackdropFilter: "blur(28px) saturate(160%)",
                   border: "1px solid rgba(255,255,255,0.16)",
                   borderRadius: 24,
-                  padding: "clamp(1.5rem,4vw,2.8rem) clamp(1.5rem,5vw,3.2rem)",
+                  overflow: "hidden",
                   boxShadow: "0 20px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.14)",
                   transform: `perspective(1000px) rotateX(${heroTilt.rx}deg) rotateY(${heroTilt.ry}deg)`,
                   transition: "transform 0.18s ease",
                   transformStyle: "preserve-3d",
-                  maxWidth: 700,
+                  maxWidth: 780,
                   width: "100%",
                 }}
               >
                 <div className="hero-card-inner">
-                  <img
-                    src={myPic}
-                    alt="Ayesha Rahman"
-                    className="hero-photo"
-                  />
+                  <div className="hero-photo-wrap">
+                    <img
+                      src={myPic}
+                      alt="Ayesha Rahman"
+                      className="hero-photo"
+                    />
+                  </div>
 
                   <div className="hero-text">
                     <h1
@@ -581,133 +718,6 @@ const tabs = [
                 ))}
               </div>
             </section>
-
-            <style>{`
-              .hero {
-                width: 100%;
-                min-height: calc(100vh - 200px);
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                flex-direction: column;
-                gap: 2rem;
-                padding-top: 10vh;
-              }
-              .hero-card-inner {
-                display: flex;
-                align-items: center;
-                gap: clamp(1.2rem, 4vw, 2.2rem);
-              }
-              .hero-photo {
-                flex-shrink: 0;
-                width: clamp(90px, 14vw, 150px);
-                height: clamp(90px, 14vw, 150px);
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: center top;
-                border: 2px solid rgba(255,255,255,0.25);
-                box-shadow: 0 12px 30px rgba(0,0,0,0.45), 0 0 0 6px rgba(160,130,255,0.1);
-              }
-              .hero-text { flex: 1; min-width: 0; }
-              @media (max-width: 640px) {
-                .hero-card-inner { flex-direction: column; text-align: center; }
-                .hero-text { width: 100%; }
-                .role-line { justify-content: center; }
-                .home-cta { justify-content: center; }
-                .stats { align-items: center; }
-              }
-              .cs-nav-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 14px;
-                width: 100%;
-                max-width: 700px;
-              }
-              @media (max-width: 600px) {
-                .cs-nav-grid { grid-template-columns: 1fr; }
-              }
-              .cs-nav-card {
-                background: var(--card-color);
-                border: 1px solid rgba(255,255,255,0.15);
-                border-radius: 16px;
-                padding: 1rem 1.1rem;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-                cursor: pointer;
-                text-align: left;
-                transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-                backdrop-filter: blur(24px) saturate(160%);
-                -webkit-backdrop-filter: blur(24px) saturate(160%);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-                position: relative;
-                overflow: hidden;
-              }
-              .cs-nav-card::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: var(--card-color);
-                opacity: 0;
-                transition: opacity 0.18s;
-              }
-              .cs-nav-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.18); }
-              .cs-nav-card:hover::before { opacity: 1; }
-              .cs-nav-icon {
-                font-family: "Courier New", monospace;
-                font-size: 1.2rem;
-                font-weight: 800;
-                color: var(--card-accent);
-                letter-spacing: -0.02em;
-              }
-              .cs-nav-label {
-                font-size: 0.95rem;
-                font-weight: 800;
-                color: #f0f0f8;
-                line-height: 1.2;
-              }
-              .cs-nav-desc {
-                font-size: 0.78rem;
-                color: rgba(240,240,248,0.5);
-                font-weight: 500;
-                line-height: 1.3;
-              }
-              .cs-nav-arrow {
-                margin-top: 6px;
-                font-size: 1rem;
-                color: var(--card-accent);
-                font-weight: 700;
-                transition: transform 0.18s;
-              }
-              .cs-nav-card:hover .cs-nav-arrow { transform: translateX(4px); }
-              .role-line { margin-top: 10px; display: inline-flex; align-items: center; gap: 12px; font-weight: 600; font-size: clamp(1.05rem, 2.6vw, 1.25rem); color: rgba(240,240,248,0.75); }
-              .rotator { position: relative; height: 1.6em; width: auto; display: inline-block; vertical-align: middle; min-width: min(32ch, 88vw); }
-              .role-item { position: absolute; left:0; top:0; line-height:1.6em; min-height:1.6em; display:flex; align-items:center; color:#f0f0f8; font-size:clamp(1.15rem,3.2vw,1.5rem); font-weight:700; opacity:0; pointer-events:none; transition: opacity .4s cubic-bezier(.22,.9,.35,1); white-space:nowrap; }
-              .role-item.active { opacity: 1; pointer-events: auto; }
-              .stats { margin-top: 2.5rem; display:flex; flex-direction:column; gap:.6rem; align-items:flex-start; }
-              .stat-line { color:rgba(240,240,248,0.65); font-weight:600; font-size:clamp(.88rem,1.4vw,1rem); line-height:1.3; letter-spacing:-0.01em; white-space:nowrap; }
-              .home-cta { margin-top:20px; display:flex; gap:.6rem; flex-wrap:wrap; }
-              .btn { border:1px solid rgba(255,255,255,0.18); padding:.6rem 1rem; border-radius:12px; font-weight:800; cursor:pointer; background:rgba(255,255,255,0.08); backdrop-filter:blur(8px); transition: transform .15s ease, box-shadow .2s ease, background .2s; text-decoration:none; color:#f0f0f8; font-size:0.95rem; }
-              .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.35); background:rgba(255,255,255,0.14); }
-              .btn.primary { background:rgba(255,255,255,0.95); color:#0d0d1a; border-color:transparent; }
-              .btn.primary:hover { background:#fff; }
-              .btn.ghost { background:rgba(255,255,255,0.07); }
-              @media (max-width: 920px) {
-                .hero { min-height: auto; padding-top: 6vh; }
-                .stats { margin-top: 1.5rem; align-items: flex-start; }
-                .stat-line { white-space: normal; }
-              }
-              @media (max-width: 600px) {
-                .rotator { min-width: 0; width: 100%; }
-                .role-item { white-space: normal; }
-                .home-cta { flex-direction: column; }
-              }
-              @media (max-width: 660px) {
-                .about-layout { flex-direction: column; align-items: center; }
-                .about-photo-wrap img { width: 200px !important; max-width: 60vw !important; }
-              }
-            `}</style>
           </>
         ) : activeTab === "About Me" ? (
           <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -794,7 +804,18 @@ const tabs = [
             <TechnicalCompetencies />
           </Suspense>
         ) : activeTab === "Contact" ? (
-          <div style={{ width: "100%", display: "grid", placeItems: "center", gap: "1rem" }}>
+          <div style={{ width: "100%", display: "grid", placeItems: "center", gap: "1.5rem" }}>
+            <div className="home-cta" style={{ justifyContent: "center" }}>
+              <a className="btn ghost" href="mailto:ayesharahman7755@gmail.com">
+                Gmail ↗
+              </a>
+              <a className="btn ghost" href={LINKS?.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn ↗
+              </a>
+              <a className="btn ghost" href={LINKS?.github} target="_blank" rel="noreferrer">
+                GitHub ↗
+              </a>
+            </div>
             <ContactForm />
             <div style={{ opacity: 0.75, fontSize: ".95rem", color: "#f0f0f8" }}>
               Prefer email? <a href="mailto:ayesharahman7755@gmail.com" style={{ color: "rgba(180,160,255,0.9)" }}>ayesharahman7755@gmail.com</a>

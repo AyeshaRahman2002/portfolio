@@ -12,8 +12,9 @@ export default function Blog4({ onBack }) {
       <button
         onClick={onBack}
         style={{
-          border: "1px solid rgba(0,0,0,0.12)",
-          background: "#fff",
+          border: "1px solid rgba(255,255,255,0.15)",
+          background: "rgba(255,255,255,0.08)",
+          color: "#f0f0f8",
           borderRadius: 12,
           padding: "10px 15px",
           cursor: "pointer",
@@ -25,11 +26,11 @@ export default function Blog4({ onBack }) {
         ← Back to Blog
       </button>
 
-      <h1 style={{ margin: "6px 0 8px", fontWeight: 900, letterSpacing: "-0.02em" }}>
+      <h1 style={{ margin: "6px 0 8px", fontWeight: 900, letterSpacing: "-0.02em", color: "#f0f0f8" }}>
         {meta.title}
       </h1>
 
-      <div style={{ opacity: 0.7, marginBottom: 20 }}>
+      <div style={{ opacity: 0.7, marginBottom: 20, color: "#f0f0f8" }}>
         {new Date(meta.date).toLocaleDateString(undefined, {
           year: "numeric",
           month: "long",
@@ -46,8 +47,9 @@ export default function Blog4({ onBack }) {
               fontSize: ".85rem",
               padding: "4px 10px",
               borderRadius: 999,
-              border: "1px solid rgba(0,0,0,0.12)",
-              background: "rgba(255,255,255,0.9)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              background: "rgba(255,255,255,0.08)",
+              color: "#f0f0f8",
               fontWeight: 700,
             }}
           >
@@ -56,7 +58,7 @@ export default function Blog4({ onBack }) {
         ))}
       </div>
 
-      <div style={{ lineHeight: 1.7, fontSize: "1.04rem", color: "rgba(20,20,25,0.9)" }}>
+      <div style={{ lineHeight: 1.7, fontSize: "1.04rem", color: "rgba(240,240,248,0.85)" }}>
         <p>
           My introduction to cybersecurity did not start from encryption algorithms or 
           network firewalls. It began with a simple question can an app understand the 

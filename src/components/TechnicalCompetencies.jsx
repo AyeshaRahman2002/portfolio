@@ -7,12 +7,12 @@ import React, { useMemo, useState } from "react";
 
 const SKILLS = [
   // -------------------- ML / Data --------------------
-  { name: "PyTorch", cat: "ML / Data" },
+  { name: "PyTorch", cat: "ML / Data", core: true },
   { name: "TensorFlow / Keras", cat: "ML / Data" },
-  { name: "scikit-learn", cat: "ML / Data" },
-  { name: "Pandas", cat: "ML / Data" },
-  { name: "NumPy", cat: "ML / Data" },
-  { name: "HuggingFace Transformers", cat: "ML / Data" },
+  { name: "scikit-learn", cat: "ML / Data", core: true },
+  { name: "Pandas", cat: "ML / Data", core: true },
+  { name: "NumPy", cat: "ML / Data", core: true },
+  { name: "HuggingFace Transformers", cat: "ML / Data", core: true },
   { name: "ONNX / TorchScript", cat: "ML / Data" },
   { name: "OpenVINO / TF Lite", cat: "ML / Data" },
   { name: "LoRA / QLoRA", cat: "ML / Data" },
@@ -32,9 +32,9 @@ const SKILLS = [
   { name: "ARIMA", cat: "Models", group: "Classical" },
   { name: "SARIMA", cat: "Models", group: "Classical" },
   { name: "ARIMAX", cat: "Models", group: "Classical" },
-  { name: "SARIMAX", cat: "Models", group: "Classical" },
-  { name: "Random Forest", cat: "Models", group: "Machine Learning" },
-  { name: "XGBoost", cat: "Models", group: "Machine Learning" },
+  { name: "SARIMAX", cat: "Models", group: "Classical", core: true },
+  { name: "Random Forest", cat: "Models", group: "Machine Learning", core: true },
+  { name: "XGBoost", cat: "Models", group: "Machine Learning", core: true },
   { name: "LightGBM", cat: "Models", group: "Machine Learning" },
   { name: "CatBoost", cat: "Models", group: "Machine Learning" },
   { name: "Decision Tree", cat: "Models", group: "Machine Learning" },
@@ -42,10 +42,10 @@ const SKILLS = [
   { name: "MARS", cat: "Models", group: "Machine Learning" },
   { name: "RNN", cat: "Models", group: "Deep Learning" },
   { name: "GRU", cat: "Models", group: "Deep Learning" },
-  { name: "LSTM", cat: "Models", group: "Deep Learning" },
-  { name: "Transformer", cat: "Models", group: "Deep Learning" },
+  { name: "LSTM", cat: "Models", group: "Deep Learning", core: true },
+  { name: "Transformer", cat: "Models", group: "Deep Learning", core: true },
   { name: "GNN (Graph Neural Network)", cat: "Models", group: "Deep Learning" },
-  { name: "CNN", cat: "Models", group: "Deep Learning" },
+  { name: "CNN", cat: "Models", group: "Deep Learning", core: true },
   { name: "TFT (Temporal Fusion Transformer)", cat: "Models", group: "Deep Learning" },
   { name: "TCN (Temporal Convolutional Network)", cat: "Models", group: "Deep Learning" },
   { name: "TiDE", cat: "Models", group: "Deep Learning" },
@@ -53,23 +53,23 @@ const SKILLS = [
   { name: "N-HiTS", cat: "Models", group: "Deep Learning" },
   { name: "MLP (Multi-Layer Perceptron)", cat: "Models", group: "Deep Learning" },
   { name: "AutoEncoder (AE)", cat: "Models", group: "Anomaly / Reconstruction" },
-  { name: "Variational AutoEncoder (VAE)", cat: "Models", group: "Anomaly / Reconstruction" },
+  { name: "Variational AutoEncoder (VAE)", cat: "Models", group: "Anomaly / Reconstruction", core: true },
   { name: "VFAE (Variational Fair AutoEncoder)", cat: "Models", group: "Anomaly / Reconstruction" },
-  { name: "Temporal AutoEncoder", cat: "Models", group: "Anomaly / Reconstruction" },
+  { name: "Temporal AutoEncoder", cat: "Models", group: "Anomaly / Reconstruction", core: true },
   { name: "ResNet18", cat: "Models", group: "Vision" },
   { name: "NeRF / Nerfstudio", cat: "Models", group: "Vision" },
   { name: "BLIP", cat: "Models", group: "Vision" },
-  { name: "CLIP", cat: "Models", group: "Vision" },
+  { name: "CLIP", cat: "Models", group: "Vision", core: true },
   { name: "MiniLM (Sentence Embeddings)", cat: "Models", group: "Retrieval / Text" },
-  { name: "FLAN-T5", cat: "Models", group: "Retrieval / Text" },
-  { name: "PSO (Particle Swarm Optimisation)", cat: "Models", group: "Evolutionary Optimisers" },
+  { name: "FLAN-T5", cat: "Models", group: "Retrieval / Text", core: true },
+  { name: "PSO (Particle Swarm Optimisation)", cat: "Models", group: "Evolutionary Optimisers", core: true },
   { name: "MPA (Marine Predators)", cat: "Models", group: "Evolutionary Optimisers" },
   { name: "LM-IMPA", cat: "Models", group: "Evolutionary Optimisers" },
 
   // -------------------- Privacy & Federated AI --------------------
-  { name: "Federated Learning (FedProx / FedAvg)", cat: "Privacy & Federated AI" },
-  { name: "Differential Privacy (DP-SGD)", cat: "Privacy & Federated AI" },
-  { name: "SHAP (Shapley Values)", cat: "Privacy & Federated AI" },
+  { name: "Federated Learning (FedProx / FedAvg)", cat: "Privacy & Federated AI", core: true },
+  { name: "Differential Privacy (DP-SGD)", cat: "Privacy & Federated AI", core: true },
+  { name: "SHAP (Shapley Values)", cat: "Privacy & Federated AI", core: true },
   { name: "LIME (Local Interpretable Models)", cat: "Privacy & Federated AI" },
   { name: "Welford Online Statistics", cat: "Privacy & Federated AI" },
   { name: "Privacy-Preserving ML", cat: "Privacy & Federated AI" },
@@ -79,14 +79,14 @@ const SKILLS = [
   { name: "Non-IID Federated Training", cat: "Privacy & Federated AI" },
 
   // -------------------- Security & IAM --------------------
-  { name: "Zero Trust Architecture", cat: "Security & IAM" },
-  { name: "OAuth2 / SSO", cat: "Security & IAM" },
-  { name: "RBAC / ABAC", cat: "Security & IAM" },
+  { name: "Zero Trust Architecture", cat: "Security & IAM", core: true },
+  { name: "OAuth2 / SSO", cat: "Security & IAM", core: true },
+  { name: "RBAC / ABAC", cat: "Security & IAM", core: true },
   { name: "Active Directory", cat: "Security & IAM" },
   { name: "JWT / Session Management", cat: "Security & IAM" },
   { name: "Device Fingerprinting & Trust", cat: "Security & IAM" },
-  { name: "Behavioural Biometrics", cat: "Security & IAM" },
-  { name: "Risk-Based Authentication", cat: "Security & IAM" },
+  { name: "Behavioural Biometrics", cat: "Security & IAM", core: true },
+  { name: "Risk-Based Authentication", cat: "Security & IAM", core: true },
   { name: "Anomaly Detection (IAM)", cat: "Security & IAM" },
   { name: "GeoIP & Impossible Travel Detection", cat: "Security & IAM" },
   { name: "Adversarial Simulation & Fuzzing", cat: "Security & IAM" },
@@ -102,9 +102,9 @@ const SKILLS = [
   { name: "Input Validation & Sanitisation", cat: "Security & IAM" },
 
   // -------------------- Agentic AI --------------------
-  { name: "LangChain", cat: "Agentic AI" },
-  { name: "FAISS Vector Store", cat: "Agentic AI" },
-  { name: "RAG Pipelines (Dense + Hybrid)", cat: "Agentic AI" },
+  { name: "LangChain", cat: "Agentic AI", core: true },
+  { name: "FAISS Vector Store", cat: "Agentic AI", core: true },
+  { name: "RAG Pipelines (Dense + Hybrid)", cat: "Agentic AI", core: true },
   { name: "Multi-Agent Frameworks", cat: "Agentic AI" },
   { name: "Tool Calling / Function Use", cat: "Agentic AI" },
   { name: "Memory Systems (Short-term / Episodic)", cat: "Agentic AI" },
@@ -114,9 +114,9 @@ const SKILLS = [
   { name: "Prompt Engineering & Evaluation", cat: "Agentic AI" },
 
   // -------------------- Frameworks --------------------
-  { name: "Flask", cat: "Frameworks" },
-  { name: "FastAPI", cat: "Frameworks" },
-  { name: "React", cat: "Frameworks" },
+  { name: "Flask", cat: "Frameworks", core: true },
+  { name: "FastAPI", cat: "Frameworks", core: true },
+  { name: "React", cat: "Frameworks", core: true },
   { name: "Node.js / Express", cat: "Frameworks" },
   { name: "Streamlit", cat: "Frameworks" },
   { name: "Vite", cat: "Frameworks" },
@@ -127,36 +127,36 @@ const SKILLS = [
   { name: "OpenGL / GLSL (Blinn-Phong)", cat: "Frameworks" },
 
   // -------------------- Databases --------------------
-  { name: "PostgreSQL", cat: "Databases" },
+  { name: "PostgreSQL", cat: "Databases", core: true },
   { name: "MySQL", cat: "Databases" },
-  { name: "MongoDB", cat: "Databases" },
+  { name: "MongoDB", cat: "Databases", core: true },
   { name: "SQLite", cat: "Databases" },
   { name: "Redis", cat: "Databases" },
   { name: "Vector DB (FAISS / NumPy)", cat: "Databases" },
 
   // -------------------- Languages --------------------
-  { name: "Python", cat: "Languages" },
-  { name: "JavaScript / TypeScript", cat: "Languages" },
+  { name: "Python", cat: "Languages", core: true },
+  { name: "JavaScript / TypeScript", cat: "Languages", core: true },
   { name: "C / C++", cat: "Languages" },
   { name: "Java", cat: "Languages" },
-  { name: "SQL", cat: "Languages" },
+  { name: "SQL", cat: "Languages", core: true },
   { name: "Bash", cat: "Languages" },
   { name: "HTML / CSS", cat: "Languages" },
   { name: "Prolog (SWI-Prolog)", cat: "Languages" },
 
   // -------------------- Cloud & Platform --------------------
-  { name: "AWS (EC2, S3, Lambda, CloudFront, IAM)", cat: "Cloud & Platform" },
+  { name: "AWS (EC2, S3, Lambda, CloudFront, IAM)", cat: "Cloud & Platform", core: true },
   { name: "Azure (Compute / ML Endpoints)", cat: "Cloud & Platform" },
   { name: "GCP (Google Cloud Platform)", cat: "Cloud & Platform" },
-  { name: "Docker", cat: "Cloud & Platform" },
-  { name: "Kubernetes", cat: "Cloud & Platform" },
+  { name: "Docker", cat: "Cloud & Platform", core: true },
+  { name: "Kubernetes", cat: "Cloud & Platform", core: true },
   { name: "Terraform", cat: "Cloud & Platform" },
   { name: "GitHub Actions (CI/CD)", cat: "Cloud & Platform" },
   { name: "Linux / Bash Admin", cat: "Cloud & Platform" },
 
   // -------------------- DevOps & Tools --------------------
-  { name: "Git / GitHub / GitLab", cat: "DevOps & Tools" },
-  { name: "Jupyter / Notebooks", cat: "DevOps & Tools" },
+  { name: "Git / GitHub / GitLab", cat: "DevOps & Tools", core: true },
+  { name: "Jupyter / Notebooks", cat: "DevOps & Tools", core: true },
   { name: "VS Code / IntelliJ", cat: "DevOps & Tools" },
   { name: "Postman", cat: "DevOps & Tools" },
   { name: "Anaconda / venv", cat: "DevOps & Tools" },
@@ -165,27 +165,27 @@ const SKILLS = [
   { name: "pytest / unittest", cat: "DevOps & Tools" },
 
   // -------------------- Edge & Robotics --------------------
-  { name: "ROS2 (Robot Operating System)", cat: "Edge & Robotics" },
+  { name: "ROS2 (Robot Operating System)", cat: "Edge & Robotics", core: true },
   { name: "LiDAR-Camera Fusion", cat: "Edge & Robotics" },
   { name: "PID Control", cat: "Edge & Robotics" },
   { name: "SLAM", cat: "Edge & Robotics" },
-  { name: "OpenCV", cat: "Edge & Robotics" },
+  { name: "OpenCV", cat: "Edge & Robotics", core: true },
   { name: "NVIDIA Jetson / Intel Movidius", cat: "Edge & Robotics" },
   { name: "Gazebo / RViz Simulation", cat: "Edge & Robotics" },
   { name: "COLMAP (3D Reconstruction)", cat: "Edge & Robotics" },
 
   // -------------------- Finance & Analytics --------------------
-  { name: "Financial Statement Analysis", cat: "Finance & Analytics" },
+  { name: "Financial Statement Analysis", cat: "Finance & Analytics", core: true },
   { name: "Cash Flow Forecasting", cat: "Finance & Analytics" },
-  { name: "Market Trend / Equity Research", cat: "Finance & Analytics" },
+  { name: "Market Trend / Equity Research", cat: "Finance & Analytics", core: true },
   { name: "Data-Driven Financial Models", cat: "Finance & Analytics" },
   { name: "Portfolio Analysis", cat: "Finance & Analytics" },
 
   // -------------------- Methods & Practices --------------------
-  { name: "Agile / Scrum / Kanban", cat: "Methods & Practices" },
+  { name: "Agile / Scrum / Kanban", cat: "Methods & Practices", core: true },
   { name: "TDD / BDD", cat: "Methods & Practices" },
-  { name: "CI/CD Pipelines", cat: "Methods & Practices" },
-  { name: "OOP & Design Patterns (SOLID)", cat: "Methods & Practices" },
+  { name: "CI/CD Pipelines", cat: "Methods & Practices", core: true },
+  { name: "OOP & Design Patterns (SOLID)", cat: "Methods & Practices", core: true },
   { name: "API Design & Versioning", cat: "Methods & Practices" },
   { name: "Security & Privacy by Design", cat: "Methods & Practices" },
   { name: "Performance Profiling & Optimisation", cat: "Methods & Practices" },
@@ -224,8 +224,8 @@ const MODEL_GROUPS = [
    COMPONENTS
    ===================================================================== */
 
-function Pill({ name }) {
-  return <span className="spill">{name}</span>;
+function Pill({ name, core }) {
+  return <span className={core ? "spill core" : "spill"}>{name}</span>;
 }
 
 function ModelsBlock({ items }) {
@@ -238,44 +238,58 @@ function ModelsBlock({ items }) {
     byGroup[g].push(s);
   }
   const groups = MODEL_GROUPS.filter((g) => byGroup[g]?.length > 0);
-  const visibleGroups = collapsed ? groups.slice(0, 3) : groups;
+  const hasHidden = groups.some((g) => byGroup[g].some((s) => !s.core));
 
   return (
     <section className="block">
       <header className="block-head">
         <h3>Models</h3>
-        <button className="link-btn" onClick={() => setCollapsed((c) => !c)}>
-          {collapsed ? "Show all" : "Collapse"}
-        </button>
+        {hasHidden && (
+          <button className="link-btn" onClick={() => setCollapsed((c) => !c)}>
+            {collapsed ? "Show all" : "Collapse"}
+          </button>
+        )}
       </header>
-      {visibleGroups.map((g) => (
-        <div key={g} className="model-group">
-          <div className="model-group-label">{g}</div>
-          <div className="pill-row">
-            {byGroup[g].map((s, i) => <Pill key={i} name={s.name} />)}
+      {groups.map((g) => {
+        const all = byGroup[g];
+        const core = all.filter((s) => s.core);
+        const rest = all.filter((s) => !s.core);
+        const shown = collapsed ? (core.length ? core : all) : all;
+        return (
+          <div key={g} className="model-group">
+            <div className="model-group-label">{g}</div>
+            <div className="pill-row">
+              {shown.map((s, i) => <Pill key={i} name={s.name} core={s.core} />)}
+              {collapsed && core.length > 0 && rest.length > 0 && (
+                <span className="more-hint">+{rest.length} more</span>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </section>
   );
 }
 
 function CategoryBlock({ title, items }) {
   const [collapsed, setCollapsed] = useState(true);
-  const limit = 14;
-  const shown = collapsed ? items.slice(0, Math.min(limit, items.length)) : items;
+  const core = items.filter((s) => s.core);
+  const hasCore = core.length > 0;
+  const shown = !collapsed ? items : hasCore ? core : items.slice(0, 8);
+  const hiddenCount = items.length - shown.length;
+
   return (
     <section className="block">
       <header className="block-head">
         <h3>{title}</h3>
-        {items.length > limit && (
+        {(hiddenCount > 0 || !collapsed) && (
           <button className="link-btn" onClick={() => setCollapsed((c) => !c)}>
-            {collapsed ? `+${items.length - limit} more` : "Collapse"}
+            {collapsed ? `+${hiddenCount} more` : "Collapse"}
           </button>
         )}
       </header>
       <div className="pill-row">
-        {shown.map((s, i) => <Pill key={i} name={s.name} />)}
+        {shown.map((s, i) => <Pill key={i} name={s.name} core={s.core} />)}
       </div>
     </section>
   );
@@ -436,21 +450,36 @@ export default function TechnicalCompetencies() {
           border-radius: 7px;
           font-size: .84rem;
           font-weight: 700;
-          background: rgba(255,255,255,0.08);
+          background: rgba(38,38,52,0.9);
           border: 1px solid rgba(255,255,255,0.15);
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
           box-shadow: 0 2px 8px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
 
-          color: rgba(240,240,248,0.85);
+          color: rgba(240,240,248,0.7);
           cursor: default;
           white-space: nowrap;
           transition: background .12s ease, transform .1s ease;
           letter-spacing: -0.005em;
         }
         .spill:hover {
-          background: rgba(255,255,255,0.62);
+          background: rgba(255,255,255,0.16);
           transform: translateY(-1px);
+        }
+        .spill.core {
+          background: rgba(160,130,255,0.18);
+          border-color: rgba(160,130,255,0.45);
+          color: #f0f0f8;
+          font-weight: 800;
+        }
+        .spill.core:hover {
+          background: rgba(160,130,255,0.3);
+        }
+
+        .more-hint {
+          align-self: center;
+          font-size: .78rem;
+          font-weight: 600;
+          color: rgba(240,240,248,0.35);
+          padding-left: .2rem;
         }
 
         .model-group { margin-bottom: .65rem; }
