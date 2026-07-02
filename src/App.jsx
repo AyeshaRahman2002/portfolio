@@ -1,10 +1,12 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
+import { createPortal } from "react-dom";
 import myPic from "./profile.jpg";
 const ProjectCards = lazy(() => import("./components/ProjectCards"));
 const TechnicalCompetencies = lazy(() => import("./components/TechnicalCompetencies"));
 import WorkExperience from "./components/WorkExperience";
 import Certifications from "./components/Certifications";
 import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 import Blog1 from "./components/blog1.jsx";
 import Blog2 from "./components/blog2.jsx";
 import Blog3 from "./components/blog3.jsx";
@@ -209,6 +211,9 @@ const tabs = [
   const [projectCategory, setProjectCategory] = useState("All");
   const [projectSection, setProjectSection] = useState("All");
   const [projMenuOpen, setProjMenuOpen] = useState(false);
+  const [projMenuPos, setProjMenuPos] = useState({ top: 0, left: 0 });
+  const projTriggerRef = useRef(null);
+  const projCloseTimerRef = useRef(null);
   const PROJECT_SECTIONS = [
     { key: "All", label: "All Types" },
     { key: "Work", label: "Work Projects" },
@@ -216,6 +221,29 @@ const tabs = [
     { key: "Uni", label: "University Projects" },
     { key: "Virtual", label: "Virtual Experience" },
   ];
+  const PROJECT_DOMAINS = ["All", "Finance", "Health", "Robotics", "Graphics", "Systems", "AI/ML", "HCI", "Security"];
+
+  // Dropdown is rendered via a portal (see below) so it isn't clipped by
+  // nav's overflowX:auto, which forces overflowY to compute as non-visible.
+  const openProjMenu = () => {
+    if (projCloseTimerRef.current) {
+      clearTimeout(projCloseTimerRef.current);
+      projCloseTimerRef.current = null;
+    }
+    if (projTriggerRef.current) {
+      const r = projTriggerRef.current.getBoundingClientRect();
+      setProjMenuPos({ top: r.bottom + 8, left: r.left });
+    }
+    setProjMenuOpen(true);
+  };
+  const scheduleCloseProjMenu = () => {
+    if (projCloseTimerRef.current) clearTimeout(projCloseTimerRef.current);
+    projCloseTimerRef.current = setTimeout(() => {
+      setProjMenuOpen(false);
+      setTilt({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
+    }, 150);
+  };
+
   useEffect(() => {
     const onDocClick = (e) => {
       const menu = document.getElementById("projects-menu");
@@ -236,6 +264,8 @@ const tabs = [
       minHeight: "100vh",
       overflow: "hidden",
       background: "#09090f",
+      display: "flex",
+      flexDirection: "column",
     }}>
       {/* Dot grid texture */}
       <div style={{
@@ -304,9 +334,10 @@ const tabs = [
           return (
             <div
               key="Projects"
+              ref={projTriggerRef}
               style={{ position: "relative" }}
-              onMouseEnter={() => setProjMenuOpen(true)}
-              onMouseLeave={() => { setProjMenuOpen(false); setTilt({ rx: 0, ry: 0, glowX: 50, glowY: 50 }); }}
+              onMouseEnter={openProjMenu}
+              onMouseLeave={scheduleCloseProjMenu}
             >
               <button
                 id="projects-btn"
@@ -341,11 +372,13 @@ const tabs = [
                 Projects <span aria-hidden>▾</span>
               </button>
 
-              {projMenuOpen && (
+              {projMenuOpen && createPortal(
                 <div
                   id="projects-menu"
                   role="menu"
                   className="glass-menu"
+                  onMouseEnter={openProjMenu}
+                  onMouseLeave={scheduleCloseProjMenu}
                   onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const x = e.clientX - rect.left;
@@ -357,9 +390,9 @@ const tabs = [
                     setTilt({ rx, ry, glowX: px * 100, glowY: py * 100 });
                   }}
                   style={{
-                    position: "absolute",
-                    top: "100%",
-                    left: 0,
+                    position: "fixed",
+                    top: projMenuPos.top,
+                    left: projMenuPos.left,
                     minWidth: "260px",
                     borderRadius: "14px",
                     padding: "8px",
@@ -380,7 +413,7 @@ const tabs = [
                     boxShadow: `0 10px 30px rgba(0,0,0,0.5)`,
                     backdropFilter: "blur(16px)",
                     WebkitBackdropFilter: "blur(16px)",
-                    zIndex: 999,
+                    zIndex: 9999,
                   }}
                 >
                   <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(240,240,248,0.4)", padding: "8px 12px 4px" }}>
@@ -421,7 +454,7 @@ const tabs = [
                   <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(240,240,248,0.4)", padding: "4px 12px 4px" }}>
                     Domain
                   </div>
-                  {["All", "Finance", "Health", "Robotics", "Graphics", "Systems", "AI/ML", "HCI", "Security"].map(
+                  {PROJECT_DOMAINS.map(
                     (cat) => (
                       <button
                         key={cat}
@@ -452,7 +485,8 @@ const tabs = [
                       </button>
                     )
                   )}
-                </div>
+                </div>,
+                document.body
               )}
             </div>
           );
@@ -611,6 +645,43 @@ const tabs = [
         .btn.primary { background:rgba(255,255,255,0.95); color:#0d0d1a; border-color:transparent; }
         .btn.primary:hover { background:#fff; }
         .btn.ghost { background:rgba(255,255,255,0.07); }
+        .filter-bar {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 12px 14px;
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
+        }
+        .filter-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .filter-label {
+          flex-shrink: 0;
+          width: 56px;
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: rgba(240,240,248,0.4);
+        }
+        .filter-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+        .filter-pill {
+          border: 1px solid rgba(255,255,255,0.15);
+          background: rgba(255,255,255,0.06);
+          color: rgba(240,240,248,0.75);
+          border-radius: 999px;
+          padding: 6px 12px;
+          font-weight: 700;
+          font-size: 0.82rem;
+          cursor: pointer;
+          transition: background .15s ease, color .15s ease;
+        }
+        .filter-pill:hover { background: rgba(255,255,255,0.12); color: #f0f0f8; }
+        .filter-pill.on { background: rgba(160,130,255,0.22); border-color: rgba(160,130,255,0.5); color: #f0f0f8; }
+        @media (max-width: 640px) {
+          .filter-row { flex-direction: column; align-items: flex-start; }
+          .filter-label { width: auto; }
+        }
         @media (max-width: 920px) {
           .hero { min-height: auto; padding-top: 6vh; }
           .stats { margin-top: 1.5rem; align-items: flex-start; }
@@ -633,6 +704,7 @@ const tabs = [
           position: "relative",
           zIndex: 1,
           minHeight: "100vh",
+          flex: "1 0 auto",
           display: "grid",
           alignItems:
             activeTab === "Projects" || activeTab === "Certifications" || activeTab === "Technical Competencies" || activeTab === "Blog"
@@ -826,26 +898,59 @@ const tabs = [
             }}
           >
             <div style={{ width: "100%" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", width: "100%", maxWidth: "1240px", margin: "0 auto 1rem" }}>
-                <div style={{ fontWeight: 700, letterSpacing: "-0.01em", color: "#f0f0f8" }}>
-                  {(() => {
-                    const sectionLabel = PROJECT_SECTIONS.find((s) => s.key === projectSection)?.label;
-                    const parts = [
-                      projectSection !== "All" ? sectionLabel : null,
-                      projectCategory !== "All" ? `${projectCategory}` : null,
-                    ].filter(Boolean);
-                    return parts.length ? parts.join(" • ") : "All Projects";
-                  })()}
+              <div style={{ width: "100%", maxWidth: "1240px", margin: "0 auto 1.5rem", display: "flex", flexDirection: "column", gap: "10px" }}>
+                <div className="filter-bar">
+                  <div className="filter-row">
+                    <span className="filter-label">Type</span>
+                    <div className="filter-pills">
+                      {PROJECT_SECTIONS.map(({ key, label }) => (
+                        <button
+                          key={key}
+                          className={`filter-pill ${projectSection === key ? "on" : ""}`}
+                          onClick={() => setProjectSection(key)}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="filter-row">
+                    <span className="filter-label">Domain</span>
+                    <div className="filter-pills">
+                      {PROJECT_DOMAINS.map((cat) => (
+                        <button
+                          key={cat}
+                          className={`filter-pill ${projectCategory === cat ? "on" : ""}`}
+                          onClick={() => setProjectCategory(cat)}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                {(projectCategory !== "All" || projectSection !== "All") && (
-                  <button
-                    onClick={() => { setProjectCategory("All"); setProjectSection("All"); }}
-                    style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.08)", color: "#f0f0f8", borderRadius: 10, padding: "6px 10px", cursor: "pointer", fontWeight: 600 }}
-                    title="Show all projects"
-                  >
-                    Clear filter
-                  </button>
-                )}
+
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div style={{ fontWeight: 700, letterSpacing: "-0.01em", color: "#f0f0f8" }}>
+                    {(() => {
+                      const sectionLabel = PROJECT_SECTIONS.find((s) => s.key === projectSection)?.label;
+                      const parts = [
+                        projectSection !== "All" ? sectionLabel : null,
+                        projectCategory !== "All" ? `${projectCategory}` : null,
+                      ].filter(Boolean);
+                      return parts.length ? parts.join(" • ") : "All Projects";
+                    })()}
+                  </div>
+                  {(projectCategory !== "All" || projectSection !== "All") && (
+                    <button
+                      onClick={() => { setProjectCategory("All"); setProjectSection("All"); }}
+                      style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.08)", color: "#f0f0f8", borderRadius: 10, padding: "6px 10px", cursor: "pointer", fontWeight: 600 }}
+                      title="Show all projects"
+                    >
+                      Clear filter
+                    </button>
+                  )}
+                </div>
               </div>
 
               <Suspense fallback={<div style={{padding:"2rem",opacity:0.5}}>Loading projects...</div>}>
@@ -863,6 +968,23 @@ const tabs = [
           </Suspense>
         ) : activeTab === "Contact" ? (
           <div style={{ width: "100%", display: "grid", placeItems: "center", gap: "1.5rem" }}>
+            <div style={{ textAlign: "center", maxWidth: 520 }}>
+              <h1
+                style={{
+                  margin: "0 0 0.6rem",
+                  fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+                  fontWeight: 800,
+                  letterSpacing: "-0.02em",
+                  color: "#f0f0f8",
+                }}
+              >
+                Let's Connect
+              </h1>
+              <p style={{ margin: 0, color: "rgba(240,240,248,0.65)", fontSize: "1rem", lineHeight: 1.6 }}>
+                Have a role, project, or idea in mind? I'd love to hear from you.
+              </p>
+            </div>
+
             <div className="home-cta" style={{ justifyContent: "center" }}>
               <a className="btn ghost" href="mailto:ayesharahman7755@gmail.com">
                 Gmail ↗
@@ -987,6 +1109,8 @@ const tabs = [
           </div>
         )}
       </main>
+
+      <Footer email="ayesharahman7755@gmail.com" linkedin={LINKS.linkedin} github={LINKS.github} />
 
       {activeTab === "Projects" && (
         <div data-assistant-hint>

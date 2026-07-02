@@ -12,9 +12,9 @@ const RELEVANT = [
     location: "Remote · Jeddah, Saudi Arabia",
     dates: "Dec 2025 - Present",
     bullets: [
-      "Developing a continuous post-authentication behavioural authentication system using process-level telemetry (VAE, Transformer, CNN, Temporal Autoencoder) across CERT, LANL, and RBA datasets (58M+ events).",
-      "Built scalable feature pipelines with TSFresh automated extraction; implemented Welford streaming digital twins and a 24→39→49-dimensional domain-specific feature space for runtime user profiling.",
-      "Achieved AUROC=0.992 and F1=0.989 (balanced LANL) on honest evaluation against real red-team labels; applied federated learning (FedProx) and differential privacy (DP-SGD at ε=2.0), targeting IEEE S&P 2026.",
+      "Building a continuous post-authentication behavioural monitoring system that watches how users act after they've already logged in, since most identity systems only verify identity once at login and have no way to catch session hijacking or insider threats afterwards.",
+      "Designing deep learning models (VAE, Transformer, CNN, Temporal Autoencoder) and streaming feature pipelines that build a live behavioural profile for each user, so unusual activity can be flagged in real time instead of being found later in an audit.",
+      "Applying privacy-preserving techniques like federated learning and differential privacy so the system can learn from sensitive enterprise behavioural data without ever exposing it directly, with the goal of growing this research into an MVP and eventually a full product.",
     ],
   },
   {

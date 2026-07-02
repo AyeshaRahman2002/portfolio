@@ -243,7 +243,7 @@ function ModelsBlock({ items }) {
   const visibleGroups = collapsed ? groups.slice(0, 3) : groups;
 
   return (
-    <section className="block">
+    <section className="block models-block">
       <header className="block-head">
         <h3>Models</h3>
         {groups.length > 3 && (
@@ -324,9 +324,17 @@ export default function TechnicalCompetencies() {
           className="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Filter skills..."
-          aria-label="Filter skills"
+          placeholder="Search skills..."
+          aria-label="Search skills"
         />
+        <div className="filter-header">
+          <span className="filter-title">Filter by category</span>
+          {activeCats.size < CATEGORIES.length && (
+            <button className="link-btn" onClick={() => setActiveCats(new Set(CATEGORIES))}>
+              Reset
+            </button>
+          )}
+        </div>
         <div className="pills">
           {CATEGORIES.map((c) => (
             <button
@@ -341,19 +349,38 @@ export default function TechnicalCompetencies() {
         </div>
       </div>
 
-      {CATEGORIES.map((c) => {
-        const items = grouped.get(c) || [];
-        if (!items.length) return null;
-        if (c === "Models") return <ModelsBlock key={c} items={items} />;
-        return <CategoryBlock key={c} title={c} items={items} />;
-      })}
+      <div className="tc-grid">
+        {CATEGORIES.map((c) => {
+          const items = grouped.get(c) || [];
+          if (!items.length) return null;
+          if (c === "Models") return <ModelsBlock key={c} items={items} />;
+          return <CategoryBlock key={c} title={c} items={items} />;
+        })}
+      </div>
 
       <style>{`
         .tc-wrap {
           width: 100%;
-          max-width: 1100px;
+          max-width: 1320px;
           margin: 0 auto;
           padding-bottom: 2rem;
+        }
+
+        .tc-grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 16px;
+          align-items: stretch;
+        }
+        @media (min-width: 640px) {
+          .tc-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1020px) {
+          .tc-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .tc-grid .models-block { grid-column: span 2; }
+        @media (max-width: 639px) {
+          .tc-grid .models-block { grid-column: span 1; }
         }
 
         .filterbar {
@@ -376,11 +403,28 @@ export default function TechnicalCompetencies() {
           outline: none;
           font-size: 0.95rem;
         }
+        .filter-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: .7rem;
+        }
+        .filter-title {
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: rgba(240,240,248,0.4);
+        }
         .pills {
           display: flex;
           flex-wrap: wrap;
           gap: .4rem;
-          margin-top: .55rem;
+          margin-top: .5rem;
+          padding: 10px 12px;
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
         }
         .pill {
           border: 1px solid rgba(255,255,255,0.15);
@@ -401,7 +445,15 @@ export default function TechnicalCompetencies() {
           color: #f0f0f8;
         }
 
-        .block { margin-top: 1.2rem; }
+        .block {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 16px;
+          padding: 1.1rem 1.2rem 1.3rem;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
         .block-head {
           display: flex;
           align-items: center;
