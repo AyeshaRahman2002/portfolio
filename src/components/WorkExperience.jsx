@@ -18,7 +18,7 @@ const RELEVANT = [
     ],
   },
   {
-    role: "Associate",
+    role: "Associate Consultant",
     company: "Palmate Technology",
     location: "Remote",
     dates: "May 2026 - Present",

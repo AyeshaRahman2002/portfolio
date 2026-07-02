@@ -1,6 +1,25 @@
 // Components/ProjectCard.jsx
 import { useState, useRef, useEffect } from "react";
 
+// Turns any raw URLs inside a chat message into clickable links.
+function linkify(text) {
+  return text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+    /^https?:\/\//.test(part) ? (
+      <a
+        key={i}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "rgba(160,200,255,0.95)", textDecoration: "underline" }}
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function ProjectCard({
   image,
   title,
@@ -30,6 +49,7 @@ export default function ProjectCard({
     { sender: "assistant", text: "Hi! Ask me anything about this project." },
   ]);
   const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -49,19 +69,23 @@ export default function ProjectCard({
   }, [mode]);
 
   const defaultResponder = (input) => {
-    const text = input.toLowerCase();
+    const text = input.toLowerCase().trim();
+    if (/^(hi|hello|hey|yo|sup)\b/.test(text))
+      return `Hey! Ask me about ${title} — approach, tech stack, results, or links like GitHub, video and report.`;
+    if (/(thanks|thank you|cheers|appreciate)/.test(text))
+      return "You're welcome! Anything else you'd like to know about this project?";
     if (/(github|code|repo)/.test(text) && githubLink)
       return `Explore the code on GitHub: ${githubLink}`;
     if (/(video|demo|presentation)/.test(text))
       return videoLink ? `Watch the demo here: ${videoLink}` : "No video available for this project.";
     if (/(report|paper|docs?)/.test(text)) {
       if (reportLinks?.length > 0)
-        return `Documents:\n${reportLinks.map((r) => `• ${r.name}`).join("\n")}`;
+        return `Documents:\n${reportLinks.map((r) => `• ${r.name}`).join("\n")}\nOpen the Overview tab to download them.`;
       return "No report available for this project.";
     }
     if (/(summary|overview|what|about)/.test(text))
       return `${title}: click the Overview tab to see the project description and key highlights.`;
-    return "Try asking about the approach, models, results, or links like GitHub, video and report.";
+    return "I didn't quite catch that — try asking about the approach, tech stack, results, or links like GitHub, video and report.";
   };
 
   const responder = typeof getResponse === "function" ? getResponse : defaultResponder;
@@ -70,9 +94,12 @@ export default function ProjectCard({
     if (!text.trim()) return;
     setUsedChips((prev) => new Set([...prev, text]));
     setMessages((prev) => [...prev, { sender: "user", text }]);
+    setIsTyping(true);
+
     setTimeout(() => {
       setMessages((prev) => [...prev, { sender: "assistant", text: responder(text) }]);
-    }, 350);
+      setIsTyping(false);
+    }, 250);
   };
 
   const handleSend = () => {
@@ -307,10 +334,27 @@ export default function ProjectCard({
                           color: "#f0f0f8", border: "1px solid rgba(255,255,255,0.08)",
                           whiteSpace: "pre-wrap",
                         }}>
-                          {msg.text}
+                          {linkify(msg.text)}
                         </div>
                       </div>
                     ))}
+                    {isTyping && (
+                      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
+                        <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(240,240,248,0.4)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                          AI
+                        </span>
+                        <div className="typing-dots" style={{
+                          padding: "9px 13px", borderRadius: 12,
+                          background: "rgba(255,255,255,0.07)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          display: "flex", gap: 4, alignItems: "center",
+                        }}>
+                          <span className="typing-dot" />
+                          <span className="typing-dot" />
+                          <span className="typing-dot" />
+                        </div>
+                      </div>
+                    )}
                     <div ref={messagesEndRef} />
                   </div>
 
@@ -373,6 +417,22 @@ export default function ProjectCard({
           </div>
         </div>
       )}
+
+      <style>{`
+        .typing-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: rgba(240,240,248,0.5);
+          animation: typing-bounce 1.2s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes typing-bounce {
+          0%, 60%, 100% { opacity: 0.35; transform: translateY(0); }
+          30% { opacity: 1; transform: translateY(-3px); }
+        }
+      `}</style>
     </>
   );
 }

@@ -1698,7 +1698,7 @@ const llmResearchResponder = (raw) => {
 /** --------------------------
  * Projects (with categories) + filtered render
  * -------------------------- */
-export default function ProjectCards({ selectedCategory = "All" }) {
+export default function ProjectCards({ selectedCategory = "All", selectedSection = "All" }) {
   const workProjects = [
     {
       section: "Work",
@@ -2053,7 +2053,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
     @media (min-width: 1180px) { .proj-grid { grid-template-columns: repeat(4, 1fr) !important; } }
   `;
 
-  if (selectedCategory === "All") {
+  if (selectedCategory === "All" && selectedSection === "All") {
     return (
       <>
         <style>{gridResponsiveCSS}</style>
@@ -2073,7 +2073,11 @@ export default function ProjectCards({ selectedCategory = "All" }) {
     );
   }
 
-  const visible = allProjects.filter((p) => p.category === selectedCategory);
+  const visible = allProjects.filter(
+    (p) =>
+      (selectedCategory === "All" || p.category === selectedCategory) &&
+      (selectedSection === "All" || p.section === selectedSection)
+  );
 
   return (
     <>
@@ -2083,7 +2087,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
           <ProjectCard key={p.title} {...p} />
         ))}
         {visible.length === 0 && (
-          <div style={{ opacity: 0.6, fontWeight: 600, gridColumn: "1/-1" }}>No projects in this category yet.</div>
+          <div style={{ opacity: 0.6, fontWeight: 600, gridColumn: "1/-1" }}>No projects in this filter yet.</div>
         )}
       </div>
     </>

@@ -207,7 +207,15 @@ const tabs = [
 
   // Projects state
   const [projectCategory, setProjectCategory] = useState("All");
+  const [projectSection, setProjectSection] = useState("All");
   const [projMenuOpen, setProjMenuOpen] = useState(false);
+  const PROJECT_SECTIONS = [
+    { key: "All", label: "All Types" },
+    { key: "Work", label: "Work Projects" },
+    { key: "Research", label: "Research Projects" },
+    { key: "Uni", label: "University Projects" },
+    { key: "Virtual", label: "Virtual Experience" },
+  ];
   useEffect(() => {
     const onDocClick = (e) => {
       const menu = document.getElementById("projects-menu");
@@ -307,6 +315,7 @@ const tabs = [
                 onClick={() => {
                   setActiveTab("Projects");
                   setProjectCategory("All");
+                  setProjectSection("All");
                   setProjMenuOpen(false);
                   go("/");
                 }}
@@ -323,7 +332,11 @@ const tabs = [
                   alignItems: "center",
                   gap: ".4rem",
                 }}
-                title={projectCategory === "All" ? "Projects" : `Projects • ${projectCategory}`}
+                title={
+                  projectCategory === "All" && projectSection === "All"
+                    ? "Projects"
+                    : `Projects • ${[projectSection !== "All" ? projectSection : null, projectCategory !== "All" ? projectCategory : null].filter(Boolean).join(" / ")}`
+                }
               >
                 Projects <span aria-hidden>▾</span>
               </button>
@@ -345,15 +358,15 @@ const tabs = [
                   }}
                   style={{
                     position: "absolute",
-                    top: "2.6rem",
+                    top: "100%",
                     left: 0,
-                    minWidth: "240px",
+                    minWidth: "260px",
                     borderRadius: "14px",
                     padding: "8px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "stretch",
-                    gap: "6px",
+                    gap: "2px",
                     whiteSpace: "normal",
                     transform: `perspective(900px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) translateZ(0)`,
                     transformStyle: "preserve-3d",
@@ -370,6 +383,44 @@ const tabs = [
                     zIndex: 999,
                   }}
                 >
+                  <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(240,240,248,0.4)", padding: "8px 12px 4px" }}>
+                    Type
+                  </div>
+                  {PROJECT_SECTIONS.map(({ key, label }) => (
+                    <button
+                      key={key}
+                      role="menuitem"
+                      className="glass-item"
+                      onClick={() => {
+                        setActiveTab("Projects");
+                        setProjectSection(key);
+                        setProjMenuOpen(false);
+                        setTilt({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
+                        go("/");
+                      }}
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        textAlign: "left",
+                        border: "none",
+                        background: projectSection === key ? "rgba(255,255,255,0.12)" : "transparent",
+                        color: "#f0f0f8",
+                        padding: "10px 12px",
+                        borderRadius: "10px",
+                        cursor: "pointer",
+                        fontWeight: 700,
+                        letterSpacing: "-0.01em",
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ))}
+
+                  <div style={{ height: 1, background: "rgba(255,255,255,0.1)", margin: "6px 4px" }} />
+
+                  <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(240,240,248,0.4)", padding: "4px 12px 4px" }}>
+                    Domain
+                  </div>
                   {["All", "Finance", "Health", "Robotics", "Graphics", "Systems", "AI/ML", "HCI", "Security"].map(
                     (cat) => (
                       <button
@@ -389,8 +440,8 @@ const tabs = [
                           textAlign: "left",
                           border: "none",
                           background: projectCategory === cat ? "rgba(255,255,255,0.12)" : "transparent",
-                    color: "#f0f0f8",
-                          padding: "12px 14px",
+                          color: "#f0f0f8",
+                          padding: "10px 12px",
                           borderRadius: "10px",
                           cursor: "pointer",
                           fontWeight: 700,
@@ -777,11 +828,18 @@ const tabs = [
             <div style={{ width: "100%" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", width: "100%", maxWidth: "1240px", margin: "0 auto 1rem" }}>
                 <div style={{ fontWeight: 700, letterSpacing: "-0.01em", color: "#f0f0f8" }}>
-                  {projectCategory === "All" ? "All Projects" : `${projectCategory} Projects`}
+                  {(() => {
+                    const sectionLabel = PROJECT_SECTIONS.find((s) => s.key === projectSection)?.label;
+                    const parts = [
+                      projectSection !== "All" ? sectionLabel : null,
+                      projectCategory !== "All" ? `${projectCategory}` : null,
+                    ].filter(Boolean);
+                    return parts.length ? parts.join(" • ") : "All Projects";
+                  })()}
                 </div>
-                {projectCategory !== "All" && (
+                {(projectCategory !== "All" || projectSection !== "All") && (
                   <button
-                    onClick={() => setProjectCategory("All")}
+                    onClick={() => { setProjectCategory("All"); setProjectSection("All"); }}
                     style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.08)", color: "#f0f0f8", borderRadius: 10, padding: "6px 10px", cursor: "pointer", fontWeight: 600 }}
                     title="Show all projects"
                   >
@@ -791,7 +849,7 @@ const tabs = [
               </div>
 
               <Suspense fallback={<div style={{padding:"2rem",opacity:0.5}}>Loading projects...</div>}>
-                <ProjectCards selectedCategory={projectCategory} />
+                <ProjectCards selectedCategory={projectCategory} selectedSection={projectSection} />
               </Suspense>
             </div>
           </div>
