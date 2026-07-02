@@ -94,6 +94,18 @@ const [introStage, setIntroStage] = useState(0);
   const [typedText, setTypedText] = useState("");
   const fullText = "AYESHA RAHMAN";
 
+  // Prefetch the (large) Projects chunk during idle time so switching to that
+  // tab doesn't stall on downloading + parsing it.
+  useEffect(() => {
+    const prefetch = () => import("./components/ProjectCards");
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(prefetch);
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = setTimeout(prefetch, 1500);
+    return () => clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     if (introStage === 0) {
       let index = 0;
@@ -474,46 +486,56 @@ const tabs = [
                   width: "100%",
                 }}
               >
-                <h1
-                  style={{
-                    margin: 0,
-                    fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
-                    fontWeight: 800,
-                    letterSpacing: "-0.02em",
-                    color: "#f0f0f8",
-                  }}
-                >
-                  AYESHA RAHMAN
-                </h1>
+                <div className="hero-card-inner">
+                  <img
+                    src={myPic}
+                    alt="Ayesha Rahman"
+                    className="hero-photo"
+                  />
 
-                <div className="role-line" aria-live="polite" aria-atomic="true">
-                  <div className="rotator" aria-label={`Role: ${roles[idx]}`}>
-                    {roles.map((r, i) => (
-                      <div key={i} className={`role-item ${i === idx ? "active" : ""}`}>
-                        {r}
+                  <div className="hero-text">
+                    <h1
+                      style={{
+                        margin: 0,
+                        fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
+                        fontWeight: 800,
+                        letterSpacing: "-0.02em",
+                        color: "#f0f0f8",
+                      }}
+                    >
+                      AYESHA RAHMAN
+                    </h1>
+
+                    <div className="role-line" aria-live="polite" aria-atomic="true">
+                      <div className="rotator" aria-label={`Role: ${roles[idx]}`}>
+                        {roles.map((r, i) => (
+                          <div key={i} className={`role-item ${i === idx ? "active" : ""}`}>
+                            {r}
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="home-cta">
-                  <a className="btn primary" href={LINKS.resume} download>
-                    Download Resume
-                  </a>
-                  <a className="btn ghost" href={LINKS?.linkedin} target="_blank" rel="noreferrer">
-                    LinkedIn ↗
-                  </a>
-                  <a className="btn ghost" href={LINKS?.github} target="_blank" rel="noreferrer">
-                    GitHub ↗
-                  </a>
-                </div>
-
-                <div className="stats">
-                  {stats.map((s, i) => (
-                    <div className="stat-line" key={i}>
-                      {s}
                     </div>
-                  ))}
+
+                    <div className="home-cta">
+                      <a className="btn primary" href={LINKS.resume} download>
+                        Download Resume
+                      </a>
+                      <a className="btn ghost" href={LINKS?.linkedin} target="_blank" rel="noreferrer">
+                        LinkedIn ↗
+                      </a>
+                      <a className="btn ghost" href={LINKS?.github} target="_blank" rel="noreferrer">
+                        GitHub ↗
+                      </a>
+                    </div>
+
+                    <div className="stats">
+                      {stats.map((s, i) => (
+                        <div className="stat-line" key={i}>
+                          {s}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -570,6 +592,29 @@ const tabs = [
                 flex-direction: column;
                 gap: 2rem;
                 padding-top: 10vh;
+              }
+              .hero-card-inner {
+                display: flex;
+                align-items: center;
+                gap: clamp(1.2rem, 4vw, 2.2rem);
+              }
+              .hero-photo {
+                flex-shrink: 0;
+                width: clamp(90px, 14vw, 150px);
+                height: clamp(90px, 14vw, 150px);
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center top;
+                border: 2px solid rgba(255,255,255,0.25);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.45), 0 0 0 6px rgba(160,130,255,0.1);
+              }
+              .hero-text { flex: 1; min-width: 0; }
+              @media (max-width: 640px) {
+                .hero-card-inner { flex-direction: column; text-align: center; }
+                .hero-text { width: 100%; }
+                .role-line { justify-content: center; }
+                .home-cta { justify-content: center; }
+                .stats { align-items: center; }
               }
               .cs-nav-grid {
                 display: grid;
@@ -720,7 +765,7 @@ const tabs = [
             }}
           >
             <div style={{ width: "100%" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", width: "100%", maxWidth: "1240px", margin: "0 auto 1rem" }}>
                 <div style={{ fontWeight: 700, letterSpacing: "-0.01em", color: "#f0f0f8" }}>
                   {projectCategory === "All" ? "All Projects" : `${projectCategory} Projects`}
                 </div>

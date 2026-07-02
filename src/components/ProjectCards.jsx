@@ -2040,20 +2040,26 @@ export default function ProjectCards({ selectedCategory = "All" }) {
 
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+    gridTemplateColumns: "repeat(1, 1fr)",
     gap: "16px",
+    width: "100%",
+    maxWidth: "1240px",
+    margin: "0 auto",
   };
+
+  const gridResponsiveCSS = `
+    @media (min-width: 560px) { .proj-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (min-width: 860px) { .proj-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+    @media (min-width: 1180px) { .proj-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+  `;
 
   if (selectedCategory === "All") {
     return (
       <>
-        <style>{`
-          @media (min-width: 640px) { .proj-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important; } }
-          @media (min-width: 1024px) { .proj-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; } }
-        `}</style>
+        <style>{gridResponsiveCSS}</style>
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", width: "100%" }}>
           {SECTIONS.map(({ key, label, projects }) => (
-            <div key={key}>
+            <div key={key} style={{ width: "100%", maxWidth: "1240px", margin: "0 auto" }}>
               <h2 style={sectionHeadStyle}>{label}</h2>
               <div className="proj-grid" style={gridStyle}>
                 {projects.map((p) => (
@@ -2071,10 +2077,7 @@ export default function ProjectCards({ selectedCategory = "All" }) {
 
   return (
     <>
-      <style>{`
-        @media (min-width: 640px) { .proj-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important; } }
-        @media (min-width: 1024px) { .proj-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; } }
-      `}</style>
+      <style>{gridResponsiveCSS}</style>
       <div className="proj-grid" style={gridStyle}>
         {visible.map((p) => (
           <ProjectCard key={p.title} {...p} />

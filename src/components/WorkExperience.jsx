@@ -18,15 +18,14 @@ const RELEVANT = [
     ],
   },
   {
-    role: "Freelance Software Developer",
-    company: "Outlier",
+    role: "Associate",
+    company: "Palmate Technology",
     location: "Remote",
-    dates: "Dec 2024 - Sep 2025",
-    logo: outlierLogo,
+    dates: "May 2026 - Present",
     bullets: [
-      "Designed and tested AI prompts with emphasis on edge cases and QA.",
-      "Built full-stack client websites using HTML, CSS, JavaScript, and Flask.",
-      "Collaborated with cross-functional teams to develop web tools aligned with client needs.",
+      "Implementing and configuring Odoo ERP modules (Sales, Inventory, Accounting, Fiscal Positions) to match client business processes and requirements.",
+      "Customizing workflows and migrating data across Odoo modules, coordinating with cross-functional teams to test end-to-end business processes.",
+      "Providing ongoing support and troubleshooting for live Odoo ERP deployments to ensure smooth client adoption.",
     ],
   },
   {
@@ -44,6 +43,14 @@ const RELEVANT = [
 ];
 
 const OTHER = [
+  {
+    role: "Freelance",
+    company: "Outlier",
+    location: "Remote",
+    dates: "Dec 2024 - Sep 2025",
+    logo: outlierLogo,
+    bullets: ["Designed and tested AI prompts with emphasis on edge cases and QA."],
+  },
   {
     role: "Brand Manager (Part-time)",
     company: "Student Cribs",

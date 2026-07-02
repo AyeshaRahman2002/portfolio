@@ -94,9 +94,7 @@ export default function ProjectCard({
         style={{
           borderRadius: 14,
           overflow: "hidden",
-          background: "rgba(255,255,255,0.07)",
-          backdropFilter: "blur(20px) saturate(160%)",
-          WebkitBackdropFilter: "blur(20px) saturate(160%)",
+          background: "rgba(30,30,42,0.85)",
           border: "1px solid rgba(255,255,255,0.13)",
           boxShadow: "0 6px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
           cursor: "pointer",
