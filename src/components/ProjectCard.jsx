@@ -71,7 +71,7 @@ export default function ProjectCard({
   const defaultResponder = (input) => {
     const text = input.toLowerCase().trim();
     if (/^(hi|hello|hey|yo|sup)\b/.test(text))
-      return `Hey! Ask me about ${title} — approach, tech stack, results, or links like GitHub, video and report.`;
+      return `Hey! Ask me about ${title}, approach, tech stack, results, or links like GitHub, video and report.`;
     if (/(thanks|thank you|cheers|appreciate)/.test(text))
       return "You're welcome! Anything else you'd like to know about this project?";
     if (/(github|code|repo)/.test(text) && githubLink)
@@ -85,7 +85,7 @@ export default function ProjectCard({
     }
     if (/(summary|overview|what|about)/.test(text))
       return `${title}: click the Overview tab to see the project description and key highlights.`;
-    return "I didn't quite catch that — try asking about the approach, tech stack, results, or links like GitHub, video and report.";
+    return "I didn't quite catch that, try asking about the approach, tech stack, results, or links like GitHub, video and report.";
   };
 
   const responder = typeof getResponse === "function" ? getResponse : defaultResponder;

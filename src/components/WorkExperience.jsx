@@ -18,14 +18,14 @@ const RELEVANT = [
     ],
   },
   {
-    role: "Associate Consultant",
+    role: "Associate Consultant and AI Developer",
     company: "Palmate Technology",
-    location: "Remote",
+    location: "On-site",
     dates: "May 2026 - Present",
     bullets: [
       "Implementing and configuring Odoo ERP modules (Sales, Inventory, Accounting, Fiscal Positions) to match client business processes and requirements.",
-      "Customizing workflows and migrating data across Odoo modules, coordinating with cross-functional teams to test end-to-end business processes.",
-      "Providing ongoing support and troubleshooting for live Odoo ERP deployments to ensure smooth client adoption.",
+      "Designing and integrating AI components into MyKites, the company's school application, to extend it with intelligent, automated features.",
+      "Upgrading MyKites' existing framework to modernize its architecture and improve compatibility with current tools and standards.",
     ],
   },
   {

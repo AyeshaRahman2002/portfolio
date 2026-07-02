@@ -1703,6 +1703,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Work",
       category: "Security",
+      categories: ["Security", "AI/ML"],
       tags: ["Zero Trust", "Federated Learning", "Anomaly Detection", "Digital Twins", "SHAP"],
       suggestions: ["Give me a summary", "How does the architecture work?", "What are digital twins?", "How is privacy preserved?", "How does the XAI work?", "How does it compare to prior work?"],
       image: trustAIPic,
@@ -1768,6 +1769,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Research",
       category: "Systems",
+      categories: ["Systems", "AI/ML"],
       tags: ["GNN", "ExtraTrees", "Compiler", "OpenMP", "SHAP", "PyTorch"],
       suggestions: ["Give me a summary", "What loop optimisations does it select?", "How does the GNN work?", "What were the speedup results?", "How does LOKO evaluation work?", "Show me the GitHub"],
       image: mlLoopPic,
@@ -1781,6 +1783,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Research",
       category: "Graphics",
+      categories: ["Graphics", "AI/ML"],
       tags: ["NeRF", "Vision-Language", "Agentic AI", "3D Reconstruction", "Digital Preservation"],
       suggestions: ["Give me a summary", "How does NeRF work?", "What do Vision-Language models do here?", "How does the agentic pipeline work?"],
       image: nerfPic,
@@ -1810,6 +1813,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Uni",
       category: "Finance",
+      categories: ["Finance", "AI/ML"],
       tags: ["N-BEATSx", "LSTM", "SARIMAX", "PyTorch", "Time Series"],
       image: inflationProjectPic,
       title: "Inflation Forecasting with Machine Learning Models",
@@ -1825,6 +1829,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Uni",
       category: "Health",
+      categories: ["Health", "AI/ML"],
       tags: ["LSTM", "Random Forest", "NLP", "Eye Tracking", "AWS"],
       image: digitalHealthPic,
       title: "Digital Health AI for Identifying Autism Spectrum Disorder",
@@ -1837,6 +1842,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Uni",
       category: "Finance",
+      categories: ["Finance", "AI/ML"],
       tags: ["NLP", "SVM", "Word2Vec", "Sentiment Analysis", "Classification"],
       image: sentimentProjectPic,
       title: "Creating a Classification Model Using Online Sentiment to Determine Stock Price",
@@ -1873,6 +1879,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Uni",
       category: "Robotics",
+      categories: ["Robotics", "AI/ML"],
       tags: ["ROS 2", "ResNet18", "PID Control", "Computer Vision", "Python"],
       image: spaceNavPic,
       title: "Autonomous Navigation and Detection System for Spacecraft",
@@ -1909,6 +1916,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
     {
       section: "Uni",
       category: "Health",
+      categories: ["Health", "AI/ML"],
       tags: ["Research Paper", "CBT", "VR Therapy", "NLP", "Chatbots"],
       image: psychAIProjectPic,
       title: "Use of AI in Psychological Treatments",
@@ -2075,7 +2083,7 @@ export default function ProjectCards({ selectedCategory = "All", selectedSection
 
   const visible = allProjects.filter(
     (p) =>
-      (selectedCategory === "All" || p.category === selectedCategory) &&
+      (selectedCategory === "All" || (p.categories ?? [p.category]).includes(selectedCategory)) &&
       (selectedSection === "All" || p.section === selectedSection)
   );
 

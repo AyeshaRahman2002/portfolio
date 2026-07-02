@@ -703,7 +703,6 @@ const tabs = [
         style={{
           position: "relative",
           zIndex: 1,
-          minHeight: "100vh",
           flex: "1 0 auto",
           display: "grid",
           alignItems:
