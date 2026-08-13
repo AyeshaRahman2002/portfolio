@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from '@/components/BasePathImage';
 import { notFound } from 'next/navigation';
-import { FEATURED_ENGINEERING_PROJECTS } from '@/data/portfolioData';
+import { FEATURED_ENGINEERING_PROJECTS, withBasePath } from '@/data/portfolioData';
 import type { ProjectVisual, VisualAspect } from '@/types/portfolio';
 import { InteractivePipeline } from '@/components/InteractivePipeline';
 import { ProjectLead } from '@/components/projects/ProjectLead';
@@ -41,6 +41,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     project.github && { label: 'GITHUB', href: project.github },
     project.publication && { label: 'PAPER', href: project.publication },
     project.demo && { label: 'DEMO', href: project.demo },
+    project.video && { label: 'VIDEO', href: project.video },
+    ...(project.reports?.map(report => ({ label: report.label.toUpperCase(), href: report.url })) ?? []),
   ].filter(Boolean) as { label: string; href: string }[];
 
   const indexGroups = [
@@ -51,10 +53,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   ].filter(group => group.values.length > 0);
 
   return (
-    <article className="page">
+    <article className="page project-case-study">
       <Link href="/archive" className="text-link">← Technical archive</Link>
-      <header className="section">
-        <p className="eyebrow">{['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}</p><h1 className="section-title mt-10 max-w-5xl">{project.title}</h1><p className="lede mt-10">{project.purpose}</p>
+      <header className="project-case-study__header">
+        <p className="eyebrow">{['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}</p><h1>{project.title}</h1><p>{project.purpose}</p>
       </header>
       <ProjectLead project={project} />
       {project.visuals && project.visuals.length > 0 && (
@@ -90,7 +92,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       {links.length > 0 && (
         <section className="section rule grid gap-8 md:grid-cols-12">
           <p className="eyebrow md:col-span-3">LINKS</p>
-          <div className="md:col-span-9 flex flex-wrap gap-8">{links.map(link => <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="text-link">{link.label} ↗</a>)}</div>
+          <div className="md:col-span-9 flex flex-wrap gap-8">{links.map(link => <a key={link.href} href={withBasePath(link.href)} target="_blank" rel="noreferrer" className="text-link">{link.label} ↗</a>)}</div>
         </section>
       )}
     </article>
@@ -103,7 +105,7 @@ function ProjectFigure({ visual, index }: { visual: ProjectVisual; index: number
   return (
     <figure>
       {visual.src ? (
-        <div className={`relative ${aspect} bg-[var(--bg-card)]`}><Image src={visual.src} alt={visual.alt} fill sizes="(max-width: 768px) 100vw, 1100px" className="object-contain" /></div>
+        <div className={`project-figure__media relative ${aspect} bg-[var(--bg-card)]`}><Image src={visual.src} alt={visual.alt} fill sizes="(max-width: 768px) 100vw, 720px" className="object-contain" /></div>
       ) : process.env.NODE_ENV === 'development' ? (
         <div className={`grid ${aspect} place-items-center border border-dashed border-[var(--border-strong)]`}><span className="eyebrow">{visual.type} evidence slot</span></div>
       ) : null}
@@ -113,5 +115,5 @@ function ProjectFigure({ visual, index }: { visual: ProjectVisual; index: number
 }
 
 function StudySection({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
-  return <section className="section rule grid gap-8 md:grid-cols-12"><p className="eyebrow md:col-span-3">{number} / {title}</p><div className="lede md:col-span-9">{children}</div></section>;
+  return <section className="project-study-section rule"><p className="eyebrow">{number} / {title}</p><div>{children}</div></section>;
 }
