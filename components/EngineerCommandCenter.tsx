@@ -7,12 +7,13 @@ const profiles = [
   {
     key: 'ai', label: 'AI / ML', command: 'inspect --discipline ai-ml', code: 'ML-01',
     title: 'Machine intelligence built for real systems.',
-    description: 'I build and evaluate learning systems across forecasting, language, vision and behavioural modelling, with a focus on evidence, reliability and deployment.',
-    skills: ['PyTorch', 'Transformers', 'Time series', 'RAG', 'Explainable AI'],
+    description: 'I build and evaluate learning systems across forecasting, language, vision, agentic AI and behavioural modelling, with a focus on evidence, reliability and deployment.',
+    skills: ['PyTorch', 'Transformers', 'Agentic AI', 'Multi-agent systems', 'RAG', 'Time-series ML', 'Computer vision', 'Explainable AI', 'Federated ML'],
     implementations: [
-      ['MODEL PIPELINES', 'Built forecasting, classification, retrieval and multimodal pipelines using PyTorch, scikit-learn and Hugging Face.'],
+      ['MODEL PIPELINES', 'Built forecasting, classification, anomaly-detection, retrieval and multimodal pipelines using PyTorch, scikit-learn and Hugging Face.'],
+      ['AGENTIC + VISION', 'Designed BDI multi-agent simulations, agentic workflow orchestration, vision-language annotation and NeRF-based neural reconstruction.'],
       ['EVALUATION', 'Used walk-forward validation, cross-validation, LOKO testing, nDCG, ROUGE, BERTScore, SHAP and error analysis.'],
-      ['EFFICIENCY', 'Implemented CPU-ready RAG, LoRA experiments, vector retrieval, model comparison and reproducible Docker workflows.'],
+      ['EFFICIENCY', 'Implemented CPU-ready RAG, LoRA and PEFT experiments, vector retrieval, model comparison and reproducible Docker workflows.'],
     ],
   },
   {
