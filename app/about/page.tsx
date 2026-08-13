@@ -11,6 +11,15 @@ const chapters = [
   { label:'Origins', title:'Built across cultures.', body:'Raised across India, Dubai and Saudi Arabia, I learned to adapt quickly, observe carefully and approach problems from more than one perspective.', meta:'INDIA / DUBAI / SAUDI ARABIA / LEEDS' },
   { label:'Education', title:'Computer science met intelligence.', body:'At the University of Leeds, I completed both BSc and MEng degrees in Computer Science with Artificial Intelligence. My work moved from software foundations into machine learning, security and research.', meta:'BSC 2:1 / MENG 2:1 / DISSERTATION 81%' },
   { label:'Direction', title:'Performance needs trust.', body:'Finance, health and identity projects made one question central to my practice: how do we build intelligent systems that remain secure, interpretable and useful outside controlled experiments?', meta:'AI / SECURITY / PRIVACY / SYSTEMS' },
+  { label:'Interests', title:'Intelligence worth trusting.', body:'I am interested in AI systems that can reason, adapt and create value without making security, privacy or human understanding an afterthought.', meta:'RESEARCH INTERESTS' },
+] as const;
+
+const interests = [
+  ['01', 'AI in cybersecurity', 'Adaptive detection, behavioural identity and intelligent defence.'],
+  ['02', 'Zero-trust privacy', 'Continuous verification with privacy-preserving learning.'],
+  ['03', 'Agentic AI', 'Inspectable agents that plan, coordinate and act responsibly.'],
+  ['04', 'AI in finance', 'Forecasting, risk intelligence and evidence-led decisions.'],
+  ['05', 'Explainable AI', 'Models whose outputs people can understand and challenge.'],
 ] as const;
 
 export default function AboutPage() {
@@ -26,7 +35,7 @@ export default function AboutPage() {
     </header>
     <section className="about-console">
       <nav aria-label="About chapters">{chapters.map((entry,index)=><button key={entry.label} type="button" aria-pressed={chapter===index} onClick={()=>setChapter(index)}><span>0{index+1}</span>{entry.label}</button>)}</nav>
-      <article key={item.label}><p className="eyebrow">PROFILE NODE / {item.label.toUpperCase()}</p><h2>{item.title}</h2><p>{item.body}</p><footer>{item.meta}</footer></article>
+      <article key={item.label}><p className="eyebrow">PROFILE NODE / {item.label.toUpperCase()}</p><h2>{item.title}</h2><p>{item.body}</p>{item.label === 'Interests' && <div className="about-console__interests">{interests.map(([number,title,detail])=><div key={title}><span>{number}</span><b>{title}</b><small>{detail}</small></div>)}</div>}<footer>{item.meta}</footer></article>
     </section>
     <section className="about-snapshot">
       <div><p className="eyebrow">CURRENTLY</p>{EXPERIENCE.filter(item=>item.primary).map(item=><article key={item.id}><span>{item.period}</span><h3>{item.organization}</h3><p>{item.role}</p></article>)}</div>

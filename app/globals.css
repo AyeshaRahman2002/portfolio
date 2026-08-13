@@ -700,6 +700,13 @@ h1,h2,h3 { font-family: var(--heading-font); }
 .about-console article h2 { margin-top:1.5rem; font-size:clamp(2.5rem,6vw,5.5rem); line-height:.85; letter-spacing:-.06em; }
 .about-console article > p:not(.eyebrow) { max-width:48rem; margin-top:2rem; color:var(--text-muted); font-size:1.05rem; line-height:1.65; }
 .about-console article footer { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border-subtle); color:var(--accent-color); font:.6rem var(--font-mono); }
+.about-console__interests { margin-top:1.75rem; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border:1px solid var(--border-subtle); }
+.about-console__interests div { min-height:92px; padding:1rem; display:grid; grid-template-columns:2rem 1fr; gap:.35rem .65rem; border-right:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); }
+.about-console__interests div:nth-child(even) { border-right:0; }
+.about-console__interests div:last-child { grid-column:1/-1; border-right:0; border-bottom:0; }
+.about-console__interests span { color:var(--accent-color); font:.58rem var(--font-mono); }
+.about-console__interests b { font-size:.9rem; font-weight:600; }
+.about-console__interests small { grid-column:2; color:var(--text-muted); font-size:.7rem; line-height:1.45; }
 .about-snapshot { padding:clamp(4rem,8vw,7rem) 0; display:grid; grid-template-columns:repeat(2,1fr); gap:4rem; }
 .about-snapshot article { padding:1.2rem 0; border-top:1px solid var(--border-subtle); }
 .about-snapshot span { color:var(--accent-color); font:.58rem var(--font-mono); }
@@ -968,6 +975,8 @@ h1,h2,h3 { font-family: var(--heading-font); }
   .about-engineer__hero figure { min-height:520px; }
   .about-console nav { display:flex; overflow-x:auto; border-right:0; border-bottom:1px solid var(--border-subtle); }
   .about-console nav button { min-width:140px; }
+  .about-console__interests { grid-template-columns:1fr; }
+  .about-console__interests div,.about-console__interests div:nth-child(even),.about-console__interests div:last-child { grid-column:auto; border-right:0; }
   .about-artist__hero figure { min-height:65vh; }
   .practice-selector > div { grid-template-columns:repeat(2,1fr); }
   .profile-facts { grid-template-columns:repeat(2,1fr); }
