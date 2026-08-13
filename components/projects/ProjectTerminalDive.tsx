@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface TerminalDiveStep {
   command: string;
@@ -30,15 +30,17 @@ export function ProjectTerminalDive({
   backHref?: string;
 }) {
   const [visible, setVisible] = useState(1);
+  const [completed, setCompleted] = useState(0);
   const nextPrompt = useRef<HTMLButtonElement>(null);
+  const isTyping = completed < visible;
 
   useEffect(() => {
-    if (visible > 1) nextPrompt.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, [visible]);
+    if (!isTyping && visible > 1) nextPrompt.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [isTyping, visible]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== 'Enter' || event.repeat || visible >= steps.length) return;
+      if (event.key !== 'Enter' || event.repeat || isTyping || visible >= steps.length) return;
 
       const target = event.target as HTMLElement | null;
       if (target?.closest('a, button, input, textarea, select, [contenteditable="true"]')) return;
@@ -49,15 +51,17 @@ export function ProjectTerminalDive({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [steps.length, visible]);
+  }, [isTyping, steps.length, visible]);
 
-  const runNext = () => setVisible(count => Math.min(count + 1, steps.length));
+  const runNext = () => {
+    if (!isTyping) setVisible(count => Math.min(count + 1, steps.length));
+  };
 
   return (
     <div className="project-terminal" aria-label={`${title} interactive project deep dive`}>
       <div className="project-terminal__chrome">
         <span>PROJECT_SESSION.LOG</span>
-        <span>{visible}/{steps.length} COMMANDS COMPLETE</span>
+        <span>{completed}/{steps.length} COMMANDS COMPLETE</span>
       </div>
 
       <div className="project-terminal__body">
@@ -69,29 +73,19 @@ export function ProjectTerminalDive({
         </div>
 
         <div className="project-terminal__stream" aria-live="polite">
-          {steps.slice(0, visible).map((step, index) => (
-            <section className="project-terminal__entry" key={step.command}>
-              <p className="project-terminal__command"><span>ayesha@portfolio:~$</span> {step.command}</p>
-              <div className="project-terminal__result">
-                <p className="project-terminal__status">✓ {step.label}</p>
-                {step.lines.map((line, lineIndex) => (
-                  <p key={`${line}-${lineIndex}`}><b>{String(lineIndex + 1).padStart(2, '0')}</b><span>{line}</span></p>
-                ))}
-              </div>
-            </section>
-          ))}
+          {steps.slice(0, visible).map((step, index) => <AnimatedTerminalEntry key={step.command} step={step} animate={index === visible - 1 && index >= completed} onDone={() => setCompleted(value => Math.max(value, index + 1))} />)}
 
-          {visible < steps.length ? (
+          {!isTyping && visible < steps.length ? (
             <button ref={nextPrompt} type="button" className="project-terminal__next" onClick={runNext}>
               <span>ayesha@portfolio:~$</span> {steps[visible].command}<i aria-hidden="true" />
               <small>CLICK OR PRESS ENTER ANYWHERE TO RUN</small>
             </button>
-          ) : (
+          ) : !isTyping ? (
             <div className="project-terminal__complete">
               <p><span>ayesha@portfolio:~$</span> session --complete</p>
               <p>✓ Deep dive complete. All project records loaded.</p>
             </div>
-          )}
+          ) : null}
         </div>
 
         <footer className="project-terminal__footer">
@@ -99,9 +93,60 @@ export function ProjectTerminalDive({
             {links.map(link => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
           </div>
           <Link href={backHref}>← RETURN TO PROJECT ARCHIVE</Link>
-          {visible < steps.length && <button type="button" onClick={() => setVisible(steps.length)}>RUN ALL COMMANDS ↓</button>}
         </footer>
       </div>
     </div>
   );
+}
+
+function AnimatedTerminalEntry({ step, animate, onDone }: { step: TerminalDiveStep; animate: boolean; onDone: () => void }) {
+  const fullOutput = step.lines.join('\n');
+  const [commandCount, setCommandCount] = useState(animate ? 0 : step.command.length);
+  const [outputCount, setOutputCount] = useState(animate ? 0 : fullOutput.length);
+  const tail = useRef<HTMLSpanElement>(null);
+  const done = useRef(false);
+  const finish = useCallback(() => {
+    if (!done.current) { done.current = true; onDone(); }
+  }, [onDone]);
+
+  useEffect(() => {
+    if (!animate) { finish(); return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCommandCount(step.command.length); setOutputCount(fullOutput.length); finish(); return;
+    }
+
+    let commandIndex = 0;
+    let outputIndex = 0;
+    let outputTimer: number | undefined;
+    const commandTimer = window.setInterval(() => {
+      commandIndex += 1;
+      setCommandCount(commandIndex);
+      if (commandIndex >= step.command.length) {
+        window.clearInterval(commandTimer);
+        outputTimer = window.setInterval(() => {
+          outputIndex = Math.min(outputIndex + 2, fullOutput.length);
+          setOutputCount(outputIndex);
+          if (outputIndex % 18 === 0 || outputIndex === fullOutput.length) tail.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+          if (outputIndex >= fullOutput.length) { if (outputTimer) window.clearInterval(outputTimer); finish(); }
+        }, 12);
+      }
+    }, 24);
+    return () => { window.clearInterval(commandTimer); if (outputTimer) window.clearInterval(outputTimer); };
+  }, [animate, finish, fullOutput, step.command.length]);
+
+  let remaining = outputCount;
+  return <section className="project-terminal__entry">
+    <p className="project-terminal__command"><span>ayesha@portfolio:~$</span> {step.command.slice(0, commandCount)}{commandCount < step.command.length && <i className="project-terminal__cursor" />}</p>
+    {commandCount >= step.command.length && <div className="project-terminal__result">
+      <p className="project-terminal__status">✓ {step.label}</p>
+      {step.lines.map((line, lineIndex) => {
+        const shown = line.slice(0, Math.max(0, remaining));
+        remaining -= line.length + 1;
+        if (!shown && outputCount < fullOutput.length) return null;
+        return <p key={`${line}-${lineIndex}`}><b>{String(lineIndex + 1).padStart(2, '0')}</b><span>{shown}{outputCount < fullOutput.length && shown.length < line.length && <i className="project-terminal__cursor" />}</span></p>;
+      })}
+      <span ref={tail} aria-hidden="true" />
+    </div>}
+    <span className="sr-only">{step.command}. {step.label}. {step.lines.join(' ')}</span>
+  </section>;
 }
