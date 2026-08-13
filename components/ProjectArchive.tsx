@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { SECONDARY_PROJECT_ARCHIVE } from '@/data/portfolioData';
+import { SECONDARY_PROJECT_ARCHIVE, withBasePath } from '@/data/portfolioData';
 import { projectSlug } from '@/lib/projectSlug';
 
 const imageByTitle: Record<string, string> = {
@@ -63,7 +63,7 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
       <div className="project-console__list" role="listbox" aria-label="Projects">{projects.map((project,index) => <button key={project.title} type="button" role="option" aria-selected={active.title === project.title} onClick={() => setSelected(index)}><span>{String(index + 1).padStart(2,'0')}</span><strong>{project.title}</strong><small>{project.domain}</small><b>↗</b></button>)}</div>
       <article className="project-console__preview">
         <div className="project-console__image"><Image key={active.title} src={`/projects/archive/${imageByTitle[active.title] ?? 'mlloopoptselector.jpg'}`} alt={`Project visual for ${active.title}`} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
-        <div className="project-console__meta"><p className="eyebrow">SELECTED OUTPUT / {active.domain}</p><h3>{active.title}</h3><div>{active.technologies.map(technology => <span key={technology}>{technology}</span>)}</div><p>Designed and developed across research, university, professional or independent practice. Open the available evidence below for implementation and evaluation detail.</p><footer><Link href={`/archive/${projectSlug(active.title)}`}>OPEN PROJECT DEEP DIVE ↗</Link>{active.github && <a href={active.github} target="_blank" rel="noreferrer">SOURCE CODE ↗</a>}{active.report && <a href={active.report.url}>READ {active.report.label.toUpperCase()} ↗</a>}{active.video && <a href={active.video} target="_blank" rel="noreferrer">WATCH DEMO ↗</a>}</footer></div>
+        <div className="project-console__meta"><p className="eyebrow">SELECTED OUTPUT / {active.domain}</p><h3>{active.title}</h3><div>{active.technologies.map(technology => <span key={technology}>{technology}</span>)}</div><p>Designed and developed across research, university, professional or independent practice. Open the available evidence below for implementation and evaluation detail.</p><footer><Link href={`/archive/${projectSlug(active.title)}`}>OPEN PROJECT DEEP DIVE ↗</Link>{active.github && <a href={active.github} target="_blank" rel="noreferrer">SOURCE CODE ↗</a>}{active.report && <a href={withBasePath(active.report.url)}>READ {active.report.label.toUpperCase()} ↗</a>}{active.video && <a href={active.video} target="_blank" rel="noreferrer">WATCH DEMO ↗</a>}</footer></div>
       </article>
     </div> : <p className="project-console__empty">No projects match this command.</p>}
   </section>;

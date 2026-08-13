@@ -12,16 +12,18 @@ import type {
 
 /**
  * Resolve the canonical site origin.
- * Priority: an explicit NEXT_PUBLIC_SITE_URL, then Netlify's build-time `URL`
- * (automatically set to the site's primary address, including the custom domain
- * once attached : so production picks up the real domain with no code change).
- * The localhost fallback is only ever used in local development, so production
- * never emits a localhost canonical URL. See NETLIFY.md.
+ * The GitHub Pages workflow supplies NEXT_PUBLIC_SITE_URL for production.
+ * Local development falls back to localhost.
  */
 const resolveSiteUrl = (): string => {
   const candidate = process.env.NEXT_PUBLIC_SITE_URL || process.env.URL;
   if (candidate) return candidate.replace(/\/+$/, '');
   return 'http://localhost:3000';
+};
+
+export const withBasePath = (url: string): string => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  return url.startsWith('/') ? `${basePath}${url}` : url;
 };
 
 export const SITE_CONFIG = {

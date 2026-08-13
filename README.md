@@ -10,7 +10,7 @@ The Engineer portal presents experience, research, software systems and technica
 - React and TypeScript
 - Tailwind CSS plus custom CSS
 - React Three Fiber for optional interactive artwork surfaces
-- Netlify Forms for contact enquiries
+- Email-client handoff for contact enquiries on GitHub Pages
 - Next Image for responsive artwork and profile images
 
 ## Run locally
@@ -144,15 +144,16 @@ Use compressed WebP or AVIF images where practical. Keep source photographs and 
 
 ## Contact form
 
-The contact page uses a Netlify compatible form named `contact`.
-
-Artist mode adds enquiry options for original artwork purchases and each commission service. Engineer mode provides engineering and research enquiry options.
-
-When testing locally, the interface can validate the form, but successful Netlify handling requires a deployed Netlify environment.
+The contact page validates enquiries in the browser and opens the visitor's
+email application with the subject and message pre-filled. This works without a
+server-side form backend on GitHub Pages.
 
 ## Deployment
 
-The project is configured for Netlify. See [NETLIFY.md](NETLIFY.md) for deployment notes.
+The project is configured for GitHub Pages at
+`https://ayesharahman2002.github.io/portfolio/`. Every push to `main` runs the
+workflow in `.github/workflows/deploy.yml`, builds a static export with the
+`/portfolio` base path and publishes the `out` directory.
 
 Recommended deployment checks:
 
@@ -162,4 +163,6 @@ npm run lint
 npm run build
 ```
 
-The site uses standard Next.js output. It does not require a static export, `basePath` or `assetPrefix`.
+GitHub Pages deployment uses a static export, unoptimized Next Image output and
+the repository base path. Local development remains available at the normal
+root URL because those deployment values are supplied by the workflow.
