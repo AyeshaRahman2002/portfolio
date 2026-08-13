@@ -398,6 +398,107 @@ export const SECONDARY_PROJECT_ARCHIVE: ArchiveProject[] = [
   { title: 'Flights Price Data Scraping Tool', domain: 'Finance / automation', summary: 'A browser-automated pricing collector for flights, schedules, carriers, stops and duration data.', implementation: ['Automated Google Flights navigation with Playwright and Chromium', 'Parsed results into structured Excel records', 'Built a tkinter interface for journey, city and date inputs', 'Documented rate limits, site terms and blocking risks'], technologies: ['Python', 'Playwright', 'Excel', 'GUI'], report: { label: 'Proposal', url: '/documents/projects/flights-scraping-proposal.pdf' } },
 ];
 
+// Expanded copy is adapted from the original portfolio supplied with the site.
+// Keeping it separate preserves the compact archive-card data while giving every
+// deep-dive page a more complete account of scope, design and validation.
+export const ARCHIVE_PROJECT_DETAILS: Record<string, string[]> = {
+  'Digital Health AI for Autism Spectrum Disorder': [
+    'The application combines validated adult-ASD questionnaires with language-based social-interaction coaching and longitudinal notes tracking.',
+    'A bidirectional LSTM processes text embeddings, while a Random Forest uses gaze and pupil features for eye-tracking classification (approximately 77% accuracy and 0.81 AUC).',
+    'Transformer sentiment and intent analysis supports real-time feedback; the proposed AWS deployment encrypts credentials and includes GDPR-aware consent flows.',
+  ],
+  'Multi-Modal CNN-RNN Visual Recognition & Captioning': [
+    'The end-to-end PyTorch pipeline couples ResNet-style visual feature extraction with recurrent sequence generation for image captions.',
+    'TinyImageNet30 classification was improved through augmentation, dropout and hyperparameter tuning, with transformer-derived embeddings strengthening caption representations.',
+    'Evaluation used confusion matrices, ROC curves and Kaggle leaderboard benchmarking, with reproducible training code and recorded results.',
+  ],
+  'Autonomous Navigation & Detection for Spacecraft': [
+    'The ROS 2 system integrates sign detection, autonomous movement and obstacle avoidance through LaserScan input and dual PID controllers.',
+    'HSV masks and contour analysis locate windows; ResNet18 classifies planets, while panorama stitching supports inter-planet distance calculation.',
+    'LaserScan Stretching was proposed to mitigate unreliable LiDAR streams, and the workflow was tested in both simulated and physical robot environments.',
+  ],
+  'Bio-Inspired Optimisation for Neural Network Training': [
+    'PSO, Marine Predators Algorithm and an LM-enhanced MPA hybrid were compared with Adam across six benchmark functions and breast-cancer classification.',
+    'Networks were optimised directly without backpropagation using an extendable genome that evolves architecture and weights together.',
+    'LM-enhanced MPA performed most strongly on rugged multimodal landscapes, while PSO converged fastest during early iterations.',
+  ],
+  'xv6 Memory Management (malloc, free, rqstMem)': [
+    'malloc and free were implemented in xv6 RISC-V around a circular free list, including adjacent-block coalescing to control fragmentation.',
+    'rqstMem extends the heap through sbrk in page-sized increments and guards zero-size, null and boundary cases.',
+    'The project documents complexity, kernel-level allocation behaviour and design trade-offs, with edge-case tests used to validate correctness.',
+  ],
+  'Interactive 3D Rendering Application': [
+    'A shader-based OpenGL pipeline renders OBJ terrain with orthophoto textures, a first-person camera and instanced launch-pad geometry.',
+    'The scene includes a custom rocket, Blinn–Phong lighting, multi-phase launch animation and GPU timestamp profiling.',
+    'Reusable cube, cylinder and cone primitives are composed with transforms, supported by a matrix/vector library tested with Catch2.',
+  ],
+  '2D Rendering Application': [
+    'The renderer implements Bresenham and DDA lines, scanline polygon filling and Sutherland–Hodgman clipping rather than relying on built-in rasterisation.',
+    'Translation, scaling and rotation use 3×3 homogeneous matrices, with mouse selection, live controls, interpolation and gradient fills.',
+    'Inner loops were optimised for interactive use, including parity-rule handling for concave polygons and basic anti-aliasing.',
+  ],
+  'Sentiment-to-Stock Movement Classification': [
+    'Social text from Amazon, Walmart and Twitter was aligned with historical price changes around product-release windows.',
+    'The NLP pipeline combines tokenisation, negation tagging, Word2Vec and TF-IDF, comparing Logistic Regression, SVM, Random Forest, Naive Bayes and J48 under stratified validation.',
+    'Post polarity and popularity weights form a daily sentiment index that is linked to pre- and post-release return deltas for directional classification.',
+  ],
+  'Olympic Medal Data Visualisation': [
+    'Flask-powered line, bar and area charts support comparison of Summer Olympic medal patterns across countries and the 1896–2020 period.',
+    'A ten-participant questionnaire used timed comprehension tasks to compare how effectively each visual form communicated the data.',
+    'The study recorded overall answer accuracy above 90% and measurable response-time differences between chart types.',
+  ],
+  'GreenMyCloud: Carbon Footprint Monitoring': [
+    'The concept tracks emissions from smartphones, IoT devices, cloud services and general online activity through device-level graphs and tables.',
+    'One account aggregates daily and yearly emissions across multiple devices and provides pre-purchase device comparisons.',
+    'Accessibility and trust features include colour-blind-friendly themes, multilingual support, encrypted sessions and password protection.',
+  ],
+  'Video Editing Application': [
+    'The C++ editor covers trim, split, merge, multi-track sequencing, filters, transitions, text overlays and slow-motion effects.',
+    'Drag-and-drop media, immediate preview, adaptable layouts, keyboard shortcuts, screen-reader labels and large targets shape the interaction design.',
+    'MediaIO, TimelineCore, EffectsEngine and PreviewRenderer isolate responsibilities; iterative user tests included large media files.',
+  ],
+  'Sports Management Web Application': [
+    'The Flask and SQLAlchemy platform manages memberships, classes, events, bookings and operational email notifications.',
+    'Flask-Login, bcrypt and CSRF protection secure accounts, while live seat counts and conflict checks govern registrations.',
+    'An administration area provides programme and event CRUD, user management, CSV exports and SMTP reminders.',
+  ],
+  'Assessment To-Do Application': [
+    'The Flask and SQLAlchemy application organises coursework through due dates, priorities, labels and per-user task ownership.',
+    'Tasks move between incomplete, in-progress and completed states, with text, priority and label filtering plus keyboard shortcuts.',
+    'CSRF protection, bcrypt hashing and secure sessions support a responsive Bootstrap interface with ARIA labelling.',
+  ],
+  'Aarogya Setu vs. COVIDSafe: Comparative Analysis': [
+    'The study contrasts India’s mandatory Bluetooth-and-GPS model with Australia’s voluntary, Bluetooth-only contact tracing.',
+    'It examines the tension between Aarogya Setu’s higher adoption and data-sharing concerns, and COVIDSafe’s stronger privacy stance but limited critical mass.',
+    'Recommendations include transparent data practices, decentralised models, clearer adoption communication and a more frequent update cadence.',
+  ],
+  'Use of AI in Psychological Treatments': [
+    'The paper reviews VR exposure therapy and internet-delivered CBT for depression and anxiety, alongside the evidence for their effectiveness.',
+    'It considers chatbots and virtual agents used for psychoeducation, mood tracking, self-help and skills rehearsal.',
+    'The analysis foregrounds limited empathy, over-reliance and patient-safety risks, concluding that clinician oversight remains necessary.',
+  ],
+  'Lyft Back-End Engineering (Forage)': [
+    'A modular serviceability simulator assembles multiple engine, battery and tyre families through the Factory pattern.',
+    'Each component implements a shared Serviceable contract and the Car delegates maintenance decisions to its constituent parts.',
+    'The four-stage build is covered by unit tests spanning component rules, assembled vehicles and end-to-end service decisions.',
+  ],
+  'Smart Poultry Farm Management': [
+    'The desktop application combines live flock and environmental monitoring with predictive health analytics and an operational simulator.',
+    'Models target mortality risk, feed optimisation and growth forecasting from temperature, humidity, weight and consumption telemetry.',
+    'A what-if simulator lets users explore management decisions before applying changes to a real flock.',
+  ],
+  'Hotel Price Data Scraping Tool': [
+    'The Python workflow collects room prices, types, availability and breakfast options into structured Excel datasets for financial analysts.',
+    'City-specific spreadsheets configure URLs and HTML selectors, while a GUI manages folders, date ranges and live run status.',
+    'The proposal documents robots.txt checks, throttling, selector maintenance and the operational risk of site changes or blocking.',
+  ],
+  'Flights Price Data Scraping Tool': [
+    'The tool collects Google Flights prices, schedules, carriers, stops and journey durations into analysis-ready Excel outputs.',
+    'Playwright controls Chromium, LexborHTMLParser parses results and a tkinter interface captures trip type, cities and dates.',
+    'Rate limits, site terms and IP-blocking risks are explicitly documented as part of the responsible collection workflow.',
+  ],
+};
+
 export const ARTWORKS: Artwork[] = [
   {
     id: 'india-window-01', slug: 'india-through-a-window-i',

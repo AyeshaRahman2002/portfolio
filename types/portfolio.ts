@@ -54,6 +54,7 @@ export interface ArchiveProject {
   domain: string;
   technologies: string[];
   summary: string;
+  details?: string[];
   implementation: string[];
   year?: string;
   github?: string;

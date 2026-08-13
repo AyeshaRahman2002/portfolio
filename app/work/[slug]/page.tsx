@@ -1,19 +1,10 @@
 import Link from 'next/link';
-import Image from '@/components/BasePathImage';
 import { notFound } from 'next/navigation';
 import { FEATURED_ENGINEERING_PROJECTS, withBasePath } from '@/data/portfolioData';
-import type { ProjectVisual, VisualAspect } from '@/types/portfolio';
 import { InteractivePipeline } from '@/components/InteractivePipeline';
 import { ProjectLead } from '@/components/projects/ProjectLead';
 
 export function generateStaticParams() { return FEATURED_ENGINEERING_PROJECTS.map(({ slug }) => ({ slug })); }
-
-const ASPECT_CLASS: Record<VisualAspect, string> = {
-  wide: 'aspect-[16/9]',
-  landscape: 'aspect-[16/10]',
-  square: 'aspect-square',
-  portrait: 'aspect-[3/4]',
-};
 
 type StudySection =
   | { kind: 'text'; title: string; body: string }
@@ -59,11 +50,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <p className="eyebrow">{['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}</p><h1>{project.title}</h1><p>{project.purpose}</p>
       </header>
       <ProjectLead project={project} />
-      {project.visuals && project.visuals.length > 0 && (
-        <section className="project-visuals" aria-label="Project visual evidence">
-          {project.visuals.map((visual, index) => <ProjectFigure key={`${visual.alt}-${index}`} visual={visual} index={index} />)}
-        </section>
-      )}
       {project.metrics && <section className="grid border-y border-[var(--border-subtle)] sm:grid-cols-2 lg:grid-cols-4">{project.metrics.map(m => <div key={m.label} className="border-b border-[var(--border-subtle)] p-6 sm:border-r"><p className="eyebrow">{m.label}</p><p className="mt-3 text-3xl">{m.value}</p></div>)}</section>}
       {sections.map((section, index) => {
         const number = String(index + 1).padStart(2, '0');
@@ -96,21 +82,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </section>
       )}
     </article>
-  );
-}
-
-function ProjectFigure({ visual, index }: { visual: ProjectVisual; index: number }) {
-  const aspect = ASPECT_CLASS[visual.aspect ?? 'landscape'];
-  const caption = visual.caption || (visual.type === 'chart' || visual.type === 'diagram' ? `Figure ${String(index + 1).padStart(2, '0')}` : undefined);
-  return (
-    <figure>
-      {visual.src ? (
-        <div className={`project-figure__media relative ${aspect} bg-[var(--bg-card)]`}><Image src={visual.src} alt={visual.alt} fill sizes="(max-width: 768px) 100vw, 720px" className="object-contain" /></div>
-      ) : process.env.NODE_ENV === 'development' ? (
-        <div className={`grid ${aspect} place-items-center border border-dashed border-[var(--border-strong)]`}><span className="eyebrow">{visual.type} evidence slot</span></div>
-      ) : null}
-      {visual.src && caption && <figcaption className="eyebrow mt-4">{caption}</figcaption>}
-    </figure>
   );
 }
 
