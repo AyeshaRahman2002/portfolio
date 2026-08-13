@@ -1,25 +1,10 @@
 node_modules/
-dist/
+.next/
+out/
+.netlify/
+*.tsbuildinfo
 .DS_Store
-
-# Python virtual environment
-venv/
-.venv/
-env/
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.egg-info/
-.Python
-
-# Env files
+__MACOSX/
+._*
 .env
 .env.local
-.env.*.local
-.env.production
-
-# Editor
-.vscode/settings.json
-*.swp
-*.swo
