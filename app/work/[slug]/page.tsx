@@ -42,7 +42,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <Link href="/archive" className="text-link">← Technical archive</Link>
       <ProjectTerminalDive
         title={project.title}
-        meta={['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}
+        meta={[project.id === 'zero-trust-ai' ? 'AGENCAT' : null, 'PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}
         summary={project.purpose}
         steps={steps}
         links={links.map(link => ({ ...link, href: withBasePath(link.href) }))}

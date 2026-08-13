@@ -19,6 +19,17 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const links = mode === 'engineer' ? engineerLinks : artistLinks;
+  const normalizedPath = pathname.replace(/\/$/, '') || '/';
+  const isActive = (href: string) => {
+    if (href === '/') return normalizedPath === '/';
+    if (mode === 'engineer' && href === '/archive') {
+      return normalizedPath === '/archive' || normalizedPath.startsWith('/archive/') || normalizedPath.startsWith('/work/');
+    }
+    if (mode === 'artist' && href === '/work') {
+      return normalizedPath === '/work' || normalizedPath.startsWith('/artwork/') || normalizedPath.startsWith('/work/art/');
+    }
+    return normalizedPath === href || normalizedPath.startsWith(`${href}/`);
+  };
 
   // Close the mobile menu on any navigation, including browser back/forward.
   useEffect(() => { setOpen(false); }, [pathname]);
@@ -39,12 +50,12 @@ export function Navigation() {
         <Link href="/" className="font-mono text-xs tracking-[.14em]" aria-label="Ayesha Rahman home">AR / {mode === 'engineer' ? 'E' : 'A'}</Link>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
           {links.map(([label, href]) => (
-            <Link key={href} href={href} aria-current={pathname === href ? 'page' : undefined}
+            <Link key={href} href={href} aria-current={isActive(href) ? 'page' : undefined}
               className="border-b border-transparent py-2 font-mono text-[10px] tracking-[.12em] text-[var(--text-muted)] aria-[current=page]:border-[var(--text-main)] aria-[current=page]:text-[var(--text-main)]">
               {label}
             </Link>
           ))}
-          <Link href="/contact" aria-current={pathname === '/contact' ? 'page' : undefined} className="font-mono text-[10px] tracking-[.12em]">CONTACT ↗</Link>
+          <Link href="/contact" aria-current={isActive('/contact') ? 'page' : undefined} className="border-b border-transparent py-2 font-mono text-[10px] tracking-[.12em] text-[var(--text-muted)] aria-[current=page]:border-[var(--text-main)] aria-[current=page]:text-[var(--text-main)]">CONTACT ↗</Link>
         </nav>
         <div className="hidden md:block"><ModeToggle compact /></div>
         <button ref={triggerRef} type="button" className="min-h-11 font-mono text-xs lg:hidden" aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>
@@ -56,7 +67,7 @@ export function Navigation() {
           <ModeToggle className="mb-6" />
           <nav className="grid" aria-label="Mobile navigation">
             {[...links, ['CONTACT', '/contact'] as const].map(([label, href], index) => (
-              <Link key={href} href={href} aria-current={pathname === href ? 'page' : undefined} onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-between border-t border-[var(--border-subtle)] font-mono text-xs aria-[current=page]:text-[var(--accent-color)]">
+              <Link key={href} href={href} aria-current={isActive(href) ? 'page' : undefined} onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-between border-t border-[var(--border-subtle)] font-mono text-xs aria-[current=page]:text-[var(--accent-color)]">
                 <span>{String(index + 1).padStart(2, '0')}</span><span>{label}</span>
               </Link>
             ))}
