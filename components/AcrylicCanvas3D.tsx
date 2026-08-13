@@ -1,9 +1,10 @@
 'use client';
 
-import Image from 'next/image';
+import Image from '@/components/BasePathImage';
 import { Canvas, ThreeEvent, useFrame, useLoader } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { withBasePath } from '@/data/portfolioData';
 
 interface AcrylicCanvas3DProps {
   imageSrc: string;
@@ -60,5 +61,12 @@ export function AcrylicCanvas3D(props:AcrylicCanvas3DProps) {
   const [reducedMotion,setReducedMotion]=useState(false);
   useEffect(()=>{try{const canvas=document.createElement('canvas');const media=window.matchMedia('(prefers-reduced-motion: reduce)');setReducedMotion(media.matches);setWebgl(Boolean(canvas.getContext('webgl2')||canvas.getContext('webgl')));const update=()=>setReducedMotion(media.matches);media.addEventListener('change',update);return()=>media.removeEventListener('change',update)}catch{setWebgl(false)}},[]);
   if(!webgl) return <div className="relative aspect-[4/3] bg-[var(--bg-card)]"><Image src={props.imageSrc} alt={props.alt} fill sizes="(max-width: 768px) 100vw, 900px" className="object-contain"/></div>;
-  return <figure className="space-y-4"><div className="h-[320px] cursor-grab border border-[var(--border-subtle)] bg-[var(--bg-card)] active:cursor-grabbing sm:h-[420px] lg:h-[560px]"><Canvas camera={{position:[0,0,4.7],fov:42}} gl={{antialias:true,alpha:false}}><color attach="background" args={['#ded8cc']}/><ambientLight intensity={1.1}/><PhysicalCanvas {...props} reducedMotion={reducedMotion}/></Canvas></div><figcaption className="eyebrow">Drag to examine the physical canvas.</figcaption></figure>;
+  const textureProps = {
+    ...props,
+    imageSrc: withBasePath(props.imageSrc),
+    normalMap: props.normalMap && withBasePath(props.normalMap),
+    roughnessMap: props.roughnessMap && withBasePath(props.roughnessMap),
+    displacementMap: props.displacementMap && withBasePath(props.displacementMap),
+  };
+  return <figure className="space-y-4"><div className="h-[320px] cursor-grab border border-[var(--border-subtle)] bg-[var(--bg-card)] active:cursor-grabbing sm:h-[420px] lg:h-[560px]"><Canvas camera={{position:[0,0,4.7],fov:42}} gl={{antialias:true,alpha:false}}><color attach="background" args={['#ded8cc']}/><ambientLight intensity={1.1}/><PhysicalCanvas {...textureProps} reducedMotion={reducedMotion}/></Canvas></div><figcaption className="eyebrow">Drag to examine the physical canvas.</figcaption></figure>;
 }

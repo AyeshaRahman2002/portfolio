@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import Image from '@/components/BasePathImage';
 import type { Artwork } from '@/types/portfolio';
 import { ArtworkProcessScrubber } from './ArtworkProcessScrubber';
 

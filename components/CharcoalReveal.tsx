@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from '@/components/BasePathImage';
 import { useEffect, useRef, useState } from 'react';
 
 interface CharcoalRevealProps { imageSrc: string; alt: string; className?: string; }

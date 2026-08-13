@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from '@/components/BasePathImage';
 import Link from 'next/link';
 import { useState } from 'react';
 import { EXPERIENCE, FEATURED_ENGINEERING_PROJECTS, SITE_CONFIG } from '@/data/portfolioData';

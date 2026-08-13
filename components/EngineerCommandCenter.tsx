@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from '@/components/BasePathImage';
 import { useEffect, useState } from 'react';
 
 const profiles = [
