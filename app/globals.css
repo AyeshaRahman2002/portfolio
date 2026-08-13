@@ -227,20 +227,21 @@ h1,h2,h3 { font-family: var(--heading-font); }
 .hero-footer > span { display: flex; gap: 1.5rem; font: 500 .64rem var(--font-mono); letter-spacing: .1em; }
 
 .hero--artist { min-height:auto; padding-top:clamp(3rem,6vw,5rem); padding-bottom:2rem; }
-.artist-intro { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; }
-.artist-intro > div { max-width: 70rem; }
-.artist-intro__composition { display:grid; grid-template-columns:minmax(220px,.7fr) minmax(0,1.65fr); gap:clamp(1.5rem,3vw,3rem); align-items:end; }
-.artist-intro__portrait { position:relative; min-height:clamp(390px,48vw,610px); overflow:hidden; background:var(--bg-surface); box-shadow:0 22px 55px rgba(61,45,31,.18); transform:rotate(-.45deg); }
+.artist-intro { display:grid; gap:1.25rem; }
+.artist-intro > .eyebrow { padding-left:clamp(0rem,3vw,3rem); }
+.artist-intro > div { max-width:none; }
+.artist-intro__composition { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(280px,.72fr); gap:clamp(2rem,5vw,5rem); align-items:center; }
+.artist-intro__portrait { grid-column:2; grid-row:1; position:relative; min-height:clamp(420px,38vw,570px); overflow:hidden; background:var(--bg-surface); box-shadow:0 22px 55px rgba(61,45,31,.18); transform:rotate(.35deg); }
 .artist-intro__portrait::before { content:""; position:absolute; z-index:2; left:50%; top:-.35rem; width:5.5rem; height:1.15rem; transform:translateX(-50%) rotate(1.5deg); background:rgba(201,172,126,.82); box-shadow:0 2px 5px rgba(56,35,21,.1); }
-.artist-intro__portrait img { object-fit:cover; object-position:50% 50%; filter:none !important; }
+.artist-intro__portrait img { object-fit:cover; object-position:50% 58%; filter:none !important; }
 .artist-intro__portrait figcaption { position:absolute; z-index:3; inset:auto .75rem .75rem; padding:.65rem .75rem; display:flex; justify-content:space-between; gap:1rem; background:rgba(247,243,235,.9); color:#34271f; font:.48rem var(--font-mono); letter-spacing:.08em; }
 .artist-intro__portrait figcaption span { color:#99543d; }
 .artist-intro__portrait figcaption b { font-weight:500; }
-.artist-intro__copy { min-width:0; padding-bottom:.5rem; }
-.artist-intro h1 { font: 400 clamp(4rem, 11vw, 10rem)/.8 var(--font-serif); letter-spacing: -.065em; }
+.artist-intro__copy { grid-column:1; grid-row:1; min-width:0; padding-left:clamp(0rem,3vw,3rem); }
+.artist-intro h1 { font:400 clamp(4.5rem,8.5vw,8.5rem)/.82 var(--font-serif); letter-spacing:-.065em; }
 .artist-intro h1 em { color: var(--accent-color); font-weight: 400; }
-.artist-intro__copy > p { max-width: 43rem; margin: 2.5rem 0 0 auto; font: 400 clamp(1.05rem, 2vw, 1.35rem)/1.55 var(--font-serif); }
-.artist-intro__links { max-width:43rem; margin:2rem 0 0 auto; display:flex; flex-wrap:wrap; gap:1rem 1.8rem; }
+.artist-intro__copy > p { max-width:39rem; margin:2rem 0 0; font:400 clamp(1.05rem,1.6vw,1.3rem)/1.55 var(--font-serif); }
+.artist-intro__links { max-width:43rem; margin:1.7rem 0 0; display:flex; flex-wrap:wrap; gap:1rem 1.8rem; }
 .artist-intro__links a { padding-bottom:.25rem; border-bottom:1px solid var(--border-strong); color:var(--accent-color); font:600 .6rem var(--font-mono); letter-spacing:.08em; }
 .studio-canvas { margin-top: clamp(5rem, 10vw, 10rem); display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(0, 3fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
 .studio-canvas__copy { position: sticky; top: 110px; }
@@ -1047,10 +1048,11 @@ h1,h2,h3 { font-family: var(--heading-font); }
   .terminal-output p:first-child { border-top: 0; }
   .hero-status { grid-template-columns: 1fr; }
   .hero-footer { align-items: stretch; flex-direction: column; }
-  .artist-intro,.studio-canvas { grid-template-columns: 1fr; }
+  .artist-intro,.studio-canvas { grid-template-columns:1fr; }
+  .artist-intro > .eyebrow { padding-left:0; }
   .artist-intro__composition { grid-template-columns:1fr; }
-  .artist-intro__portrait { min-height:min(125vw,680px); order:2; }
-  .artist-intro__copy { order:1; }
+  .artist-intro__portrait { grid-column:1; grid-row:2; min-height:min(118vw,650px); transform:none; }
+  .artist-intro__copy { grid-column:1; grid-row:1; padding-left:0; }
   .artist-intro h1 { font-size: clamp(3.5rem, 20vw, 6rem); }
   .studio-canvas__copy { position: static; }
   .studio-canvas canvas { height: 65vh; max-height: 520px; }
