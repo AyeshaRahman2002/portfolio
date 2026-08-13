@@ -36,6 +36,21 @@ export function ProjectTerminalDive({
     if (visible > 1) nextPrompt.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [visible]);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Enter' || event.repeat || visible >= steps.length) return;
+
+      const target = event.target as HTMLElement | null;
+      if (target?.closest('a, button, input, textarea, select, [contenteditable="true"]')) return;
+
+      event.preventDefault();
+      setVisible(count => Math.min(count + 1, steps.length));
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [steps.length, visible]);
+
   const runNext = () => setVisible(count => Math.min(count + 1, steps.length));
 
   return (
@@ -69,7 +84,7 @@ export function ProjectTerminalDive({
           {visible < steps.length ? (
             <button ref={nextPrompt} type="button" className="project-terminal__next" onClick={runNext}>
               <span>ayesha@portfolio:~$</span> {steps[visible].command}<i aria-hidden="true" />
-              <small>CLICK OR PRESS ENTER TO RUN</small>
+              <small>CLICK OR PRESS ENTER ANYWHERE TO RUN</small>
             </button>
           ) : (
             <div className="project-terminal__complete">
