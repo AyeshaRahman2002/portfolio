@@ -46,6 +46,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         summary={project.purpose}
         steps={steps}
         links={links.map(link => ({ ...link, href: withBasePath(link.href) }))}
+        active={project.id === 'zero-trust-ai'}
       />
     </article>
   );

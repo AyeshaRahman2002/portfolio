@@ -30,7 +30,7 @@ export const SITE_CONFIG = {
   name: 'Ayesha Rahman',
   title: 'Ayesha Rahman | AI / ML Engineer & Artist',
   description:
-    'Ayesha Rahman is an AI / ML Engineer working across trustworthy AI, privacy-preserving machine learning and intelligent systems, and an Artist working in charcoal and acrylic.',
+    'Ayesha Rahman is an AI / ML Engineer working across behavioural modelling, continuous behaviour monitoring, trustworthy AI, privacy-preserving machine learning and intelligent systems, and an Artist working in charcoal and acrylic.',
   location: 'Jeddah, Saudi Arabia',
   email: 'ayesharahman7755@gmail.com',
   github: 'https://github.com/AyeshaRahman2002',
@@ -46,7 +46,7 @@ export const PERSONAL_INFO = {
   taglineEngineerShort: 'AI / ML',
   taglineArtist: 'ARTIST',
   positioning:
-    'AI / ML Engineer focused on secure, interpretable and privacy-preserving intelligent systems.',
+    'AI / ML Engineer focused on behavioural modelling, continuous behaviour monitoring and secure, interpretable, privacy-preserving intelligent systems.',
   artPositioning:
     'Artist working in charcoal, acrylic, portraiture and realism.',
   location: SITE_CONFIG.location,
@@ -101,7 +101,7 @@ export const EXPERIENCE: Experience[] = [
     summary:
       'Researching continuous post-authentication behavioural trust, preparing the work for conference-paper submission and developing it toward a practical AI security product.',
     focus: [
-      'Investigating behavioural authentication through human, process and temporal telemetry.',
+      'Investigating behavioural modelling and continuous behaviour monitoring through human, process and temporal telemetry.',
       'Working with VAE, Transformer, CNN, temporal autoencoder and TSFresh methods.',
       'Using CERT, LANL and IAM datasets for research evaluation.',
       'Exploring federated learning, differential privacy, agentic AI, XAI and adaptive risk scoring.',
@@ -236,15 +236,24 @@ export const FEATURED_ENGINEERING_PROJECTS: EngineeringProject[] = [
   {
     id: 'zero-trust-ai', number: '01', title: 'CONTINUOUS RISK-ADAPTIVE IDENTITY', slug: 'zero-trust-ai-identity',
     year: '2025-Present', category: 'Research Project', purpose: 'Investigating what happens to identity trust after login.',
-    overview: 'AgenCAT is ongoing cybersecurity research into continuous post-login identity assurance. It treats authentication as an evolving trust decision, building behavioural profiles from user, process and temporal activity so compromised sessions, lateral movement and insider-risk patterns can be identified after a valid login.',
-    problem: 'Most identity controls concentrate on the login event. A stolen or hijacked session can therefore retain its original trust even when its timing, machine access and process behaviour drift sharply from the user’s established pattern. Published results can also look unrealistically strong when evaluated only against synthetic attack labels.',
-    approach: 'Build per-user behavioural baselines, combine temporal feature engineering with representation and anomaly models, and translate deviations into explainable risk evidence. The research evaluates real labelled enterprise attack data and explores federated learning and differential privacy so organisations can collaborate without centralising raw logs.',
-    implementation: ['Normalised authentication, machine-access, process and temporal signals into session-level evidence', 'Built personal profiles that adapt over time while retaining a general baseline for new users', 'Investigated VAE, Transformer, CNN, temporal autoencoder and TSFresh representations', 'Evaluated behaviour against CERT, LANL, IAM and verified attack-label datasets', 'Designed analyst-facing explanations for the behaviours contributing to each alert', 'Explored federated learning and differential privacy for cross-organisation deployment'],
-    methods: ['Behavioural authentication', 'Anomaly modelling', 'Federated learning', 'Differential privacy', 'Explainable AI'],
-    models: ['VAE', 'Transformer', 'CNN', 'Temporal autoencoder'], datasets: ['CERT', 'LANL', 'IAM datasets'],
-    technologies: ['Python', 'PyTorch', 'TSFresh'], architecture: trustPipeline,
-    limitations: ['Research is ongoing and results are not yet published.', 'No production-readiness or automatic enforcement claim is made.'],
-    futureWork: ['Complete conference-paper evaluation against real attack labels.', 'Advance the research towards a scalable, auditable security product with step-up authentication policies.'], featured: true, researchRelevant: true,
+    overview: 'AgenCAT (Agentic Continuous Adaptive Trust) is a Zero Trust research framework for post-login identity assurance. Instead of scoring trust only at login, it deploys local identity agents that maintain per-user digital twins, continuously re-evaluating session trust from login-context, authentication-path and process-level telemetry to catch compromised sessions, lateral movement and insider drift after a valid login.',
+    problem: 'Most identity controls concentrate on the login event, so a stolen session, service account or delegated agent keeps its original trust even as its timing, host access and process behaviour drift from the user\'s baseline. Reported results can also look unrealistically strong when tested only against synthetic labels rather than real red-team activity.',
+    approach: 'Map telemetry into progressively richer feature spaces, score events with an ensemble of anomaly and supervised models, and personalise detection per user with online digital twins blended against a global prior. Aggregate event scores into user-level trust trajectories and drive a policy engine, with federated learning and differential privacy for cross-organisation deployment. Evaluate against real red-team labels, not just synthetic ones.',
+    implementation: [
+      'Mapped telemetry into progressive 24D / 39D / 49D feature spaces capturing contextual, behavioural and process-level signal',
+      'Built per-user digital twins with Welford online statistics blended against a global prior, with cold-start warmup for new users',
+      'Scored events with an ensemble of autoencoder, Isolation Forest, LightGBM and logistic-regression detectors',
+      'Aggregated user-level trust trajectories with a temporal convolutional-attention autoencoder to cut analyst alert burden',
+      'Drove a policy engine (allow, step-up MFA, account review, session restriction, block) from k-consecutive high-risk escalation',
+      'Added federated learning (FedAvg), differential privacy (DP-SGD), explainable AI and tamper-evident audit logging',
+      'Demonstrated strong event- and user-level separability against real red-team labels, outperforming replicated baselines on false-positive rate',
+    ],
+    methods: ['Behavioural authentication', 'Anomaly detection ensemble', 'Digital twins', 'Federated learning', 'Differential privacy', 'Explainable AI'],
+    models: ['Autoencoder', 'Temporal autoencoder', 'Isolation Forest', 'LightGBM', 'Logistic regression'],
+    datasets: ['LANL Cyber1', 'RBA', 'CERT', 'DARPA OpTC'],
+    technologies: ['Python', 'PyTorch', 'LightGBM', 'TSFresh'], architecture: trustPipeline,
+    limitations: ['Conference-paper evaluation is in progress and results are not yet formally published.', 'Focus is the post-login interval; no full production enforcement system is claimed.'],
+    futureWork: ['Complete and publish the conference-paper evaluation.', 'Extend toward an auditable enforcement product with adaptive step-up policies.'], featured: true, researchRelevant: true,
     visuals: [{ type: 'image', src: '/projects/archive/trustworthy_ai_finance.jpg', alt: 'Visual overview for continuous adaptive trust research', caption: 'Continuous post-login identity assurance research overview.', aspect: 'landscape' }],
   },
   {
@@ -556,7 +565,7 @@ export const ABOUT_CHRONOLOGY_ORDER = ['cybersar', 'palmate', 'outlier', 'uti'] 
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   { category: 'AI / Machine Learning', items: ['PyTorch', 'TensorFlow', 'scikit-learn', 'Hugging Face', 'Deep Learning', 'Computer Vision', 'Time-Series Forecasting'] },
-  { category: 'Trust / Security', items: ['Zero Trust', 'IAM', 'Behavioural Authentication', 'Federated Learning', 'Differential Privacy', 'Explainable AI', 'Threat Modelling'] },
+  { category: 'Trust / Security', items: ['Zero Trust', 'IAM', 'Behavioural Modelling', 'Continuous Behaviour Monitoring', 'Behavioural Authentication', 'Federated Learning', 'Differential Privacy', 'Explainable AI', 'Threat Modelling'] },
   { category: 'Software / Systems', items: ['Python', 'C++', 'TypeScript', 'FastAPI', 'Flask', 'React', 'PostgreSQL'] },
   { category: 'Cloud / Infrastructure', items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Terraform'] },
   { category: 'Edge / Robotics', items: ['ROS2', 'OpenCV', 'SLAM', 'LiDAR', 'Jetson'] },
@@ -590,7 +599,7 @@ export const FULL_TECHNICAL_INDEX: SkillCategory[] = [
   { category: 'ML / Data', items: ['PyTorch', 'TensorFlow / Keras', 'scikit-learn', 'Pandas', 'NumPy', 'Hugging Face Transformers', 'ONNX / TorchScript', 'OpenVINO / TF Lite', 'Quantization (INT8/FP16)', 'LoRA / QLoRA', 'NLP & Sentiment Analysis', 'Time-Series Forecasting', 'Feature Engineering', 'Matplotlib / Plotly', 'TSFresh', 'Walk-Forward Validation', 'Hyperparameter Tuning', 'BERTScore / ROUGE-L'] },
   { category: 'Models', items: ['ARIMA / SARIMA / ARIMAX / SARIMAX', 'VAR / ARDL', 'Random Forest', 'Decision Tree', 'Isolation Forest', 'MARS', 'XGBoost / LightGBM / CatBoost', 'RNN / GRU / LSTM', 'Transformer', 'CNN', 'GNN', 'N-HiTS / N-BEATSx / TiDE', 'TFT / TCN', 'MLP', 'AutoEncoder / VAE / VFAE', 'Temporal AutoEncoder', 'ResNet18', 'NeRF / Nerfstudio', 'BLIP / CLIP', 'MiniLM', 'FLAN-T5', 'PSO / MPA / LM-IMPA'] },
   { category: 'Privacy & Federated AI', items: ['Federated Learning (FedAvg / FedProx)', 'Differential Privacy (DP-SGD)', 'SHAP', 'LIME', 'Welford Online Statistics', 'Privacy-Preserving ML', 'Gradient Clipping & Noise Injection', 'GDPR in ML', 'Data Anonymisation / Pseudonymisation', 'Non-IID Federated Training'] },
-  { category: 'Security & IAM', items: ['Zero Trust Architecture', 'OAuth2 / SSO', 'RBAC / ABAC', 'Active Directory', 'JWT / Session Management', 'Behavioural Biometrics', 'Risk-Based Authentication', 'Anomaly Detection (IAM)', 'Device Fingerprinting', 'GeoIP / Impossible Travel', 'Adversarial Simulation / Fuzzing', 'SOC Integration', 'Threat Intelligence Enrichment', 'SQLCipher / Key Isolation', 'Audit Logging / NDJSON Export', 'OWASP Secure Development', 'Argon2id / Bcrypt', 'TLS / Certificate Pinning', 'Rate Limiting / Abuse Guards', 'CORS / Security Headers', 'Input Validation'] },
+  { category: 'Security & IAM', items: ['Zero Trust Architecture', 'OAuth2 / SSO', 'RBAC / ABAC', 'Active Directory', 'JWT / Session Management', 'Behavioural Modelling', 'Continuous Behaviour Monitoring', 'Behavioural Telemetry', 'Behavioural Biometrics', 'Risk-Based Authentication', 'Anomaly Detection (IAM)', 'Device Fingerprinting', 'GeoIP / Impossible Travel', 'Adversarial Simulation / Fuzzing', 'SOC Integration', 'Threat Intelligence Enrichment', 'SQLCipher / Key Isolation', 'Audit Logging / NDJSON Export', 'OWASP Secure Development', 'Argon2id / Bcrypt', 'TLS / Certificate Pinning', 'Rate Limiting / Abuse Guards', 'CORS / Security Headers', 'Input Validation'] },
   { category: 'Agentic AI', items: ['LangChain', 'FAISS Vector Store', 'RAG Pipelines (Dense + Hybrid)', 'Multi-Agent Frameworks', 'Tool Calling', 'Short-Term / Episodic Memory', 'Hallucination Guards', 'Agentic Reasoning Loops', 'Multimodal Retrieval (BLIP / CLIP)', 'Prompt Engineering & Evaluation'] },
   { category: 'Frameworks', items: ['Flask', 'FastAPI', 'React', 'Node.js / Express', 'Streamlit', 'Vite', 'SQLAlchemy', 'REST APIs', 'Web Scraping (Playwright / BS4 / Selenium)', 'Flutter', 'OpenGL / GLSL', 'Odoo ERP', 'n8n Workflow Automation'] },
   { category: 'Languages', items: ['Python', 'JavaScript / TypeScript', 'C / C++', 'Java', 'SQL', 'Bash', 'HTML / CSS', 'Prolog'] },

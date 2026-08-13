@@ -15,7 +15,7 @@ const chapters = [
 ] as const;
 
 const interests = [
-  ['01', 'AI in cybersecurity', 'Adaptive detection, behavioural identity and intelligent defence.'],
+  ['01', 'AI in cybersecurity', 'Behavioural modelling, continuous behaviour monitoring, adaptive detection and intelligent defence.'],
   ['02', 'Zero-trust privacy', 'Continuous verification with privacy-preserving learning.'],
   ['03', 'Agentic AI', 'Inspectable agents that plan, coordinate and act responsibly.'],
   ['04', 'AI in finance', 'Forecasting, risk intelligence and evidence-led decisions.'],
@@ -30,7 +30,7 @@ export default function AboutPage() {
   const item = chapters[chapter];
   return <article className="page about-engineer">
     <header className="about-engineer__hero">
-      <div><p className="eyebrow">ABOUT / ENGINEER PROFILE</p><h1>Curiosity,<br/>made rigorous.</h1><p>I am Ayesha Rahman, an AI and machine learning engineer specialising in cybersecurity, trustworthy AI and privacy-aware systems.</p><div className="profile-facts"><span><b>02</b> AI DEGREES</span><span><b>81%</b> DISSERTATION</span><span><b>04</b> COUNTRIES</span><span><b>25+</b> BUILDS</span></div></div>
+      <div><p className="eyebrow">ABOUT / ENGINEER PROFILE</p><h1>Curiosity,<br/>made rigorous.</h1><p>I am Ayesha Rahman, an AI and machine learning engineer specialising in cybersecurity, behavioural modelling, continuous behaviour monitoring and privacy-aware systems.</p><div className="profile-facts"><span><b>02</b> AI DEGREES</span><span><b>81%</b> DISSERTATION</span><span><b>04</b> COUNTRIES</span><span><b>25+</b> BUILDS</span></div></div>
       <figure><Image src={SITE_CONFIG.portrait!} alt="Ayesha Rahman at her University of Leeds graduation" fill priority sizes="(max-width: 760px) 100vw, 42vw"/><span>AYESHA_RAHMAN.JPG / VERIFIED</span></figure>
     </header>
     <section className="about-console">

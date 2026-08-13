@@ -20,9 +20,9 @@ const profiles = [
     key: 'security', label: 'Cybersecurity', command: 'inspect --discipline cybersec', code: 'SEC-02',
     title: 'Trust should continue after login.',
     description: 'My specialism connects AI with cybersecurity: behavioural identity, continuous authentication, adaptive risk and privacy-preserving learning.',
-    skills: ['Zero trust', 'Behavioural identity', 'Anomaly detection', 'Federated learning', 'Differential privacy'],
+    skills: ['Zero trust', 'Behavioural modelling', 'Behaviour monitoring', 'Behavioural identity', 'Anomaly detection', 'Federated learning', 'Differential privacy'],
     implementations: [
-      ['POST-LOGIN TRUST', 'Modelled behavioural, process and temporal telemetry so identity evidence can evolve throughout a session.'],
+      ['POST-LOGIN TRUST', 'Built behavioural models from human, process and temporal telemetry for continuous behaviour monitoring, so identity evidence can evolve throughout a session.'],
       ['PRIVACY LAYER', 'Investigated federated learning and differential privacy for learning across organisations without centralising raw data.'],
       ['AUDITABLE RISK', 'Combined anomaly evidence, adaptive scoring and explainability to support reviewable security decisions.'],
     ],
@@ -69,7 +69,7 @@ export function EngineerCommandCenter() {
       <div className="command-center__main">
         <div className="terminal-kicker"><span>ayesha@portfolio:~$</span> ./introduce --professional</div>
         <h1>AI &amp; ML<br/>Engineer<span className="accent-dot">.</span></h1>
-        <p className="command-center__position">Specialising in <strong>AI for cybersecurity</strong>, trustworthy machine learning and privacy-aware intelligent systems.</p>
+        <p className="command-center__position">Specialising in <strong>AI for cybersecurity</strong>, behavioural modelling, continuous behaviour monitoring and privacy-aware intelligent systems.</p>
         <p className="interaction-hint"><span>INTERACTIVE</span> Select a discipline to inspect the profile</p>
         <div className="discipline-tabs" role="tablist" aria-label="Engineering disciplines">
           {profiles.map((item, index) => <button key={item.key} type="button" role="tab" aria-selected={active === index} onClick={() => setActive(index)} onKeyDown={event => { if (event.key === 'ArrowRight') setActive((active + 1) % profiles.length); if (event.key === 'ArrowLeft') setActive((active + profiles.length - 1) % profiles.length); }}><span>0{index + 1}</span>{item.label}<i aria-hidden="true" /></button>)}

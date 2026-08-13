@@ -21,6 +21,7 @@ export function ProjectTerminalDive({
   steps,
   links,
   backHref = '/archive',
+  active = false,
 }: {
   title: string;
   meta: string;
@@ -28,6 +29,7 @@ export function ProjectTerminalDive({
   steps: TerminalDiveStep[];
   links: TerminalDiveLink[];
   backHref?: string;
+  active?: boolean;
 }) {
   const [visible, setVisible] = useState(1);
   const [completed, setCompleted] = useState(0);
@@ -58,7 +60,7 @@ export function ProjectTerminalDive({
   };
 
   return (
-    <div className="project-terminal" aria-label={`${title} interactive project deep dive`}>
+    <div className={`project-terminal${active ? ' project-terminal--active' : ''}`} aria-label={`${title} interactive project deep dive`}>
       <div className="project-terminal__chrome">
         <span>PROJECT_SESSION.LOG</span>
         <span>{completed}/{steps.length} COMMANDS COMPLETE</span>
