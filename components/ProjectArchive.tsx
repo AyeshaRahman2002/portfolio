@@ -5,28 +5,7 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { SECONDARY_PROJECT_ARCHIVE, withBasePath } from '@/data/portfolioData';
 import { projectSlug } from '@/lib/projectSlug';
-
-const imageByTitle: Record<string, string> = {
-  'Digital Health AI for Autism Spectrum Disorder': 'digital_health_project.jpg',
-  'Multi-Modal CNN-RNN Visual Recognition & Captioning': 'multimodal_project.jpg',
-  'Autonomous Navigation & Detection for Spacecraft': 'space_nav_project.jpg',
-  'Bio-Inspired Optimisation for Neural Network Training': 'bio_opt_project.jpg',
-  'xv6 Memory Management (malloc, free, rqstMem)': 'xv6_project.jpg',
-  'Interactive 3D Rendering Application': 'rendering_project.jpg',
-  '2D Rendering Application': '2d_render_project.jpg',
-  'Sentiment-to-Stock Movement Classification': 'sentiment_stock_project.jpg',
-  'Olympic Medal Data Visualisation': 'medals_project.jpg',
-  'GreenMyCloud: Carbon Footprint Monitoring': 'greenmycloud_project.jpg',
-  'Video Editing Application': 'video_editing_project.jpg',
-  'Sports Management Web Application': 'sports_mgmt_project.jpg',
-  'Assessment To-Do Application': 'assessment_todo_project.jpg',
-  'Aarogya Setu vs. COVIDSafe: Comparative Analysis': 'covid_apps_project.jpg',
-  'Use of AI in Psychological Treatments': 'psych_ai_project.jpg',
-  'Lyft Back-End Engineering (Forage)': 'lyft_project.jpg',
-  'Smart Poultry Farm Management': 'bio_opt_project.jpg',
-  'Hotel Price Data Scraping Tool': 'hotel_project.jpg',
-  'Flights Price Data Scraping Tool': 'flights_project.jpg',
-};
+import { projectImage } from '@/lib/projectImages';
 
 const groups = ['All', 'Research', 'AI / ML', 'Security', 'Systems', 'Graphics', 'HCI', 'Finance'] as const;
 const researchTitles = new Set([
@@ -62,7 +41,7 @@ export function ProjectArchive({ label = 'PROJECT ARCHIVE' }: { label?: string }
     {active ? <div className="project-console__body">
       <div className="project-console__list" role="listbox" aria-label="Projects">{projects.map((project,index) => <button key={project.title} type="button" role="option" aria-selected={active.title === project.title} onClick={() => setSelected(index)}><span>{String(index + 1).padStart(2,'0')}</span><strong>{project.title}</strong><small>{project.domain}</small><b>↗</b></button>)}</div>
       <article className="project-console__preview">
-        <div className="project-console__image"><Image key={active.title} src={`/projects/archive/${imageByTitle[active.title] ?? 'mlloopoptselector.jpg'}`} alt={`Project visual for ${active.title}`} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+        <div className="project-console__image"><Image key={active.title} src={projectImage(active.title)} alt={`Project visual for ${active.title}`} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
         <div className="project-console__meta"><p className="eyebrow">SELECTED OUTPUT / {active.domain}</p><h3>{active.title}</h3><div>{active.technologies.map(technology => <span key={technology}>{technology}</span>)}</div><p>Designed and developed across research, university, professional or independent practice. Open the available evidence below for implementation and evaluation detail.</p><footer><Link href={`/archive/${projectSlug(active.title)}`}>OPEN PROJECT DEEP DIVE ↗</Link>{active.github && <a href={active.github} target="_blank" rel="noreferrer">SOURCE CODE ↗</a>}{active.report && <a href={withBasePath(active.report.url)}>READ {active.report.label.toUpperCase()} ↗</a>}{active.video && <a href={active.video} target="_blank" rel="noreferrer">WATCH DEMO ↗</a>}</footer></div>
       </article>
     </div> : <p className="project-console__empty">No projects match this command.</p>}
