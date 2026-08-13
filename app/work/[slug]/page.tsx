@@ -1,32 +1,13 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FEATURED_ENGINEERING_PROJECTS, withBasePath } from '@/data/portfolioData';
-import { InteractivePipeline } from '@/components/InteractivePipeline';
-import { ProjectLead } from '@/components/projects/ProjectLead';
+import { ProjectTerminalDive } from '@/components/projects/ProjectTerminalDive';
 
 export function generateStaticParams() { return FEATURED_ENGINEERING_PROJECTS.map(({ slug }) => ({ slug })); }
-
-type StudySection =
-  | { kind: 'text'; title: string; body: string }
-  | { kind: 'list'; title: string; items: string[] }
-  | { kind: 'architecture' };
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = FEATURED_ENGINEERING_PROJECTS.find(p => p.slug === params.slug);
   if (!project) notFound();
-
-  // Displayed sections are numbered dynamically, so an absent optional section
-  // never leaves a gap in the sequence (e.g. 05 → 07).
-  const sections: StudySection[] = [
-    { kind: 'text', title: 'OVERVIEW', body: project.overview },
-    { kind: 'text', title: 'PROBLEM', body: project.problem },
-    { kind: 'text', title: 'APPROACH', body: project.approach },
-    { kind: 'architecture' },
-    { kind: 'list', title: 'IMPLEMENTATION', items: project.implementation },
-    ...(project.results?.length ? [{ kind: 'list', title: 'RESULTS', items: project.results } as const] : []),
-    ...(project.limitations?.length ? [{ kind: 'list', title: 'LIMITATIONS', items: project.limitations } as const] : []),
-    ...(project.futureWork?.length ? [{ kind: 'list', title: 'FUTURE WORK', items: project.futureWork } as const] : []),
-  ];
 
   const links = [
     project.github && { label: 'GITHUB', href: project.github },
@@ -36,55 +17,36 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     ...(project.reports?.map(report => ({ label: report.label.toUpperCase(), href: report.url })) ?? []),
   ].filter(Boolean) as { label: string; href: string }[];
 
-  const indexGroups = [
-    { label: 'METHODS', values: project.methods },
-    { label: 'MODELS', values: project.models },
-    { label: 'DATA', values: project.datasets },
-    { label: 'TECHNOLOGIES', values: project.technologies },
-  ].filter(group => group.values.length > 0);
+  const technicalIndex = [
+    project.methods.length && `Methods: ${project.methods.join(' · ')}`,
+    project.models.length && `Models: ${project.models.join(' · ')}`,
+    project.datasets.length && `Data: ${project.datasets.join(' · ')}`,
+    project.technologies.length && `Technologies: ${project.technologies.join(' · ')}`,
+  ].filter(Boolean) as string[];
+
+  const steps = [
+    { command: 'project brief --overview', label: 'OVERVIEW', lines: [project.overview] },
+    { command: 'project diagnose --problem', label: 'PROBLEM', lines: [project.problem] },
+    { command: 'project inspect --approach', label: 'APPROACH', lines: [project.approach] },
+    { command: 'pipeline trace --stages', label: 'ARCHITECTURE', lines: project.architecture.map(stage => `${stage.name}: ${stage.description}. ${stage.detail}`) },
+    { command: 'project trace --implementation', label: 'IMPLEMENTATION', lines: project.implementation },
+    ...(project.metrics?.length ? [{ command: 'benchmark read --metrics', label: 'METRICS', lines: project.metrics.map(metric => `${metric.label}: ${metric.value}${metric.sub ? ` — ${metric.sub}` : ''}`) }] : []),
+    ...(project.results?.length ? [{ command: 'evaluation show --results', label: 'RESULTS', lines: project.results }] : []),
+    ...(project.limitations?.length ? [{ command: 'project audit --limitations', label: 'LIMITATIONS', lines: project.limitations }] : []),
+    ...(project.futureWork?.length ? [{ command: 'roadmap show --next', label: 'FUTURE WORK', lines: project.futureWork }] : []),
+    { command: 'project stack --list', label: 'TECHNICAL INDEX', lines: technicalIndex },
+  ];
 
   return (
     <article className="page project-case-study">
       <Link href="/archive" className="text-link">← Technical archive</Link>
-      <header className="project-case-study__header">
-        <p className="eyebrow">{['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}</p><h1>{project.title}</h1><p>{project.purpose}</p>
-      </header>
-      <ProjectLead project={project} />
-      {project.metrics && <section className="grid border-y border-[var(--border-subtle)] sm:grid-cols-2 lg:grid-cols-4">{project.metrics.map(m => <div key={m.label} className="border-b border-[var(--border-subtle)] p-6 sm:border-r"><p className="eyebrow">{m.label}</p><p className="mt-3 text-3xl">{m.value}</p></div>)}</section>}
-      {sections.map((section, index) => {
-        const number = String(index + 1).padStart(2, '0');
-        if (section.kind === 'architecture') {
-          return <section key="architecture" className="section rule"><p className="eyebrow">{number} / ARCHITECTURE</p><InteractivePipeline stages={project.architecture} title={`${project.title} PIPELINE`} /></section>;
-        }
-        return (
-          <StudySection key={section.title} number={number} title={section.title}>
-            {section.kind === 'text'
-              ? <p>{section.body}</p>
-              : <ul>{section.items.map(item => <li key={item} className="border-t border-[var(--border-subtle)] py-3">: {item}</li>)}</ul>}
-          </StudySection>
-        );
-      })}
-      <section className="section rule grid gap-8 md:grid-cols-12">
-        <p className="eyebrow md:col-span-3">TECHNICAL INDEX</p>
-        <div className="md:col-span-9 space-y-5">
-          {indexGroups.map(group => (
-            <div key={group.label} className="grid gap-2 border-t border-[var(--border-subtle)] pt-4 sm:grid-cols-[8rem_1fr]">
-              <p className="eyebrow">{group.label}</p>
-              <p className={group.label === 'TECHNOLOGIES' ? 'font-mono text-xs' : ''}>{group.values.join(' · ')}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      {links.length > 0 && (
-        <section className="section rule grid gap-8 md:grid-cols-12">
-          <p className="eyebrow md:col-span-3">LINKS</p>
-          <div className="md:col-span-9 flex flex-wrap gap-8">{links.map(link => <a key={link.href} href={withBasePath(link.href)} target="_blank" rel="noreferrer" className="text-link">{link.label} ↗</a>)}</div>
-        </section>
-      )}
+      <ProjectTerminalDive
+        title={project.title}
+        meta={['PROJECT ' + project.number, project.year, project.category].filter(Boolean).join(' / ')}
+        summary={project.purpose}
+        steps={steps}
+        links={links.map(link => ({ ...link, href: withBasePath(link.href) }))}
+      />
     </article>
   );
-}
-
-function StudySection({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
-  return <section className="project-study-section rule"><p className="eyebrow">{number} / {title}</p><div>{children}</div></section>;
 }
